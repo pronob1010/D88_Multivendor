@@ -99,7 +99,7 @@ rating_choice =(
 )
 
 class CustomerReview(models.Model):
-    product = models.ForeignKey(product, on_delete=CASCADE, related_name="customer_review", null=True)
+    product = models.ForeignKey(product, on_delete=CASCADE, related_name="c_review", null=True)
     customer = models.ForeignKey(User, on_delete=CASCADE)
     rating = models.PositiveIntegerField(choices = rating_choice, null=True)
     review = models.TextField(max_length=200, null=True, blank=True)
