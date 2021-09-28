@@ -1,0 +1,85 @@
+/*------------------------------------
+  Background Soft Colors
+------------------------------------*/
+
+.banner-bg {
+    background-color: $gray-2000 !important;
+}
+
+.bg-1 {
+    background-color: $gray-80; //#ddd
+}
+
+.bg-2 {
+    background-color: $gray-90; //#333e48
+}
+
+.slider-bg {
+    background-color: $slider-bg;
+}
+
+.bg-md-transparent {
+    @include media-breakpoint-up(md) {
+        background-color: transparent !important;
+    }
+}
+
+.bg-xl-transparent {
+    @include media-breakpoint-up(xl) {
+        background-color: transparent !important;
+    }
+}
+
+.bg-primary-down-lg {
+    @include media-breakpoint-down(lg) {
+        background-color: $primary !important;
+    }
+}
+
+.bg-dark-lighter {
+    background-color: rgba(0,0,0,.035);
+}
+
+.bg-lg-down-transparent,
+a.bg-lg-down-transparent.bg-white:hover,
+a.bg-lg-down-transparent.bg-white:focus,
+button.bg-lg-down-transparent.bg-white:hover,
+button.bg-lg-down-transparent.bg-white:focus {
+    @include media-breakpoint-down(lg) {
+        background-color: transparent !important;
+    }
+}
+
+.bg-lg-down-black {
+    @include media-breakpoint-down(lg) {
+        background-color: $black !important;
+        color: $white;
+    }
+}
+
+.bg-on-hover {
+    .bg {
+        color: $gray-8000;
+        background-color: $gray-10000;
+    }
+
+    &:hover {
+        .bg {
+            color: $black;
+            background-color: $primary;
+        }
+    }
+}
+
+.bg-transparent-on-hover {
+    &:hover {
+        background-color: transparent !important;
+    }
+}
+
+.bg-primary-on-hover {
+    &:hover {
+        border-color: $primary !important;
+        background-color: $primary;
+    }
+}

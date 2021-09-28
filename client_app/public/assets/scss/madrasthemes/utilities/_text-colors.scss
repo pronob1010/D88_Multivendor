@@ -1,0 +1,102 @@
+/*------------------------------------
+  Text Colors
+------------------------------------*/
+
+.text-gray-30 { //#a0a0a0
+    color: $gray-30;
+}
+
+.text-gray-50 { //#959595
+    color: $gray-50;
+}
+
+.text-gray-60 { //#6b6b6b
+    color: $gray-60;
+}
+
+.text-gray-70 { //#334141
+    color: $gray-70;
+}
+
+.text-gray-90 { //#333e48
+    color: $gray-90;
+
+    &[href]:hover {
+		color: $gray-90;
+	}
+}
+
+.text-gray-100 {
+    color: $gray-7000; //#343f49
+}
+
+.text-gray-110 {
+    color: $gray-15000; //#7c7c7c
+}
+
+.text-gray-111 {
+    color: $gray-21000; //#686c6f
+}
+
+.text-gray-20 {
+    color: $gray-20000; //#7d7d7d
+}
+
+.text-gray-23 {
+    color: $gray-23000; //#aeaeae
+}
+
+.text-gray-25 {
+    color: $gray-25000; //#acacac
+}
+
+.text-gray-27 {
+    color: $gray-27000; //#575560
+
+    &[href]:hover {
+		color: $gray-90;
+	}
+}
+
+.text-gray-300 {
+    color: $gray-30000; //#b0b0b0
+}
+
+.text-gray-32 {
+    color: $gray-32000; //#a7a7a7
+}
+
+.text-gray-39 {
+    color: $gray-39000; //#434343
+}
+
+.text-gray-41 {
+    color: $gray-41000; //#989898
+}
+
+.text-gray-44 {
+    color: $gray-44000; //#9f9f9f
+}
+
+
+.text-blue { //#0062bd
+    color: $blue !important;
+
+    &[href]:hover {
+		color: lighten($blue, 2%);
+	}
+}
+
+.text-primary-darken-5 {
+    color: darken($primary, 5%);
+}
+
+.text-red { //#ee0000
+    color: $red;
+}
+
+.hover-on-dark {
+    &:hover {
+        color: $gray-90 !important;
+    }
+}

@@ -1,0 +1,29 @@
+/*------------------------------------
+  Search-Forms
+------------------------------------*/
+.custom-search-categories-select {
+    width: auto !important;
+    position: relative;
+
+    &.bootstrap-select .dropdown-toggle .filter-option {
+        position: relative;
+        padding: 0;
+        font-size: ($font-size-base * 1.071); //15px
+    }
+
+    .dropdown-toggle {
+        display: flex;
+        align-items: center;
+
+        &::after {
+            margin-top: 4px;
+            margin-left: .6rem;
+        }
+    }
+}
+
+.placeholder-1 {
+    input::placeholder {
+        color: $gray-90;
+    }
+}

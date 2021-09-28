@@ -1,0 +1,99 @@
+/*------------------------------------
+  Slick
+------------------------------------*/
+
+// Make overflow visible
+.u-slick-overflow-visble {
+	.slick-list {
+		overflow: visible;
+	}
+}
+
+
+// Thumb Progress
+.u-slick-thumb-progress {
+	&__custom {
+		.slick-slide {
+			padding: 1rem .5rem;
+			line-height: 1.2;
+			display: none;
+
+			@include media-breakpoint-up(md) {
+				display: block;
+			}
+
+			@include media-breakpoint-up(xl) {
+				padding: 1rem 2.6rem;
+			}
+
+			@include media-breakpoint-up(wd) {
+				padding: 1rem 4.6rem;
+			}
+
+			.js-slick-thumb-progress {
+				color: $gray-70;
+				font-weight: $font-weight-bold;
+			}
+
+			&:not(.slick-current) .js-slick-thumb-progress {
+				opacity: .4;
+
+				&:hover {
+					color: $gray-11000; //#7b8186
+					opacity: 1;
+				}
+			}
+		}
+
+		.slick-current.js-slide {
+			position: relative;
+
+			&::before,
+			&::after {
+				position: absolute;
+				content: " ";
+				border-top: 2px solid $primary;
+			}
+
+			&::before {
+				display: block;
+				top: 0;
+				width: 100%;
+				left: 0;
+			}
+
+			&::after {
+			    border-left: 4px solid transparent;
+			    border-right: 4px solid transparent;
+			    top: 4px;
+			    left: 50%;
+			    border-top-width: 4px;
+			    transform: translate(-50%,-50%);
+			}
+		}
+	}
+}
+
+//Slick Slider Syncing
+
+.u-slick {
+	&--slider-syncing {
+		.slick-slide {
+			padding: 0.625rem;
+			border: 1px solid $gray-14000;
+
+			&.slick-current {
+				border-bottom-width: 2px;
+				border-bottom-color: $primary;
+			}
+		}
+	}
+
+	&--slider-syncing-size {
+		.slick-slide {
+			@include media-breakpoint-up(xl) {
+				width: 5rem !important;
+			}
+		}
+	}
+}

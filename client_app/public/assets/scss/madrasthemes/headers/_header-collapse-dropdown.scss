@@ -1,0 +1,12 @@
+/*------------------------------------
+  Header Collapse
+------------------------------------*/
+
+.u-header-collapse {
+    &__nav-link,
+    &__submenu-nav-link,
+    &__submenu-list-link {
+        padding-top: .4rem;
+        padding-bottom: .4rem;
+    }
+}

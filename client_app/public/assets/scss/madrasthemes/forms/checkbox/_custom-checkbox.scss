@@ -1,0 +1,21 @@
+/*------------------------------------
+  Custom Checkbox
+------------------------------------*/
+
+.custom-checkbox .custom-control-label {
+    // Background-color and (when enabled) gradient
+    &::before {
+        //height: $custom-control-indicator-height-size;
+    }
+}
+
+.custom-radio {
+    padding-left: 1.6rem;
+
+    .custom-control-label::after,
+    .custom-control-label::before {
+        width: 1rem;
+        height: 1rem;
+        left: -1.6rem;
+    }
+}

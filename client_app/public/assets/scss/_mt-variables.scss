@@ -1,0 +1,529 @@
+/*------------------------------------
+  Madrasthemes variables
+------------------------------------*/
+
+// Color System
+// =========================================================
+
+// Grays
+$gray-20:                                                   #e8e8e8;
+$gray-30:                                                   #a0a0a0;
+$gray-40:                                                   #cad5d5;
+$gray-50:                                                   #959595;
+$gray-60:                                                   #6b6b6b;
+$gray-70:                                                   #334141;
+$gray-80:                                                   #dddddd;
+$gray-90:                                                   #333e48 ; //body color
+$gray-1000:                                                 #b0b5b9;
+$gray-2000:                                                 #f5f5f5;
+$gray-3000:                                                 #bcbcbc;
+$gray-4000:                                                 #383838;
+$gray-5000:                                                 #eeeeee;
+$gray-6000:                                                 #e6e6e6;
+$gray-7000:                                                 #343f49;
+$gray-8000:                                                 #878787;
+$gray-9000:                                                 #848484;
+$gray-10000:                                                #f9f9f9;
+$gray-11000:                                                #7b8186;
+$gray-12000:                                                #8f8f8f;
+$gray-13000:                                                #f8f8f8;
+$gray-14000:                                                #eaeaea;
+$gray-15000:                                                #7c7c7c;
+$gray-16000:                                                #9d9c9c;
+$gray-17000:                                                #606060;
+$gray-18000:                                                #ecedf2;
+$gray-19000:                                                #333e484d;
+$gray-20000:                                                #7d7d7d;
+$gray-21000:                                                #686c6f;
+$gray-22000:                                                #d8d8d8;
+$gray-23000:                                                #aeaeae;
+$gray-24000:                                                #ececec;
+$gray-25000:                                                #acacac;
+$gray-26000:                                                #dfdfdf;
+$gray-27000:                                                #575560;
+$gray-28000:                                                #dcdcdc;
+$gray-29000:                                                #d6dbe1;
+$gray-30000:                                                #b0b0b0;
+$gray-31000:                                                #262626;
+$gray-32000:                                                #a7a7a7;
+$gray-33000:                                                #747474;
+$gray-34000:                                                #818181;
+$gray-35000:                                                #f1f1f1;
+$gray-36000:                                                #d7d7d7;
+$gray-37000:                                                #eceeef;
+$gray-38000:                                                #efecec;
+$gray-39000:                                                #434343;
+$gray-40000:                                                #b9b9b9;
+$gray-41000:                                                #989898;
+$gray-42000:                                                #f7f7f7;
+$gray-43000:                                                #b5b5b5;
+$gray-44000:                                                #9f9f9f;
+
+
+
+// Colors
+$yellow:                                                    #fed700;
+$dark:                                                      $gray-90;
+$black:                                                     #000000;
+$blue:                                                      #0062bd;
+$blue-light:                                                #66afe9;
+$cyan:                                                      #34bcec;
+$green:                                                     #5cb85c;
+$red:                                                       #ee0000;
+$sale:                                                      #df3737;
+$slider-bg:                                                 #eef7f9;
+
+// Theme Colors
+$primary:                                                   $yellow;
+
+$theme-colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge(
+  (
+    "primary":    $primary,
+    "dark":       $dark,
+    "cyan":       $cyan,
+    "sale":       $sale,
+    "black":      $black,
+    "green":      $green,
+    "red":        $red,
+    "gray-1":     $gray-2000, //#f5f5f5
+    "gray-2":     $gray-4000, //#383838
+    "gray-3":     $gray-5000, //#eeeeee
+    "gray-4":     $gray-6000, //#e6e6e6
+    "gray-5":     $gray-8000, //#878787
+    "gray-6":     $gray-9000, //#848484
+    "gray-7":     $gray-10000, //#f9f9f9
+    "gray-8":     $gray-11000, //#7b8186
+    "gray-9":     $gray-12000, //#8f8f8f
+    "gray-13":    $gray-13000, //#f8f8f8
+    "gray-14":    $gray-14000, //#eaeaea
+    "gray-15":    $gray-16000, //#7c7c7c
+    "gray-16":    $gray-17000, //#606060
+    "gray-17":    $gray-18000, //#ecedf2
+    "gray-18":    $gray-19000 //#333e484d
+  ),
+  $theme-colors
+);
+
+
+// Breakpoints
+// =========================================================
+
+$xs:                                                        0;
+$sm:                                                        576px;
+$md:                                                        768px;
+$lg:                                                        992px;
+$xl:                                                        1200px;
+$wd:                                                        1480px; /* EOC */
+
+$grid-breakpoints: (
+  xs:                                                       $xs,
+  sm:                                                       $sm,
+  md:                                                       $md,
+  lg:                                                       $lg,
+  xl:                                                       $xl,
+  wd:                                                       $wd /* EOC */
+);
+
+
+// Grid containers
+// =========================================================
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px,
+  wd: 1430px /* EOC */
+) ;
+
+
+// Spacing
+//
+
+// stylelint-disable
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge((
+  0: 0,
+  0dot5:($spacer * .143),
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 2),
+  6: ($spacer * 2.5),
+  7: ($spacer * 3),
+  8: ($spacer * 3.5),
+  9: ($spacer * 4),
+  10: ($spacer * 4.5),
+  11: ($spacer * 5),
+  12: ($spacer * 5.5),
+  13: ($spacer * 6),
+  14: ($spacer * 6.5),
+  15: ($spacer * 7),
+  16: ($spacer * 8),
+  17: ($spacer * 9),
+  18: ($spacer * 10),
+  19: ($spacer * 10.6),
+  20: ($spacer * 12.4)
+), $spacers);
+
+// Body
+// =========================================================
+// Settings for the `<body>` element.
+
+$body-color:                $gray-90;
+
+
+// Fonts
+// =========================================================
+// Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:                                    "Open Sans", Helvetica, Arial, sans-serif;
+$font-size-base:                                            .875rem; // Assumes the browser default, typically 16px
+$font-electro:                                              "font-electro";
+
+$font-weight-light:                                         300;
+$font-weight-medium:                                        500;
+$font-weight-semi-bold:                                     600;
+$font-weight-bold:                                          700;
+
+// Links
+//
+// Style anchor elements.
+
+$link-hover-color:                                        $dark;
+
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+$text-muted:                                              rgba($black, .2);
+
+
+// Paragraphs
+//
+// Style p element.
+$paragraph-color:            							  $gray-33000;
+$paragraph-margin-bottom:                                 1.875rem;
+
+
+
+
+// Borders
+// =========================================================
+
+$border-radius-pill:                                        6.1875rem;
+$header-sub-menu-border-color:                              $primary;
+
+// Navbar
+
+$navbar-padding-x:                                          0;
+
+
+// Header
+// =========================================================
+
+// Text Colors
+$header-nav-link-color:                                     $gray-90;
+$header-nav-link-active-color:     							$black;
+$header-nav-link-hover-color:            				    $black;
+$header-topbar-nav-link-color:                              $gray-70;
+$header-topbar-nav-link-hover-color:                        $gray-90;
+$header-topbar-nav-separator-color:                         $gray-40;
+
+// Width & Heights
+$header-navbar-brand-width-sm:                               6.375rem;
+
+// Font
+$header-topbar-nav-link-font-size:                          .813rem;
+$header-topbar-nav-link-icon-font-size:                     ($font-size-base * 1.286); //18px
+//$header-nav-link-icon-font-size:                            ($font-size-base * .625);
+//$header-navbar-link-font-size:                              ($font-size-base * .875);
+$header-sub-menu-nav-link-font-size:             			$font-size-base;
+$header-sub-menu-title-font-size:                           $font-size-base;
+$header-sub-menu-title-font-weight:                         $font-weight-bold;
+
+// Borders
+$header-topbar-border-color:                                $gray-20;
+$header-sub-menu-border-top-width:                          ($font-size-base * .125);
+$header-sub-menu-bottom-border-radius:                      ($font-size-base * .5);
+
+// Box Shadow
+$header-submenu-box-shadow:                                 0 2px 5px rgba($black, .28);
+$header-vm-submenu-box-shadow:                              3px 5px 11px -10px rgba(0, 0, 0, 0.8);
+
+// Padding Spaces
+$header-nav-link-paddingY:                                  .781rem; //12.5px
+$header-nav-link-paddingX:                                  .99rem;
+$header-sub-menu-nav-link-paddingY:                         ($font-size-base * 0.38); //5px
+$header-nav-wide-link-paddingY:                             .75rem; //12px
+$header-nav-wide-link-paddingX:                             1.1rem; //16px
+
+
+// Vertical-Menu - Padding Spaces
+$header-vmm-nav-item-paddingX:                              $font-size-base; //14px
+$header-vmm-nav-link-paddingY:                              ($font-size-base * 0.464); //6.5px
+$header-vmm-nav-link-paddingX:                              ($font-size-base * 0.357); //5px
+$header-vmm-nav-bar-nav-paddingY:                           ($font-size-base * 0.5); //7px
+$header-vmm-wrapper-paddingY:                               ($font-size-base * 2.571); //36px
+
+// Vertical-Menu - Position
+$header-vertical-mega-menu-position:                        absolute;
+$header-vertical-mega-menu-position-top:                    100%;
+$header-vertical-mega-menu-position-left:                   0;
+$header-vertical-mega-menu-position-right:                  $header-vertical-mega-menu-position-left;
+
+// Vertical-Menu - Border
+$header-vmm-nav-link-border-color:                          $gray-80;
+
+// Vertical-Menu - Font
+$header-vmm-nav-link-toggle-icon-color:                     $gray-1000;
+$header-vmm-nav-link-toggle-icon-size:                      ($font-size-base * 1.143); //16px
+$header-vmm-nav-link-hover-color:                           $gray-2000;
+
+
+//secondary-menu
+$header-secondary-nav-link-paddingY:                        ($font-size-base * 0.614); //8.5px
+$header-secondary-nav-link-divider-paddingY:                .5rem; //8px
+
+// Alerts
+//
+// Define alert colors, border radius, and padding.
+
+$alert-padding-y:                                           .92rem;
+$alert-link-font-weight:                                    $font-weight-bold;
+$alert-border-radius:                                       0;
+
+
+// Go To
+// =========================================================
+
+// Background Color
+$go-to-bg:                                                  $primary;
+
+
+// Drop Down
+// =========================================================
+
+// Colors
+$dropdown-item-states:                                      $gray-90;
+$dropdown-link-color:                                       $gray-70;
+
+
+// Type
+$dropdown-item-font-size:                                   $font-size-base;
+
+// Box Shadow
+$dropdown-box-shadow:                                       0 2px 5px rgba($black, .28);
+
+
+// Borders
+// =========================================================
+$border-radius-lg:                                          ($font-size-base * .5);
+
+
+// Hamburgers
+// =========================================================
+
+// Width & Heights
+$hamburger-layer-width:             						($font-size-base * 1.6);
+
+// Spacing
+$hamburger-layer-spacing:                                   .3rem;
+
+//Colors
+$hamburger-layer-color:             					    $black;
+$hamburger-layer-hover-color:             					$black;
+
+// Tooltip
+// =========================================================
+
+// Background Color
+$tooltip-bg:                                                $black;
+
+
+// Slick
+// =========================================================
+
+$slick-pagination-long-dot-bg-color:                        $gray-3000;
+$slick-pagination-long-active-dot-border-radius:            $border-radius-pill;
+$slick-arrow-classic-hover-bg-color:                        $primary;
+$slick-arrow-flat-bg-color:                                 rgba($primary, .8);
+$slick-arrow-hover-bg-color:                                $primary;
+
+
+// Media Player
+// =========================================================
+
+// Background Colors
+$media-viewer-icon-bg-color:                                $primary;
+
+$media-viewer-icon-width:                                   1.5rem;
+$media-viewer-icon-height:                                  $media-viewer-icon-width;
+
+
+// Links
+// =========================================================
+
+// Background Color
+$link-icon-bg-color:                                        $primary;
+
+// Width & Heights
+$link-icon-width:                                           1.063rem;
+$link-icon-height:                                          $link-icon-width;
+
+// Forms
+// =========================================================
+
+$form-focus-box-shadow:                                     none;
+
+// States
+$form-focus-border-color:                                   $blue-light;
+
+// List Group
+// =========================================================
+
+$list-group-item-padding-y:                                 .32rem;
+
+// Colors
+$list-group-action-hover-color:                             $black;
+$list-group-action-active-color:                            $list-group-action-hover-color;
+$list-group-action-color:                                   $gray-90;
+
+// Font Sizes
+$list-group-item-font-size:                                 $font-size-base;
+
+// Default Sidebar Elements
+// =========================================================
+
+// Background Color
+//$sidebar-bg-color:                                          $white !default;
+
+// Width & Heights
+$sidebar-width:             							    18.75rem;
+$sidebar-lg-width:             							    23.4375rem;
+
+// Navs
+// =========================================================
+// Background Colors
+$nav-white-nav-link-active-bg-color:                        $white !default;
+$nav-box-custom-nav-link-active-bg-color:                   $primary;
+$nav-classic-nav-link-state-color:                          $primary;
+
+
+// Breadcrumbs
+// =========================================================
+
+// Quote
+$breadcrumb-divider:                                        quote("\65");
+
+// Colors
+$breadcrumb-active-color:                                   $gray-90;
+$breadcrumb-item-link-color:                                $gray-90;
+
+// Border Colors
+$breadcrumb-divider-color:                                  $gray-90;
+
+//Background Color
+$breadcrumb-item-bg-color:                                  $gray-2000;
+$breadcrumb-item-bg-hover-color:                            $gray-20;
+
+
+//Border Radius
+$breadcrumb-border-radius:                                  .313rem;
+
+// Margin and Padding Spaces
+$breadcrumb-item-padding:                                   1rem;
+$breadcrumb-item-padding-y:                                 .438rem;
+$breadcrumb-item-padding-x:                                 .875rem;
+$breadcrumb-padding-y:                                      .62rem;
+$breadcrumb-padding-x:                                      0;
+
+//Font
+$breadcrumb-divider-font-family:                            $font-electro;
+
+// Tables
+//
+// Customizes the `.table` component with basic values, each used across all table variations.
+
+$table-cell-padding:                                        .5rem;
+
+$table-border-color:                                        $gray-18000;
+$table-th-font-weight:                                      $font-weight-bold;
+
+// Alerts
+//
+// Define alert colors, border radius, and padding.
+
+// Progress bars
+
+$progress-bg:                                               $gray-2000;
+$progress-bar-bg:                                           $gray-22000;
+
+// Forms
+//$input-border-radius:                                       1.375rem;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius:                                           1.4rem;
+$btn-border-radius-lg:                                        2rem;
+$btn-border-radius-sm:                                        1.3rem;
+
+$custom-checkbox-indicator-border-radius:                     2px;
+$custom-control-indicator-size:                               .9rem;
+$custom-control-indicator-height-size:                        .86rem;
+$custom-control-indicator-border-color:                       $gray-26000;
+$custom-control-indicator-border-width:                       2px;
+
+$input-color:                                                 $gray-34000;
+$input-border-color:                                          $gray-80;
+$input-placeholder-color:                                     $gray-34000;
+
+$input-focus-border-color:                                    $blue-light;
+$input-focus-color:                                           $input-color;
+$input-focus-box-shadow:                                      none;
+
+// Buttons + Forms
+//
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+
+$input-btn-padding-y:                                         .67rem;
+
+$input-border-radius:                                         $btn-border-radius;
+$input-border-radius-lg:                                      $btn-border-radius-lg;
+$input-border-radius-sm:                                      $btn-border-radius-sm;
+$custom-select-border-radius:                                 $btn-border-radius;
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background, and border color.
+
+$btn-font-weight:                                         $font-weight-bold;
+
+
+// Range Slider
+// =========================================================
+
+// Colors
+//$range-slider-inner-elements-bg:                            $gray-300 !default;
+
+// Text
+//$range-slider-inner-elements-text-size:                     .875rem !default;
+
+// Width & Heights
+//$range-slider-height:                                       1.25rem;
+$range-slider-inner-elements-height:                          .375rem;
+$range-slider-indicator-grid-height:                          1.5rem;
+$range-slider-stats-pointer-width:                            1rem;
+$range-slider-stats-pointer-height:                           $range-slider-stats-pointer-width;
+
+
+// Avatar
+// =========================================================
+
+// Width & Heights
+$avatar-xl:                                                 ($font-size-base * 7.143);

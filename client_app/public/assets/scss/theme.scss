@@ -1,0 +1,28 @@
+// Bootstrap setup
+@import '../vendor/bootstrap/scss/functions';
+
+// Electro setup
+@import 'electro/variables';
+
+// MT setup
+@import 'mt-variables';
+
+// Custom setup
+@import 'user-variables';
+
+// Bootstrap core
+@import '../vendor/bootstrap/scss/bootstrap';
+
+/*----------------------------------------------------------------------
+  * Electro - Responsive Website Template version v2.0
+  * Copyright 2019 Htmlstream
+  * Licensed under Bootstrap Themes (https://themes.getbootstrap.com/licenses/)
+------------------------------------------------------------------------*/
+
+@import 'electro/electro';
+
+// MT core
+@import 'mt-main';
+
+// Custom core
+@import 'user';

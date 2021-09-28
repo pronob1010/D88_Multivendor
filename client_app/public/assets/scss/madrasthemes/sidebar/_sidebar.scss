@@ -1,0 +1,126 @@
+/*------------------------------------
+  Sidebar Navigation
+------------------------------------*/
+
+// Common styles of Sidebar Navigation
+.u-sidebar {
+    &__lg {
+        width: $sidebar-lg-width;
+    }
+}
+
+.sidebar-navbar {
+    font-size: $font-size-base;
+    color: $gray-90;
+
+    a {
+        color: $gray-90;
+        display: block;
+    }
+
+    .dropdown-title {
+        padding: 0.938rem 1.75rem;
+        border-bottom: 1px solid $gray-80;
+    }
+
+    .dropdown-toggle {
+        display: flex;
+        align-items: center;
+
+        &::after {
+            content: "\f105";
+            font-size: ($font-size-base * 1.143); //16px
+            line-height: 1;
+        }
+    }
+
+    .dropdown-toggle-collapse[aria-expanded="true"]::after {
+        transform: rotate(-90deg);
+    }
+
+
+    .dropdown-list {
+        padding: 0 $font-size-base $font-size-base;
+
+        li:not(:nth-last-child(1)) {
+            .dropdown-item,
+            .dropdown-toggle {
+                border-bottom: 1px solid $gray-80;
+            }
+        }
+
+        /* li:nth-last-child(1) {
+            .dropdown-item,
+            .dropdown-toggle {
+                border-bottom-width: 0;
+            }
+        } */
+    }
+
+    .dropdown-current {
+        margin: 0 $font-size-base .4rem;
+        padding: 1rem 1rem .538rem;
+        border-bottom:1px solid $gray-80;
+
+        & + .dropdown-list {
+            padding: 0 $font-size-base $font-size-base;
+
+            li:not(:nth-last-child(1)) {
+                .dropdown-item,
+                .dropdown-toggle {
+                    border-bottom-width: 0;
+                }
+            }
+        }
+
+        &.active {
+            font-weight: $font-weight-bold;
+        }
+    }
+
+    .dropdown-item,
+    .dropdown-toggle:not(.dropdown-title) {
+        padding: 0.5rem 1.5rem;
+
+        &.active {
+            font-weight: $font-weight-bold;
+        }
+    }
+
+    &.view-all {
+        padding-bottom: .3rem;
+
+        > li:not(:first-child) {
+            margin: 0 $font-size-base;
+        }
+
+        > li:not(:last-child):not(:first-child) {
+            border-bottom:1px solid $gray-80;
+        }
+
+        .dropdown-list {
+            li {
+                .dropdown-item,
+                .dropdown-toggle {
+                    border-bottom-width: 0;
+                }
+            }
+        }
+
+        .dropdown-toggle {
+            padding: 0.5rem 1rem;
+
+            &::after {
+                order: -1;
+                margin-left: 0;
+                margin-right: .5rem;
+                color: $gray-23000;
+                font-size: ($font-size-base * .857); //12px
+            }
+
+            span {
+                margin-left: 4px;
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+/*------------------------------------
+  Overflow
+------------------------------------*/
+
+@include media-breakpoint-up(md) {
+    .overflow-md-visble {
+        overflow: visible !important;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .overflow-lg-visble {
+        overflow: visible !important;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .overflow-xl-visble {
+        overflow: visible !important;
+    }
+}

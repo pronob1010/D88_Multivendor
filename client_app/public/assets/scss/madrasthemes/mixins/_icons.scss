@@ -1,0 +1,15 @@
+/*------------------------------------
+  Font Icon (Electro)
+------------------------------------*/
+
+@mixin ec-icon($content) {
+    content: $content;
+    font: normal normal normal 14px/1 font-electro;
+    font-size: inherit;
+    text-decoration: inherit;
+    text-rendering: optimizeLegibility;
+    text-transform: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}

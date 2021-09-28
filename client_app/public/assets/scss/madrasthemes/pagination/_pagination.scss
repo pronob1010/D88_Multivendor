@@ -1,0 +1,37 @@
+/*------------------------------------
+  Pagination
+------------------------------------*/
+
+.pagination-shop {
+    .page-link {
+        width: 35px;
+        height: 35px;
+        line-height: 34px;
+        text-align: center;
+        vertical-align: middle;
+        border-radius: 20px;
+        border: 1px solid $gray-6000;
+        padding: 0;
+        color: $gray-20000;
+
+        &.current {
+            font-weight: $font-weight-bold;
+            color: $gray-31000;
+            background-color: $primary;
+            border-color: $primary;
+        }
+
+        &:hover:not(.current) {
+            background-color: $gray-6000;
+        }
+    }
+
+    .page-item {
+        margin: 0 .15rem;
+    }
+
+    .page-item:first-child .page-link,
+    .page-item:last-child .page-link  {
+        border-radius: 20px;
+    }
+}

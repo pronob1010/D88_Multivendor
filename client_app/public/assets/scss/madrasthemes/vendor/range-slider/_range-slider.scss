@@ -1,0 +1,53 @@
+/*------------------------------------
+  Range Slider
+------------------------------------*/
+.u-range-slider {
+    .irs-line-left,
+    .irs-line-mid,
+    .irs-line-right {
+        height: .125rem;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+
+    .irs-slider {
+        background-color: $primary;
+        box-shadow: none;
+
+        &.to {
+            background-color: $white;
+            border: 3px solid $primary;
+        }
+
+        &:hover {
+            box-shadow: 0 0 0 0.236em rgba(0,0,0,.1);
+        }
+
+        &.state_hover {
+            transform: scale(1);
+        }
+    }
+
+    .irs-bar {
+        background-color: $gray-28000;
+    }
+}
+
+/* Indicator */
+.u-range-slider-indicator {
+    .irs-line {
+        top: 0.575rem;
+    }
+
+    .irs-bar {
+        top: 0.575rem;
+    }
+
+    .irs-bar-edge {
+        top: 0.575rem;
+    }
+
+    .irs-slider {
+        top: 0.2rem;
+    }
+}

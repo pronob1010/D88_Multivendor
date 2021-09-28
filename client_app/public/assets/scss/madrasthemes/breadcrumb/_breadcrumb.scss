@@ -1,0 +1,45 @@
+/*------------------------------------
+  Breadcrumb
+------------------------------------*/
+
+.breadcrumb {
+    padding: $breadcrumb-padding-y 0;
+    margin-bottom: $breadcrumb-margin-bottom;
+    background-color: transparent;
+    @include border-radius(0);
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+
+    a {
+        display: inline-block;
+    }
+
+    &.active,a {
+        color: $breadcrumb-item-link-color;
+    }
+
+    + .breadcrumb-item {
+
+        &::before {
+            font-family: $breadcrumb-divider-font-family;
+            margin-top: 4px;
+        }
+
+        a {
+            padding: $breadcrumb-item-padding-y $breadcrumb-item-padding-x;
+            background-color: transparent;
+            @include border-radius($breadcrumb-border-radius);
+
+            @include media-breakpoint-up(md) {
+                background-color: $breadcrumb-item-bg-color;
+
+                &:hover {
+                    background-color: $breadcrumb-item-bg-hover-color;
+                }
+            }
+        }
+    }
+}

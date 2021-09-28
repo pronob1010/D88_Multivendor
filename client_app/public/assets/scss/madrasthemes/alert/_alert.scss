@@ -1,0 +1,27 @@
+/*------------------------------------
+  Alert
+------------------------------------*/
+
+.alert-primary {
+    background-color: $primary;
+    color: $gray-90;
+
+    .alert-link {
+        color: $gray-90;
+
+        &:hover {
+            color: $black;
+        }
+    }
+}
+
+.alert-primary,
+.alert-secondary,
+.alert-success,
+.alert-danger,
+.alert-warning,
+.alert-info,
+.alert-light,
+.alert-dark {
+    border-left: 9px solid rgba(0,0,0,.15);
+}

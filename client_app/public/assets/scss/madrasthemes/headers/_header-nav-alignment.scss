@@ -1,0 +1,14 @@
+/*------------------------------------
+  Nav Alignments
+------------------------------------*/
+
+// Above Large Devices
+@include media-breakpoint-up(lg) {
+    .vertical-menu {
+        // Right Alignment
+        .u-header__navbar-body,
+        .u-header__navbar-nav {
+            margin-left: 0;
+        }
+    }
+}

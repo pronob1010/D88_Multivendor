@@ -1,0 +1,80 @@
+/*------------------------------------
+  Default Styles
+------------------------------------*/
+
+sub, sup {
+    font-size: 60%;
+}
+
+strong {
+    font-weight: $font-weight-bold;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.009rem;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-weight: $font-weight-normal;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+
+// Blockquotes
+.blockquote {
+    padding: 2.5rem;
+    background-color: $gray-90;
+    letter-spacing: -.4px;
+    margin-bottom: 0;
+
+    @include media-breakpoint-up(md) {
+        padding: 6.25rem;
+    }
+
+    p {
+        font-size: 1.313rem; //21px
+        font-style: italic;
+        color: $white;
+        margin-bottom: 2.188rem; //35px
+        line-height: 1.875rem;
+    }
+
+    cite {
+        font-style: normal;
+    }
+}
+
+.blockquote-footer {
+    display: block;
+    font-size: $font-size-base; //14px
+    color: $white;
+
+    &::before {
+        content: "- "; //
+        //content: "\2014\00A0"; // em dash, nbsp
+    }
+}
+
+blockquote:not(.blockquote) {
+    margin: 0 0 1.25rem 2.375rem;
+
+    &::before {
+        color: $gray-32000;
+        content: "\f10d";
+        float: left;
+        font-family: FontAwesome;
+        font-size: 1.563rem;
+        margin-left: -2.313rem;
+    }
+
+    p {
+        font-size: 0.938rem;
+        line-height: 1.563rem;
+        font-style: italic;
+    }
+}

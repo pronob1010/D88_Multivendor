@@ -1,0 +1,71 @@
+/*------------------------------------
+  Grid
+------------------------------------*/
+[class*="gdot"] {
+    @include make-col-ready;
+}
+
+@each $size, $value in $grid-breakpoints {
+    .col-#{$size}-1gdot7 {
+        @include media-breakpoint-up($size) {
+            @include make-col(1.71428571);
+        }
+    }
+
+    .col-#{$size}-2gdot4 {
+        @include media-breakpoint-up($size) {
+            @include make-col(2.4);
+        }
+    }
+
+    .col-#{$size}-2gdot4-only {
+        @include media-breakpoint-only($size) {
+            @include make-col(2.4);
+        }
+    }
+
+    .col-#{$size}-3gdot9 {
+        @include media-breakpoint-up($size) {
+            @include make-col(3.9);
+        }
+    }
+
+    .col-#{$size}-2gdot5 {
+        @include media-breakpoint-up($size) {
+            @include make-col(2.5);
+        }
+    }
+
+    .col-#{$size}-3gdot3 {
+        @include media-breakpoint-up($size) {
+            @include make-col(3.3);
+        }
+    }
+
+    .col-#{$size}-8gdot46 {
+        @include media-breakpoint-up($size) {
+            @include make-col(8.46);
+        }
+    }
+
+    .col-#{$size}-8gdot7 {
+        @include media-breakpoint-up($size) {
+            @include make-col(8.7);
+        }
+    }
+
+    .col-#{$size}-9gdot5 {
+        @include media-breakpoint-up($size) {
+            @include make-col(9.5);
+        }
+    }
+}
+
+.cart-page,
+.checkout-page {
+    .container {
+        @include media-breakpoint-up(wd) {
+            max-width: 1200px;
+        }
+    }
+}

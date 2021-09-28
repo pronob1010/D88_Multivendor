@@ -1,0 +1,47 @@
+/*------------------------------------
+  Slick Pagination
+------------------------------------*/
+
+.u-slick__pagination--long {
+    li {
+        margin: 0 ($font-size-base * 0.5);
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        span {
+            transform: none;
+            border: 0;
+            width: 0.5rem; //8px
+            height: 0.5rem; //8px
+            background-color: $slick-pagination-long-dot-bg-color;
+        }
+
+        &.slick-active span {
+            transform: none;
+            width: ($font-size-base * 2.143); //30px
+            background-color: $primary;
+            @include border-radius($slick-pagination-long-active-dot-border-radius);
+        }
+    }
+}
+
+.u-slick__pagination {
+    &--hover {
+        position: absolute;
+        opacity: 0;
+        left: 2.25rem;
+        bottom: -2.125rem;
+        @include transition($btn-transition);
+    }
+}
+
+.u-slick:hover {
+    .u-slick__pagination {
+        &--hover {
+            opacity: 1;
+            bottom: 2.125rem;
+        }
+    }
+}

@@ -1,0 +1,98 @@
+/*------------------------------------
+  Position Spaces
+------------------------------------*/
+
+.top-n2 {
+    top: -($font-size-base * .143); //-2px
+}
+
+.top-2 {
+    top: ($font-size-base * .143); //2px
+}
+
+.top-3 {
+    top: 1rem; //16px
+}
+
+.top-8 {
+    top: ($font-size-base * .571); //8px
+}
+
+.top-10 {
+    top: ($font-size-base * .625); //10px
+}
+
+.top-100 {
+    top: 100%; //100%
+}
+
+.left-auto {
+    left: auto !important;
+}
+
+.left-100 {
+    left: 100% !important; //100%
+}
+
+.left-3 {
+    left: 1rem; //16px
+}
+
+.left-12 {
+    left: ($font-size-base * .857); //12px
+}
+
+.left-n16 {
+    left: -1rem; //16px
+}
+
+.bottom-1 {
+    bottom: 1rem;
+}
+
+.bottom-100 {
+    bottom: 100%;
+}
+
+.right-1 {
+    right: 1rem;
+}
+
+.right-2 {
+    right: 2rem;
+}
+
+.right-3 {
+    right: 3rem;
+}
+
+.right-n20 {
+    right: -1.25rem; //20px
+}
+
+.right-xl-220 {
+    @include media-breakpoint-only(xl) {
+        right: 13.75rem; //220px
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .position-md-static {
+        position: static !important;
+    }
+}
+
+.right-dropdown-0 ~ .dropdown-menu {
+    @include media-breakpoint-down(lg) {
+        right: 0 !important;
+        left: auto !important;
+        transform: translate3d(0px, 37px, 0px) !important;
+    }
+}
+
+.right-dropdown-0-all ~ .dropdown-menu {
+    right: 0 !important;
+    left: auto !important;
+    min-width: 100% !important;
+    transform: translate3d(0px, 44px, 0px) !important;
+}

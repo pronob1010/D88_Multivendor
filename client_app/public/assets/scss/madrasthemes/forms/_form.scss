@@ -1,0 +1,16 @@
+/*------------------------------------
+  Form
+------------------------------------*/
+
+.form-label {
+    display: block;
+    text-transform: capitalize;
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+}
+
+.form-check-input {
+    &:disabled ~ .form-check-label {
+        color: $gray-21000;
+    }
+}

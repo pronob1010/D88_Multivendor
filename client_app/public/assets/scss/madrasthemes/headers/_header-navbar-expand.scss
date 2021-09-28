@@ -1,0 +1,170 @@
+/*------------------------------------
+  Navbar Expand
+------------------------------------*/
+
+.vertical-menu {
+    .navbar-expand {
+        @each $breakpoint in map-keys($grid-breakpoints) {
+            $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+            @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+                &#{$infix} {
+                    .navbar-nav {
+                        flex-direction: column;
+                    }
+
+                    .u-header__navbar-nav {
+                        align-items: unset;
+                        width: 100%;
+                        padding: $header-vmm-nav-bar-nav-paddingY 0;
+                    }
+
+                    // Submenu
+                    .u-header__navbar-nav .u-header {
+                        &__nav-link {
+                            padding-top: $header-vmm-nav-link-paddingY;
+                            padding-bottom: $header-vmm-nav-link-paddingY;
+                            padding-right: $header-vmm-nav-link-paddingX;
+                            padding-left: $header-vmm-nav-link-paddingX;
+                        }
+
+                        &__sub-menu {
+                            box-shadow: none;
+                            border-bottom-left-radius: 0;
+                        }
+
+                        &__mega-menu-wrapper {
+                            padding-top: $header-vmm-wrapper-paddingY;
+                            padding-bottom: $header-vmm-wrapper-paddingY;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.vertical-menu {
+    &.v2,
+    &.v3 {
+        .navbar-expand {
+            @each $breakpoint in map-keys($grid-breakpoints) {
+                $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+                @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+                    &#{$infix} {
+                        // Submenu
+                        .u-header__navbar-nav .u-header {
+                            &__sub-menu {
+                                box-shadow: $header-vm-submenu-box-shadow;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.u-header__navbar--wide {
+    &.navbar-expand {
+        @each $breakpoint in map-keys($grid-breakpoints) {
+            $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+            @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+                &#{$infix} {
+
+                    // Submenu
+                    .u-header__navbar-nav {
+                        .u-header {
+                            &__nav-link {
+                                padding-top: $header-nav-wide-link-paddingY;
+                                padding-bottom: $header-nav-wide-link-paddingY;
+                                padding-right: $header-nav-wide-link-paddingX;
+                                padding-left: $header-nav-wide-link-paddingX;
+                            }
+
+                            &__nav-link-toggle::after {
+                                font-size: 90%;
+                            }
+                        }
+
+                        .nav-item + .nav-item .u-header__nav-link {
+                            border-left: 1px solid darken($primary, 5%);
+                        }
+
+                        .hs-mega-menu-opened,
+                        .hs-sub-menu-opened {
+                            .u-header {
+                                &__nav-link {
+                                    background-color: darken($primary, 5%);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .u-header__nav-item:first-child .u-header__nav-link {
+        padding-left: $header-nav-wide-link-paddingX;
+    }
+}
+
+.navbar-expand {
+    @each $breakpoint in map-keys($grid-breakpoints) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+            &#{$infix} {
+                // Mega Menu
+                .u-header__mega-menu {
+                    &-position-right-fix.hs-mega-menu.hs-position-right {
+                        //right: 35%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.secondary-menu {
+    .navbar-expand {
+        @each $breakpoint in map-keys($grid-breakpoints) {
+            $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+            @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+                &#{$infix} {
+                    // Submenu
+                    .u-header__navbar-nav .u-header {
+                        &__nav-link {
+                            padding-top: $header-secondary-nav-link-paddingY;
+                            padding-bottom: $header-secondary-nav-link-paddingY;
+                        }
+                    }
+
+                    .u-header__navbar-nav-divider {
+                        .u-header__nav-link {
+                            padding-right: $header-secondary-nav-link-divider-paddingY;
+                            padding-left: $header-secondary-nav-link-divider-paddingY;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .u-header__navbar-nav .u-header {
+        &__nav-link {
+            font-weight: $font-weight-normal;
+            font-size: ($font-size-base * .929); //13px
+        }
+    }
+
+    &.v1 .u-header__navbar-nav .u-header {
+        &__nav-link {
+            font-size: $font-size-base; //14px
+        }
+    }
+}

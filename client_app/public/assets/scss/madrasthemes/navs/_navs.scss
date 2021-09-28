@@ -1,0 +1,263 @@
+/*------------------------------------
+  Navs
+------------------------------------*/
+
+.nav {
+    &-tab {
+        border-color: $gray-80;
+
+        .nav-link {
+            margin-bottom: -1px;
+            border-width: 2px;
+            padding: .5rem .3rem;
+            font-size: 1.125rem;
+            color: $gray-7000;
+
+            &:hover {
+                color: $gray-7000;
+            }
+
+            &.active {
+				font-weight: $font-weight-bold;
+                color: $gray-7000;
+                position: relative;
+
+                &::after {
+                    content: ' ';
+                    height: 4px;
+                    width: 10px;
+                    display: block;
+                    position: absolute;
+                    bottom: -5px;
+                    left: 50%;
+                    border-radius: 0 0 10px 10px;
+                    transform: translateX(-50%);
+                    background-color: $primary;
+                }
+			}
+        }
+
+        &-sm {
+            .nav-link {
+                font-size: 0.938rem;
+            }
+
+            @include media-breakpoint-down(md) {
+                &::after {
+                    content: ' ';
+                    border-bottom: 1px solid $gray-80;
+                    display: block;
+                    position: absolute;
+                    bottom: 3px;
+                    width: 100%;
+                    z-index: -1;
+                    right: 0;
+                    left: 0;
+                }
+            }
+        }
+
+        &-lg {
+            &.nav .nav-item:not(:first-child) {
+                margin-left: 1.15rem;
+            }
+
+            &.nav .nav-item:not(:last-child) {
+                margin-right: 1.15rem;
+            }
+
+            &.nav .nav-item:not(:first-child) {
+                margin-left: 1rem;
+            }
+
+            &.nav .nav .nav-item:not(:last-child) {
+                margin-right: 1rem;
+            }
+
+            @include media-breakpoint-down(lg) {
+                &::after {
+                    content: ' ';
+                    border-bottom: 1px solid $gray-80;
+                    display: block;
+                    position: absolute;
+                    bottom: 3px;
+                    width: 100%;
+                    right: 0;
+                    left: 0;
+                }
+            }
+        }
+    }
+
+    &-tab-shop {
+        .nav-link {
+            color: $gray-29000;
+            padding: 0;
+            font-size: ($font-size-base * 1.286); //18px
+
+            &.active,
+            &:hover {
+                color: $gray-27000;
+            }
+        }
+    }
+
+    .nav-item {
+		&:not(:first-child) {
+			margin-left: .4rem;
+		}
+
+		&:not(:last-child) {
+			margin-right: .4rem;
+		}
+	}
+
+    &-tab-pill {
+        .nav-link {
+            color: $gray-11000;
+            @extend .font-size-15;
+            border: 2px solid transparent;
+            padding: 2px 20px;
+
+            &.active {
+                background-color: transparent;
+                border-color: $primary;
+                color: $gray-90;
+            }
+        }
+    }
+
+    &-tab-pill-fill {
+        .nav-link {
+            &.active {
+                background-color: $primary;
+                font-weight: $font-weight-bold;
+            }
+        }
+    }
+}
+
+/* Box */
+.nav-box-custom {
+    .nav-item {
+        width: 100%;
+    }
+
+	.nav-link {
+		color: $nav-box-nav-link-color;
+        position: relative;
+        display: block;
+
+		&.active {
+			color: $nav-box-nav-link-color;
+			background-color: $nav-box-custom-nav-link-active-bg-color;
+            font-weight: $font-weight-bold;
+
+            &::before {
+                content: " ";
+                display: block;
+                border-top: 18px solid transparent;
+                border-right: 18px solid $nav-box-custom-nav-link-active-bg-color;
+                border-bottom: 18px solid transparent;
+                position: absolute;
+                top: 0;
+                right: 100%;
+            }
+		}
+	}
+}
+
+.list-divider {
+    li:not(:last-child) {
+        &::after {
+            content: "/";
+            display: inline-block;
+            color: $gray-40000;
+            margin: 0 .6rem;
+        }
+    }
+}
+
+.ec-store-directory {
+    >ul,
+    >ul ul {
+        margin: 0 0 0 0.438rem;
+        padding: 0;
+        list-style: none;
+        position: relative;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 0;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            border-left: 1px solid $gray-80;
+        }
+    }
+
+    a {
+        font-weight: $font-weight-bold;
+        color: $gray-90;
+    }
+
+    >ul {
+        margin-left: 0;
+
+        ul a {
+            font-weight: $font-weight-normal;
+        }
+
+        li {
+            margin: 0;
+            padding: 0 1.313rem;
+            line-height: 1.75rem;
+            position: relative;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 10px;
+                height: 0;
+                border-top: 1px solid $gray-80;
+                margin-top: -1px;
+                position: absolute;
+                top: 1.25rem;
+                left: 0;
+            }
+        }
+
+        > li {
+            &::before {
+                top: 1.25rem;
+            }
+        }
+
+        li:last-child:before {
+            background-color: $white;
+            height: auto;
+            top: 1.313rem;
+            bottom: 0;
+        }
+
+        ul {
+            li:last-child:before {
+                top: 1.25rem;
+            }
+        }
+
+        li>a {
+            padding: 0.35rem 0;
+        }
+    }
+
+    ul li>a {
+        display: inline-block;
+    }
+}
+
+.cart-dropdown {
+    min-width: 20.75rem; //332px
+}

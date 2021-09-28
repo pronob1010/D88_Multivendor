@@ -1,0 +1,18 @@
+/*------------------------------------
+  Header Sidebar
+------------------------------------*/
+
+.u-header-sidebar {
+	&__content {
+		padding: 1rem 2rem 2rem;
+	}
+
+    /* Sub Menu */
+    &__sub-menu-title {
+        display: block;
+        color: $header-sub-menu-title;
+        font-size: $header-sub-menu-title-font-size;
+        font-weight: $header-sub-menu-title-font-weight;
+        margin: $header-sub-menu-margin-bottom 0;
+    }
+}

@@ -1,0 +1,94 @@
+/*------------------------------------
+  Buttons
+------------------------------------*/
+
+/* Add cart btn */
+.btn-add-cart {
+    width: 2.188rem;
+    height: 2.188rem;
+    background-color: $gray-6000;
+    color: $white;
+    @include flex-content-center;
+    @include border-radius($border-radius-pill);
+
+    i {
+        font-size: 1.25rem;
+    }
+
+    &:hover {
+        background-color: $primary;
+        color: $white;
+    }
+
+    &__wide {
+        width: auto;
+        background-color: $primary;
+        padding: 0 1rem;
+        font-weight: $font-weight-bold;
+        font-size: .813rem;
+        height: 2.313rem;
+
+        &:hover {
+            background-color: $gray-90;
+            box-shadow: 0 4px 11px rgba($gray-90, .25) !important;
+        }
+    }
+}
+
+.btn-remove-focus {
+    &:focus {
+        background-color: $primary !important;
+    }
+}
+
+.btn-remove-bg-hover {
+    &:hover,
+    &:focus {
+        background-color: transparent !important;
+    }
+}
+
+.btn-primary-dark {
+    color: $white;
+    background-color: $primary;
+    border-color: $primary;
+
+    &:hover {
+        background-color: $gray-90;
+        border-color: $gray-90;
+        color: $white;
+    }
+}
+
+.btn-soft-secondary-w {
+    color: $body-color;
+    background-color: $gray-38000;
+    border-color: $gray-38000;
+
+    &:hover {
+        background-color: $body-color;
+        border-color: $body-color;
+        color: $white;
+    }
+}
+
+.btn-primary-dark-w {
+    color: $dark;
+    background-color: $primary;
+    border-color: $primary;
+
+    &:hover {
+        background-color: $gray-90;
+        border-color: $gray-90;
+        color: $white;
+    }
+}
+
+.btn-primary-dark[type]:hover,
+.btn-primary-dark[type]:active,
+.btn-primary-dark[type]:focus,
+.btn-primary-dark[href]:hover,
+.btn-primary-dark[href]:active,
+.btn-primary-dark[href]:focus {
+    box-shadow: 0 4px 11px rgba($gray-90, .25);
+}

@@ -1,0 +1,315 @@
+/*------------------------------------
+  Borders-width
+------------------------------------*/
+
+// Custom options
+.rounded-top-lg {
+    @include border-top-radius($border-radius-lg);
+}
+
+.border-width-2 {
+    border-width: 2px !important;
+}
+
+.border-width-3 {
+    border-width: 3px !important;
+}
+
+.border-width-0 {
+    border-width: 0 !important;
+}
+
+/*------------------------------------
+  Borders-style
+------------------------------------*/
+
+.border-dotted-top {
+    border-top: 1px dotted transparent !important;
+}
+
+.border-dotted-bottom {
+    border-bottom: 1px dotted transparent !important;
+}
+
+/*------------------------------------
+  Borders-radius
+------------------------------------*/
+
+.borders-radius-6 {
+    border-radius: 0.375rem; //6px
+}
+
+.borders-radius-9 {
+    border-radius: 0.563rem; //9px
+}
+
+.borders-radius-20 {
+    border-radius: 1.25rem; //20px
+}
+
+.borders-radius-17 {
+    border-radius: 1.063rem; //17px
+}
+
+/*------------------------------------
+  Borders-Color
+------------------------------------*/
+.border-color-1 {
+    border-color: $gray-80 !important; //#ddd
+}
+
+.border-color-2 {
+    border-top: 1px solid darken($primary, 5%);
+}
+
+.border-color-3 {
+    border-color: $gray-24000 !important; //#ececec
+}
+
+.border-color-4 {
+    border-color: $gray-42000 !important; //#f7f7f7
+}
+
+.border-color-5 {
+    border-color: $gray-43000 !important; //#b5b5b5
+}
+
+@each $color, $value in $theme-colors {
+    .border-top-#{$color} {
+        border-top-color: $value !important;
+    }
+
+    .border-right-#{$color} {
+        border-right-color: $value !important;
+    }
+
+    .border-bottom-#{$color} {
+        border-bottom-color: $value !important;
+    }
+
+    .border-left-#{$color} {
+        border-left-color: $value !important;
+    }
+}
+
+
+@include media-breakpoint-down(lg) {
+    .border-lg-down-0  {border-width: 0 !important}
+    .border-lg-down-bottom-0 { border-bottom: 0 !important; }
+}
+
+@include media-breakpoint-down(md) {
+    .border-md-down-top-0    { border-top: 0 !important; }
+    .border-md-down-bottom-0 { border-bottom: 0 !important; }
+}
+
+@include media-breakpoint-down(sm) {
+    .border-sm-0        { border: 0 !important; }
+    .border-sm-top-0    { border-top: 0 !important; }
+    .border-sm-right-0  { border-right: 0 !important; }
+    .border-sm-left-0   { border-left: 0 !important; }
+    .border-sm-bottom-0 { border-bottom: 0 !important; }
+}
+
+// Medium Devices
+@include media-breakpoint-up(md) {
+    .border-md-0        { border: 0 !important; }
+    .border-md-top-0    { border-top: 0 !important; }
+    .border-md-right-0  { border-right: 0 !important; }
+    .border-md-left-0   { border-left: 0 !important; }
+    .border-md-bottom-0 { border-bottom: 0 !important; }
+}
+
+// Large Devices
+@include media-breakpoint-up(lg) {
+    .border-lg-0        { border: 0 !important; }
+    .border-lg-top-0    { border-top: 0 !important; }
+    .border-lg-right-0  { border-right: 0 !important; }
+    .border-lg-left-0   { border-left: 0 !important; }
+    .border-lg-bottom-0 { border-bottom: 0 !important; }
+}
+
+@include media-breakpoint-only(xl) {
+    .border-xl-0 { border: 0 !important;}
+}
+
+@include media-breakpoint-up(wd) {
+    .border-wd-0 { border: 0 !important;}
+}
+
+@include media-breakpoint-down(lg) {
+    .border-lg-down-0 { border: 0 !important;}
+}
+
+@include media-breakpoint-up(xl) {
+    .border-xl-top-0 {border-top: 0 !important;}
+}
+
+@include media-breakpoint-up(wd) {
+    .border-md-0        { border: 0 !important; }
+    .border-md-top-0    { border-top: 0 !important; }
+    .border-md-right-0  { border-right: 0 !important; }
+    .border-md-left-0   { border-left: 0 !important; }
+    .border-md-bottom-0 { border-bottom: 0 !important; }
+}
+
+.product-item {
+    border-bottom: 1px solid $gray-14000;
+
+    @include media-breakpoint-up(md) {
+        border-width: 0;
+    }
+
+    &:last-child,
+    &:nth-last-child(2) {
+        border-width: 0;
+    }
+
+    &::after {
+        content: '';
+        border-right: 1px solid $gray-14000;
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        height: 70%;
+        transform: translateY(-50%);
+    }
+
+    @include media-breakpoint-up(xl) {
+        &::after {
+            height: 80%;
+        }
+    }
+
+    &__card {
+        @include media-breakpoint-up(xl) {
+            &::after {
+                height: 70%;
+            }
+        }
+
+        @include media-breakpoint-down(sm) {
+            &::after {
+                content: none;
+            }
+        }
+    }
+
+    &:nth-child(even) {
+        &::after {
+            content: none;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        &:nth-child(even) {
+            &::after {
+                content: " ";
+            }
+        }
+    }
+
+    &.remove-divider {
+        &::after {
+            content: none;
+        }
+    }
+
+    &.remove-divider-md-lg {
+        @include media-breakpoint-between(md,lg) {
+            &::after {
+                content: none;
+            }
+        }
+    }
+
+    &.remove-divider-sm-down {
+        @include media-breakpoint-down(sm) {
+            &::after {
+                content: none;
+            }
+        }
+    }
+
+    &.remove-divider-md {
+        @include media-breakpoint-only(md) {
+            &::after {
+                content: none;
+            }
+        }
+    }
+
+    &.remove-divider-lg {
+        @include media-breakpoint-only(lg) {
+            &::after {
+                content: none;
+            }
+        }
+    }
+
+    &.remove-divider-wd {
+        @include media-breakpoint-up(wd) {
+            &::after {
+                content: none;
+            }
+        }
+    }
+
+    &.remove-divider-xl {
+        @include media-breakpoint-only(xl) {
+            &::after {
+                content: none;
+            }
+        }
+    }
+}
+
+.prodcut-list-view,
+.prodcut-list-view-small {
+    .product-item:not(:last-child) {
+        border-bottom: 1px solid $gray-14000;
+    }
+}
+
+.remove-bd-xl-only {
+    @include media-breakpoint-only(xl) {
+        border-width: 0 !important;
+    }
+}
+
+.remove-bd-wd {
+    @include media-breakpoint-up(wd) {
+        border-width: 0 !important;
+    }
+}
+
+.bg-animation {
+    animation: fading 1.5s infinite;
+    background-color: #c7c7c7 !important;
+    opacity: .1;
+}
+
+@keyframes placeHolderShimmer {
+    0%{ background-position: -150px 0; }
+    100%{ background-position: 150px 0; }
+}
+
+@keyframes fading {
+  0% {
+    opacity: .1;
+  }
+
+  50% {
+    opacity: .2;
+  }
+
+  100% {
+    opacity: .1;
+  }
+}
+
+.rounded-circle-top {
+  border-top-left-radius: 100px !important;
+  border-top-right-radius: 100px !important;
+}

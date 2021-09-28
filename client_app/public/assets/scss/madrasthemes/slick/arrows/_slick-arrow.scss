@@ -1,0 +1,54 @@
+/*------------------------------------
+  Slick Arrows
+------------------------------------*/
+
+.u-slick__arrow {
+    &-normal {
+        cursor: pointer;
+
+        &.slick-disabled,
+        &.slick-disabled.js-next,
+        &.slick-disabled.js-prev {
+            opacity: .5;
+            cursor: not-allowed;
+        }
+    }
+}
+
+.u-slick-deal-arrow {
+    @include media-breakpoint-only(xl) {
+        &__border {
+            &::after {
+                content: " ";
+                position: absolute;
+                height: 1px;
+                width: 310px;
+                right: 14px;
+                top: 46px;
+                background-color: $gray-14000;
+            }
+        }
+
+        &::after {
+            font-family: $font-family-base;
+            color: $gray-4000;
+            font-size: $font-size-base;
+            font-weight: normal;
+        }
+
+        &__left {
+            &::after {
+                content: "Previous Deal";
+                margin-left: 6px;
+            }
+        }
+
+        &__right {
+            &::after {
+                content: "Next Deal";
+                order: -1;
+                margin-right: 6px;
+            }
+        }
+    }
+}
