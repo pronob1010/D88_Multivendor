@@ -80,8 +80,9 @@ class MyDocument extends Document {
         <script src="/assets/js/components/hs.go-to.js"></script>
         <script src="/assets/js/components/hs.selectpicker.js"></script>
 
-        
         <script src="/assets/js/loader.js"></script>
+
+        {/* <Load /> */}
     
         </body> 
       </Html>

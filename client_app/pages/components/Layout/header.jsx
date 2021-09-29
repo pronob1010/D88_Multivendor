@@ -1,4 +1,6 @@
-export default function Header(){
+import Link from "next/link";
+
+export default function HeaderIndex(){
     return (
         <header id="header" className="u-header u-header-left-aligned-nav">
         <div className="u-header__section">
@@ -1028,7 +1030,9 @@ export default function Header(){
                                     </li>
                                     
                                     <li className="nav-item u-header__nav-item">
-                                        <a className="nav-link u-header__nav-link" href="../shop/shop-left-sidebar.html" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">Shop</a>
+                                        <Link href="/shop" >
+                                        <a className="nav-link u-header__nav-link" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">Shop</a>
+                                        </Link>
                                     </li>
                      
                                     <li className="nav-item u-header__nav-item">

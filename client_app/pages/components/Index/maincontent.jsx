@@ -1,9 +1,9 @@
 export default function MainContent(){
     return (
+        <>
         <main id="content" role="main">
-        
         <div className="mb-5">
-            <div className="bg-img-hero" style= {{backgroundimage: 'url(/assets/img/1920X422/img1.jpg)' }}>
+            <div className="bg-img-hero" style= {{backgroundImage: 'url("https://transvelo.github.io/electro-html/2.0/assets/img/1920X422/img1.jpg")' }}>
                 <div className="container min-height-420 overflow-hidden">
                     <div className="js-slick-carousel u-slick"
                         data-pagi-classes="text-center position-absolute right-0 bottom-0 left-0 u-slick__pagination u-slick__pagination--long justify-content-start mb-3 mb-md-4 offset-xl-3 pl-2 pb-1">
@@ -7239,5 +7239,6 @@ export default function MainContent(){
            
         </div>
     </main>
+    </>
     )
 }
