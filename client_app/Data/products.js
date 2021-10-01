@@ -1,4 +1,5 @@
 const ProductsList = [
+
   {
     id: 3,
     default_product_specifications: [
@@ -707,3 +708,5 @@ const ProductsList = [
     sub_category: 13,
   },
 ];
+
+export default ProductsList;

@@ -1,6 +1,7 @@
 import Link from "next/link";
 
-export default function ShopCard() {
+export default function ShopCard({data}) {
+    console.log(data);
     return (
         <li className="col-6 col-md-3 col-wd-2gdot4 product-item">
             <div className="product-item__outer h-100">
@@ -9,16 +10,16 @@ export default function ShopCard() {
                         <div className="mb-2"><a href="../shop/product-categories-7-column-full-width.html" className="font-size-12 text-gray-5">Speakers</a></div>
                         <h5 className="mb-1 product-item__title">
                             {/* <Link href="/shop/1"> */}
-                                <a className="text-blue font-weight-bold" href="/shop/1">Tablet White EliteBook Revolve 810 G2</a>
+                                <a className="text-blue font-weight-bold" href={`/shop/${data.id}`}>{data.Title}</a>
                             {/* </Link> */}
                         </h5>
                         <div className="mb-2">
-                            <a href="../shop/single-product-fullwidth.html" className="d-block text-center"><img className="img-fluid" src="/assets/img/212X200/img2.jpg" alt="Image Description" /></a>
+                            <a href="../shop/single-product-fullwidth.html" className="d-block text-center"><img className="img-fluid" src={data.image}  alt="Image Description" /></a>
                         </div>
                         <div className="flex-center-between mb-1">
                             <div className="prodcut-price d-flex align-items-center position-relative">
-                                <ins className="font-size-20 text-red text-decoration-none">$1999,00</ins>
-                                <del className="font-size-12 tex-gray-6 position-absolute bottom-100">$2 299,00</del>
+                                <ins className="font-size-20 text-red text-decoration-none">৳{data.selling_price}</ins>
+                                <del className="font-size-12 tex-gray-6 position-absolute bottom-100">৳{data.offer_price}</del>
                             </div>
                             <div className="d-none d-xl-block prodcut-add-cart">
                                 <a href="../shop/single-product-fullwidth.html" className="btn-add-cart btn-primary transition-3d-hover"><i className="ec ec-add-to-cart"></i></a>
