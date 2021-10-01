@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function ShopCard() {
     return (
         <li className="col-6 col-md-3 col-wd-2gdot4 product-item">
@@ -5,7 +7,11 @@ export default function ShopCard() {
                 <div className="product-item__inner px-xl-4 p-3">
                     <div className="product-item__body pb-xl-2">
                         <div className="mb-2"><a href="../shop/product-categories-7-column-full-width.html" className="font-size-12 text-gray-5">Speakers</a></div>
-                        <h5 className="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</a></h5>
+                        <h5 className="mb-1 product-item__title">
+                            {/* <Link href="/shop/1"> */}
+                                <a className="text-blue font-weight-bold" href="/shop/1">Tablet White EliteBook Revolve 810 G2</a>
+                            {/* </Link> */}
+                        </h5>
                         <div className="mb-2">
                             <a href="../shop/single-product-fullwidth.html" className="d-block text-center"><img className="img-fluid" src="/assets/img/212X200/img2.jpg" alt="Image Description" /></a>
                         </div>

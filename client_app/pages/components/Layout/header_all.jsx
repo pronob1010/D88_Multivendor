@@ -491,20 +491,7 @@ export default function HeaderAll(){
                                             data-event="hover"
                                             data-animation-in="slideInUp"
                                             data-animation-out="fadeOut">
-                                            <a id="HomeMegaMenu" className="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="HomeSubMenu">Home</a>
-
-                                            {/* <!--Home - Submenu--> */}
-                                            <ul id="HomeSubMenu" className="hs-sub-menu u-header__sub-menu animated fadeOut" aria-labelledby="HomeMegaMenu" style={{minwidth: "230px", display: "none" }}>
-                                                <li><a className="nav-link u-header__sub-menu-nav-link" href="index.html">Home v1</a></li>
-                                                <li><a className="nav-link u-header__sub-menu-nav-link" href="home-v2.html">Home v2</a></li>
-                                                <li><a className="nav-link u-header__sub-menu-nav-link" href="home-v3.html">Home v3</a></li>
-                                                <li><a className="nav-link u-header__sub-menu-nav-link" href="home-v3-full-color-bg.html">Home v3.1</a></li>
-                                                <li><a className="nav-link u-header__sub-menu-nav-link" href="home-v4.html">Home v4</a></li>
-                                                <li><a className="nav-link u-header__sub-menu-nav-link" href="home-v5.html">Home v5</a></li>
-                                                <li><a className="nav-link u-header__sub-menu-nav-link" href="home-v6.html">Home v6</a></li>
-                                                <li><a className="nav-link u-header__sub-menu-nav-link" href="home-v7.html">Home v7</a></li>
-                                            </ul>
-                                            {/* <!--End Home - Submenu--> */}
+                                            <a id="HomeMegaMenu" className="nav-link u-header__nav-link " href="/" aria-haspopup="true" aria-expanded="false" aria-labelledby="HomeSubMenu">Home</a>
                                         </li>
                                         {/* <!--End Home--> */}
 

@@ -81,7 +81,7 @@ export default function HeaderIndex(){
                             {/* <!-- Nav --> */}
                             <nav className="navbar navbar-expand u-header__navbar py-0 justify-content-xl-between max-width-270 min-width-270">
                                 {/* <!-- Logo --> */}
-                                <a className="order-1 order-xl-0 navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="../home/index.html" aria-label="Electro">
+                                <a className="order-1 order-xl-0 navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="/" aria-label="Electro">
                                     <svg version="1.1" x="0px" y="0px" width="175.748px" height="42.52px" viewBox="0 0 175.748 42.52" enable-background="new 0 0 175.748 42.52" style={{marginbottom: "0"}}>
                                         <ellipse className="ellipse-bg" fill-rule="evenodd" clip-rule="evenodd" fill="#FDD700" cx="170.05" cy="36.341" rx="5.32" ry="5.367"></ellipse>
                                         <path fill-rule="evenodd" clip-rule="evenodd" fill="#333E48" d="M30.514,0.71c-0.034,0.003-0.066,0.008-0.056,0.056
@@ -954,85 +954,13 @@ export default function HeaderIndex(){
                                         data-animation-in="slideInUp"
                                         data-animation-out="fadeOut"
                                         data-position="left">
-                                        <a id="homeMegaMenu" className="nav-link u-header__nav-link u-header__nav-link-toggle text-sale" href="javascript:;" aria-haspopup="true" aria-expanded="false">Home</a>
-
-                                        <div className="hs-mega-menu w-100 u-header__sub-menu" aria-labelledby="homeMegaMenu">
-                                            <div className="row u-header__mega-menu-wrapper">
-                                                <div className="col-md-3">
-                                                    <span className="u-header__sub-menu-title">Home & Static Pages</span>
-                                                    <ul className="u-header__sub-menu-nav-group">
-                                                        <li><a href="index.html" className="nav-link u-header__sub-menu-nav-link">Home v1</a></li>
-                                                        <li><a href="about.html" className="nav-link u-header__sub-menu-nav-link">About</a></li>
-                                                        <li><a href="contact-v1.html" className="nav-link u-header__sub-menu-nav-link">Contact v1</a></li>
-                                                        <li><a href="faq.html" className="nav-link u-header__sub-menu-nav-link">FAQ</a></li>
-                                                        <li><a href="store-directory.html" className="nav-link u-header__sub-menu-nav-link">Store Directory</a></li>
-                                                        <li><a href="terms-and-conditions.html" className="nav-link u-header__sub-menu-nav-link">Terms and Conditions</a></li>
-                                                        <li><a href="404.html" className="nav-link u-header__sub-menu-nav-link">404</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div className="col-md-3">
-                                                    <span className="u-header__sub-menu-title">Shop Pages</span>
-                                                    <ul className="u-header__sub-menu-nav-group mb-3">
-                                                        <li><a href="../shop/shop-grid.html" className="nav-link u-header__sub-menu-nav-link">Shop Grid</a></li>
-                                                        <li><a href="../shop/shop-grid-extended.html" className="nav-link u-header__sub-menu-nav-link">Shop Grid Extended</a></li>
-                                                        <li><a href="../shop/shop-list-view.html" className="nav-link u-header__sub-menu-nav-link">Shop List View</a></li>
-                                                        <li><a href="../shop/shop-list-view-small.html" className="nav-link u-header__sub-menu-nav-link">Shop List View Small</a></li>
-                                                        <li><a href="../shop/shop-left-sidebar.html" className="nav-link u-header__sub-menu-nav-link">Shop Left Sidebar</a></li>
-                                                        <li><a href="../shop/shop-full-width.html" className="nav-link u-header__sub-menu-nav-link">Shop Full width</a></li>
-                                                        <li><a href="../shop/shop-right-sidebar.html" className="nav-link u-header__sub-menu-nav-link">Shop Right Sidebar</a></li>
-                                                    </ul>
-                                                    <span className="u-header__sub-menu-title">Product Categories</span>
-                                                    <ul className="u-header__sub-menu-nav-group">
-                                                        <li><a href="../shop/product-categories-4-column-sidebar.html" className="nav-link u-header__sub-menu-nav-link">4 Column Sidebar</a></li>
-                                                        <li><a href="../shop/product-categories-5-column-sidebar.html" className="nav-link u-header__sub-menu-nav-link">5 Column Sidebar</a></li>
-                                                        <li><a href="../shop/product-categories-6-column-full-width.html" className="nav-link u-header__sub-menu-nav-link">6 Column Full width</a></li>
-                                                        <li><a href="../shop/product-categories-7-column-full-width.html" className="nav-link u-header__sub-menu-nav-link">7 Column Full width</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div className="col-md-3">
-                                                    <span className="u-header__sub-menu-title">Single Product Pages</span>
-                                                    <ul className="u-header__sub-menu-nav-group mb-3">
-                                                        <li><a href="../shop/single-product-extended.html" className="nav-link u-header__sub-menu-nav-link">Single Product Extended</a></li>
-                                                        <li><a href="../shop/single-product-fullwidth.html" className="nav-link u-header__sub-menu-nav-link">Single Product Fullwidth</a></li>
-                                                        <li><a href="../shop/single-product-sidebar.html" className="nav-link u-header__sub-menu-nav-link">Single Product Sidebar</a></li>
-                                                    </ul>
-                                                    <span className="u-header__sub-menu-title">Ecommerce Pages</span>
-                                                    <ul className="u-header__sub-menu-nav-group">
-                                                        <li><a href="../shop/shop.html" className="nav-link u-header__sub-menu-nav-link">Shop</a></li>
-                                                        <li><a href="../shop/cart.html" className="nav-link u-header__sub-menu-nav-link">Cart</a></li>
-                                                        <li><a href="../shop/checkout.html" className="nav-link u-header__sub-menu-nav-link">Checkout</a></li>
-                                                        <li><a href="../shop/my-account.html" className="nav-link u-header__sub-menu-nav-link">My Account</a></li>
-                                                        <li><a href="../shop/track-your-order.html" className="nav-link u-header__sub-menu-nav-link">Track your Order</a></li>
-                                                        <li><a href="../shop/compare.html" className="nav-link u-header__sub-menu-nav-link">Compare</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div className="col-md-3">
-                                                    <span className="u-header__sub-menu-title">Blog Pages</span>
-                                                    <ul className="u-header__sub-menu-nav-group mb-3">
-                                                        <li><a href="../blog/blog-v1.html" className="nav-link u-header__sub-menu-nav-link">Blog v1</a></li>
-                                                        <li><a href="../blog/blog-v2.html" className="nav-link u-header__sub-menu-nav-link">Blog v2</a></li>
-                                                        <li><a href="../blog/blog-v3.html" className="nav-link u-header__sub-menu-nav-link">Blog v3</a></li>
-                                                        <li><a href="../blog/blog-full-width.html" className="nav-link u-header__sub-menu-nav-link">Blog Full Width</a></li>
-                                                        <li><a href="../blog/single-blog-post.html" className="nav-link u-header__sub-menu-nav-link">Single Blog Post</a></li>
-                                                    </ul>
-                                                    <span className="u-header__sub-menu-title">Shop Columns</span>
-                                                    <ul className="u-header__sub-menu-nav-group">
-                                                        <li><a href="../shop/shop-7-columns-full-width.html" className="nav-link u-header__sub-menu-nav-link">7 Column Full width</a></li>
-                                                        <li><a href="../shop/shop-6-columns-full-width.html" className="nav-link u-header__sub-menu-nav-link">6 Column Full width</a></li>
-                                                        <li><a href="../shop/shop-5-columns-sidebar.html" className="nav-link u-header__sub-menu-nav-link">5 Column Sidebar</a></li>
-                                                        <li><a href="../shop/shop-4-columns-sidebar.html" className="nav-link u-header__sub-menu-nav-link">4 Column Sidebar</a></li>
-                                                        <li><a href="../shop/shop-3-columns-sidebar.html" className="nav-link u-header__sub-menu-nav-link">3 Column Sidebar</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
+                                        <a id="homeMegaMenu" className="nav-link u-header__nav-link  text-sale" href="/" aria-haspopup="true" aria-expanded="false">Home</a>
                                     </li>
                                     
                                     <li className="nav-item u-header__nav-item">
-                                        <Link href="/shop" >
-                                        <a className="nav-link u-header__nav-link" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">Shop</a>
-                                        </Link>
+                                        {/* <Link href="/shop" > */}
+                                        <a className="nav-link u-header__nav-link" href="/shop" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">Shop</a>
+                                        {/* </Link> */}
                                     </li>
                      
                                     <li className="nav-item u-header__nav-item">
