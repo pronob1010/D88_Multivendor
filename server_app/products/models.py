@@ -44,11 +44,6 @@ class product(models.Model):
     offer_price = models.FloatField()
     offer_percent = models.IntegerField(blank=True, default=0)
     
-    if offer_price:    
-         def save(self, *args, **kwargs):
-            self.OfferPercent = (100-(100*float(self.offer_price)/float(self.selling_price)))
-            super().save(*args, **kwargs)
-
     updated_on = models.DateTimeField(auto_now=True)
     created_on = models.DateTimeField(auto_now_add=True)
     description = models.CharField(max_length=500, default='This is product description.')
@@ -75,6 +70,9 @@ class product(models.Model):
 
         if not self.slug:
             self.slug = slugify(self.Title+"-"+str(random.randint(101, 1022222222)))
+
+        if self.offer_price:
+            self.offer_percent = (100-(100*float(self.offer_price)/float(self.selling_price)))
         return super().save(*args,**kwargs)
     
 
