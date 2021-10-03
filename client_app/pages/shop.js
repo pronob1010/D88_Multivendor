@@ -2,6 +2,7 @@ import BrowseCategories from './components/Shop/BrowseCategories/BrowseCategorie
 import RecommendedProductCard from './components/Shop/Recommended/RecommendedProductCard';
 import ShopCard from './components/Shop/shop_single_card';
 import { useSelector } from 'react-redux';
+import LatestProduct from './components/Shop/LatestProduct/latestproduct';
 
 export default function Shop(){
 
@@ -189,152 +190,13 @@ export default function Shop(){
                                 </a>
                                 {/* <!-- End Link --> */}
                             </div>
-                            <div className="range-slider">
-                                <h4 className="font-size-14 mb-3 font-weight-bold">Price</h4>
-                                {/* <!-- Range Slider --> */}
-                                <input className="js-range-slider" type="text"
-                                data-extra-classes="u-range-slider u-range-slider-indicator u-range-slider-grid"
-                                data-type="double"
-                                data-grid="false"
-                                data-hide-from-to="true"
-                                data-prefix="$"
-                                data-min="0"
-                                data-max="3456"
-                                data-from="0"
-                                data-to="3456"
-                                data-result-min="#rangeSliderExample3MinResult"
-                                data-result-max="#rangeSliderExample3MaxResult" />
-                                {/* <!-- End Range Slider --> */}
-                                <div className="mt-1 text-gray-111 d-flex mb-4">
-                                    <span className="mr-0dot5">Price: </span>
-                                    <span>$</span>
-                                    <span id="rangeSliderExample3MinResult" className=""></span>
-                                    <span className="mx-0dot5"> — </span>
-                                    <span>$</span>
-                                    <span id="rangeSliderExample3MaxResult" className=""></span>
-                                </div>
-                                <button type="submit" className="btn px-4 btn-primary-dark-w py-2 rounded-lg">Filter</button>
-                            </div>
+
+                            <LatestProduct />
+                        
                         </div>
-                        <div className="mb-8">
-                            <div className="border-bottom border-color-1 mb-5">
-                                <h3 className="section-title section-title__sm mb-0 pb-2 font-size-18">Latest Products</h3>
-                            </div>
-                            <ul className="list-unstyled">
-                                <li className="mb-4">
-                                    <div className="row">
-                                        <div className="col-auto">
-                                            <a href="../shop/single-product-fullwidth.html" className="d-block width-75">
-                                                <img className="img-fluid" src="/assets/img/300X300/img1.jpg" alt="Image Description" />
-                                            </a>
-                                        </div>
-                                        <div className="col">
-                                            <h3 className="text-lh-1dot2 font-size-14 mb-0"><a href="../shop/single-product-fullwidth.html">Notebook Black Spire V Nitro VN7-591G</a></h3>
-                                            <div className="text-warning text-ls-n2 font-size-16 mb-1" style={{ width: "80px" }}>
-                                                <small className="fas fa-star"></small>
-                                                <small className="fas fa-star"></small>
-                                                <small className="fas fa-star"></small>
-                                                <small className="fas fa-star"></small>
-                                                <small className="far fa-star text-muted"></small>
-                                            </div>
-                                            <div className="font-weight-bold">
-                                                <del className="font-size-11 text-gray-9 d-block">$2299.00</del>
-                                                <ins className="font-size-15 text-red text-decoration-none d-block">$1999.00</ins>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li className="mb-4">
-                                    <div className="row">
-                                        <div className="col-auto">
-                                            <a href="../shop/single-product-fullwidth.html" className="d-block width-75">
-                                                <img className="img-fluid" src="/assets/img/300X300/img3.jpg" alt="Image Description" />
-                                            </a>
-                                        </div>
-                                        <div className="col">
-                                            <h3 className="text-lh-1dot2 font-size-14 mb-0"><a href="../shop/single-product-fullwidth.html">Notebook Black Spire V Nitro VN7-591G</a></h3>
-                                            <div className="text-warning text-ls-n2 font-size-16 mb-1" style={{ width: "80px" }}>
-                                                <small className="fas fa-star"></small>
-                                                <small className="fas fa-star"></small>
-                                                <small className="fas fa-star"></small>
-                                                <small className="fas fa-star"></small>
-                                                <small className="far fa-star text-muted"></small>
-                                            </div>
-                                            <div className="font-weight-bold font-size-15">
-                                                $499.00
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li className="mb-4">
-                                    <div className="row">
-                                        <div className="col-auto">
-                                            <a href="../shop/single-product-fullwidth.html" className="d-block width-75">
-                                                <img className="img-fluid" src="/assets/img/300X300/img5.jpg" alt="Image Description" />
-                                            </a>
-                                        </div>
-                                        <div className="col">
-                                            <h3 className="text-lh-1dot2 font-size-14 mb-0"><a href="../shop/single-product-fullwidth.html">Tablet Thin EliteBook Revolve 810 G6</a></h3>
-                                            <div className="text-warning text-ls-n2 font-size-16 mb-1" style={{ width: "80px" }}>
-                                                <small className="fas fa-star"></small>
-                                                <small className="fas fa-star"></small>
-                                                <small className="fas fa-star"></small>
-                                                <small className="fas fa-star"></small>
-                                                <small className="far fa-star text-muted"></small>
-                                            </div>
-                                            <div className="font-weight-bold font-size-15">
-                                                $100.00
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li className="mb-4">
-                                    <div className="row">
-                                        <div className="col-auto">
-                                            <a href="../shop/single-product-fullwidth.html" className="d-block width-75">
-                                                <img className="img-fluid" src="/assets/img/300X300/img6.jpg" alt="Image Description" />
-                                            </a>
-                                        </div>
-                                        <div className="col">
-                                            <h3 className="text-lh-1dot2 font-size-14 mb-0"><a href="../shop/single-product-fullwidth.html">Notebook Purple G952VX-T7008T</a></h3>
-                                            <div className="text-warning text-ls-n2 font-size-16 mb-1" style={{ width: "80px" }}>
-                                                <small className="fas fa-star"></small>
-                                                <small className="fas fa-star"></small>
-                                                <small className="fas fa-star"></small>
-                                                <small className="fas fa-star"></small>
-                                                <small className="far fa-star text-muted"></small>
-                                            </div>
-                                            <div className="font-weight-bold">
-                                                <del className="font-size-11 text-gray-9 d-block">$2299.00</del>
-                                                <ins className="font-size-15 text-red text-decoration-none d-block">$1999.00</ins>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li className="mb-4">
-                                    <div className="row">
-                                        <div className="col-auto">
-                                            <a href="../shop/single-product-fullwidth.html" className="d-block width-75">
-                                                <img className="img-fluid" src="/assets/img/300X300/img10.png" alt="Image Description" />
-                                            </a>
-                                        </div>
-                                        <div className="col">
-                                            <h3 className="text-lh-1dot2 font-size-14 mb-0"><a href="../shop/single-product-fullwidth.html">Laptop Yoga 21 80JH0035GE W8.1</a></h3>
-                                            <div className="text-warning text-ls-n2 font-size-16 mb-1" style={{ width: "80px" }}>
-                                                <small className="fas fa-star"></small>
-                                                <small className="fas fa-star"></small>
-                                                <small className="fas fa-star"></small>
-                                                <small className="fas fa-star"></small>
-                                                <small className="far fa-star text-muted"></small>
-                                            </div>
-                                            <div className="font-weight-bold font-size-15">
-                                                $1200.00
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                        
+
+
                     </div>
                     <div className="col-xl-9 col-wd-9gdot5">
                         {/* <!-- Recommended Products --> */}
