@@ -1,15 +1,16 @@
 import ShopCard from "../Shop/shop_single_card";
 import { useSelector } from 'react-redux';
+import IndexSlider from "./slider/slider";
 
 export default function MainContent(){
 
     let dataset = useSelector((state) => state.productState.products);
 
-    let featured_dataset = useSelector((state) => state.FeaturedProductState.products);
+    let featured_dataset = useSelector((state) => state.PromotionalProductState.products);
 
     let featured = [];
 
-    featured_dataset.map( item => { dataset.find(ele => { if (ele.id == item.Select_Product) { featured.push(ele); } }) } )
+    featured_dataset.map( item => { if (item.type=="featured") {dataset.find(ele => { if (ele.id == item.Select_Product) { featured.push(ele); } }) } } )
 
  
 
@@ -53,113 +54,7 @@ export default function MainContent(){
     return (
         <>
         <main id="content" role="main">
-        <div className="mb-5">
-            <div className="bg-img-hero" style= {{backgroundImage: 'url("https://transvelo.github.io/electro-html/2.0/assets/img/1920X422/img1.jpg")' }}>
-                <div className="container min-height-420 overflow-hidden">
-                    <div className="js-slick-carousel u-slick"
-                        data-pagi-classes="text-center position-absolute right-0 bottom-0 left-0 u-slick__pagination u-slick__pagination--long justify-content-start mb-3 mb-md-4 offset-xl-3 pl-2 pb-1">
-                        
-                        <div className="js-slide bg-img-hero-center">
-                            <div className="row min-height-420 py-7 py-md-0">
-                                <div className="offset-xl-3 col-xl-4 col-6 mt-md-8">
-                                    <h1 className="font-size-64 text-lh-57 font-weight-light"
-                                        data-scs-animation-in="fadeInUp">
-                                        THE NEW <span className="d-block font-size-55">STANDARD</span>
-                                    </h1>
-                                    <h6 className="font-size-15 font-weight-bold mb-3"
-                                        data-scs-animation-in="fadeInUp"
-                                        data-scs-animation-delay="200">UNDER FAVORABLE SMARTWATCHES
-                                    </h6>
-                                    <div className="mb-4"
-                                        data-scs-animation-in="fadeInUp"
-                                        data-scs-animation-delay="300">
-                                        <span className="font-size-13">FROM</span>
-                                        <div className="font-size-50 font-weight-bold text-lh-45">
-                                            <sup className="">$</sup>749<sup className="">99</sup>
-                                        </div>
-                                    </div>
-                                    <a href="../shop/single-product-fullwidth.html" className="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"
-                                        data-scs-animation-in="fadeInUp"
-                                        data-scs-animation-delay="400">
-                                        Start Buying
-                                    </a>
-                                </div>
-                                <div className="col-xl-5 col-6  d-flex align-items-center"
-                                    data-scs-animation-in="zoomIn"
-                                    data-scs-animation-delay="500">
-                                    <img className="img-fluid" src="/assets/img/416X420/img1.png" alt="Image Description" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="js-slide bg-img-hero-center" data-animation-delay="0">
-                            <div className="row min-height-420 py-7 py-md-0">
-                                <div className="offset-xl-3 col-xl-4 col-6 mt-md-8">
-                                    <h1 className="font-size-64 text-lh-57 font-weight-light"
-                                        data-scs-animation-in="fadeInUp">
-                                        THE NEW <span className="d-block font-size-55">STANDARD</span>
-                                    </h1>
-                                    <h6 className="font-size-15 font-weight-bold mb-3"
-                                        data-scs-animation-in="fadeInUp"
-                                        data-scs-animation-delay="200">UNDER FAVORABLE SMARTWATCHES
-                                    </h6>
-                                    <div className="mb-4"
-                                        data-scs-animation-in="fadeInUp"
-                                        data-scs-animation-delay="300">
-                                        <span className="font-size-13">FROM</span>
-                                        <div className="font-size-50 font-weight-bold text-lh-45">
-                                            <sup className="">$</sup>749<sup className="">99</sup>
-                                        </div>
-                                    </div>
-                                    <a href="../shop/single-product-fullwidth.html" className="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"
-                                        data-scs-animation-in="fadeInUp"
-                                        data-scs-animation-delay="400">
-                                        Start Buying
-                                    </a>
-                                </div>
-                                <div className="col-xl-5 col-6  d-flex align-items-center"
-                                    data-scs-animation-in="fadeInUp"
-                                    data-scs-animation-delay="500">
-                                    <img className="img-fluid" src="/assets/img/416X420/img2.png" alt="Image Description" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="js-slide bg-img-hero-center" data-animation-delay="0">
-                            <div className="row min-height-420 py-7 py-md-0">
-                                <div className="offset-xl-3 col-xl-4 col-6 mt-md-8">
-                                    <h1 className="font-size-64 text-lh-57 font-weight-light"
-                                        data-scs-animation-in="fadeInUp">
-                                        THE NEW <span className="d-block font-size-55">STANDARD</span>
-                                    </h1>
-                                    <h6 className="font-size-15 font-weight-bold mb-3"
-                                        data-scs-animation-in="fadeInUp"
-                                        data-scs-animation-delay="200">UNDER FAVORABLE SMARTWATCHES
-                                    </h6>
-                                    <div className="mb-4"
-                                        data-scs-animation-in="fadeInUp"
-                                        data-scs-animation-delay="300">
-                                        <span className="font-size-13">FROM</span>
-                                        <div className="font-size-50 font-weight-bold text-lh-45">
-                                            <sup className="">$</sup>749<sup className="">99</sup>
-                                        </div>
-                                    </div>
-                                    <a href="../shop/single-product-fullwidth.html" className="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-15"
-                                        data-scs-animation-in="fadeInUp"
-                                        data-scs-animation-delay="400">
-                                        Start Buying
-                                    </a>
-                                </div>
-                                <div className="col-xl-5 col-6  d-flex align-items-center"
-                                    data-scs-animation-in="fadeInRight"
-                                    data-scs-animation-delay="500">
-                                    <img className="img-fluid" src="/assets/img/416X420/img3.png" alt="Image Description" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
+        <IndexSlider />
         <div className="container">
              
             <div className="mb-5">
