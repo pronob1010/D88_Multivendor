@@ -512,14 +512,8 @@ export default function HeaderIndex(){
                                     <li className="col d-none d-xl-block"><a href="../shop/compare.html" className="text-gray-90" data-toggle="tooltip" data-placement="top" title="Compare"><i className="font-size-22 ec ec-compare"></i></a></li>
                                     <li className="col d-none d-xl-block"><a href="../shop/wishlist.html" className="text-gray-90" data-toggle="tooltip" data-placement="top" title="Favorites"><i className="font-size-22 ec ec-favorites"></i></a></li>
                                     <li className="col d-xl-none px-2 px-sm-3"><a href="../shop/my-account.html" className="text-gray-90" data-toggle="tooltip" data-placement="top" title="My Account"><i className="font-size-22 ec ec-user"></i></a></li>
-                                    <li className="col pr-xl-0 px-2 px-sm-3 d-xl-none">
-                                        <a href="../shop/cart.html" className="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="Cart">
-                                            <i className="font-size-22 ec ec-shopping-bag"></i>
-                                            <span className="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">2</span>
-                                            <span className="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">$1785.00</span>
-                                        </a>
-                                    </li>
-                                    <li className="col pr-xl-0 px-2 px-sm-3 d-none d-xl-block">
+                                    
+                                    <li className="col pr-xl-0 px-2 px-sm-3 d-xl-block">
                                         <div id="basicDropdownHoverInvoker" className="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="Cart"
                                             aria-controls="basicDropdownHover"
                                             aria-haspopup="true"
@@ -577,6 +571,8 @@ export default function HeaderIndex(){
                                             </div>
                                         </div>
                                     </li>
+                                    
+ 
                                 </ul>
                             </div>
                         </div>

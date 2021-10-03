@@ -249,8 +249,8 @@ export default function MainContent(){
            
             <div className="mb-5">
                 <div className="row">
-                     
-                    <div className="col-md-auto mb-6 mb-md-0">
+
+                    <div className="col-md-auto mb-0 mb-md-0">
                         <div className="p-3 border border-width-2 border-primary borders-radius-20 bg-white min-width-370">
                             <div className="d-flex justify-content-between align-items-center m-1 ml-2">
                                 <h3 className="font-size-22 mb-0 font-weight-normal text-lh-28 max-width-120">Special Offer</h3>
