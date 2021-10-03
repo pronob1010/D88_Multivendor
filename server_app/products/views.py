@@ -9,3 +9,7 @@ from rest_framework.viewsets import ModelViewSet
 class ProductsViewSet(ModelViewSet):
     serializer_class = ProductsSerializer
     queryset = product.objects.all()
+
+class ProductsCategoryViewSet(ModelViewSet):
+    serializer_class = ProductsCategorySerializer
+    queryset = ProductsCategory.objects.all()

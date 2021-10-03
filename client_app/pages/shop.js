@@ -7,7 +7,7 @@ export default function Shop(){
 
     let datatest = useSelector((state) => state.productState.products);
 
-    datatest.map(item => console.log(item));
+    // datatest.map(item => console.log(item));
 
     let RegularShopCardList = (
 
