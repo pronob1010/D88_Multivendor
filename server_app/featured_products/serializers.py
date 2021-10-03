@@ -4,9 +4,9 @@ from rest_framework.serializers import ModelSerializer
 from.models import *
 from products.models import *
 
-class FeaturedProductsSerializer(ModelSerializer):
+class PromotionalProductsSerializer(ModelSerializer):
 
     class Meta:
-        model = FeaturedProducts
+        model = PromotionalProducts
         fields = '__all__'
 
