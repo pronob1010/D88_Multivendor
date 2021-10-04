@@ -10,8 +10,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     firstname = models.CharField(max_length=30, null=True, blank=True)
     lastname = models.CharField(max_length=30, null=True, blank=True)
 
-    device = models.CharField(max_length=200, null=True, blank= True)
-
     is_active = models.BooleanField(default=True)
     is_vendor = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
