@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import Link from 'next/link';
 
 export default function HeaderAll(){
     let cart_item = useSelector(state => state.cartState.cart )
@@ -495,21 +496,18 @@ export default function HeaderAll(){
                                 <div id="navBar" className="collapse navbar-collapse u-header__navbar-collapse">
                                     <ul className="navbar-nav u-header__navbar-nav">
                                         {/* <!--Home--> */}
-                                        <li className="nav-item hs-has-sub-menu u-header__nav-item"
-                                            data-event="hover"
-                                            data-animation-in="slideInUp"
-                                            data-animation-out="fadeOut">
-                                            <a id="HomeMegaMenu" className="nav-link u-header__nav-link " href="/" aria-haspopup="true" aria-expanded="false" aria-labelledby="HomeSubMenu">Home</a>
+                                        <li className="nav-item hs-has-sub-menu u-header__nav-item">
+                                        <Link href="/">
+                                            <a id="HomeMegaMenu" className="nav-link u-header__nav-link "   aria-haspopup="true" aria-expanded="false" aria-labelledby="HomeSubMenu">Home</a>
+                                            </Link>
                                         </li>
                                         {/* <!--End Home--> */}
 
                                         {/* <!--Pages--> */}
-                                        <li className="nav-item hs-has-mega-menu u-header__nav-item"
-                                            data-event="hover"
-                                            data-animation-in="slideInUp"
-                                            data-animation-out="fadeOut">
-                                            <a id="pagesMegaMenu" className="nav-link u-header__nav-link" href="/shop" aria-haspopup="true" aria-expanded="false">All Shops</a>
-
+                                        <li className="nav-item hs-has-mega-menu u-header__nav-item">
+                                        <Link href="/shop">
+                                            <a id="pagesMegaMenu" className="nav-link u-header__nav-link" aria-haspopup="true" aria-expanded="false">All Shops</a>
+                                            </Link>
                                             
                                         </li>
                                         {/* <!--End Pages--> */}

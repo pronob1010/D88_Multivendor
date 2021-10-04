@@ -4,6 +4,7 @@ import myStore from "../redux/store";
 import { Provider } from "react-redux";
 import { CookiesProvider } from "react-cookie";
 
+
 function MyApp({ Component, pageProps }) {
   return (
     <CookiesProvider>

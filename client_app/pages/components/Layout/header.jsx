@@ -962,13 +962,16 @@ export default function HeaderIndex(){
                                         data-animation-in="slideInUp"
                                         data-animation-out="fadeOut"
                                         data-position="left">
-                                        <a id="homeMegaMenu" className="nav-link u-header__nav-link  text-sale" href="/" aria-haspopup="true" aria-expanded="false">Home</a>
+                                        <Link href="/">
+                                        <a id="homeMegaMenu" className="nav-link u-header__nav-link  text-sale" aria-haspopup="true" aria-expanded="false">Home</a>
+                                        </Link>
+
                                     </li>
                                     
                                     <li className="nav-item u-header__nav-item">
-                                        {/* <Link href="/shop" > */}
+                                        <Link href="/shop" >
                                         <a className="nav-link u-header__nav-link" href="/shop" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">Shop</a>
-                                        {/* </Link> */}
+                                        </Link>
                                     </li>
                      
                                     <li className="nav-item u-header__nav-item">
