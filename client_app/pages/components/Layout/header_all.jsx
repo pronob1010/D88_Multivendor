@@ -1,4 +1,16 @@
+import { useSelector } from 'react-redux';
+import Link from 'next/link';
+
 export default function HeaderAll(){
+    let cart_item = useSelector(state => state.cartState.cart)
+    
+    // console.log(cart_item);
+
+    let cart_item_count = 0;
+    if (cart_item){
+        cart_item_count = cart_item.length;
+    }
+
     return (
         <header id="header" className="u-header u-header-left-aligned-nav">
         <div className="u-header__section">
@@ -487,21 +499,18 @@ export default function HeaderAll(){
                                 <div id="navBar" className="collapse navbar-collapse u-header__navbar-collapse">
                                     <ul className="navbar-nav u-header__navbar-nav">
                                         {/* <!--Home--> */}
-                                        <li className="nav-item hs-has-sub-menu u-header__nav-item"
-                                            data-event="hover"
-                                            data-animation-in="slideInUp"
-                                            data-animation-out="fadeOut">
-                                            <a id="HomeMegaMenu" className="nav-link u-header__nav-link " href="/" aria-haspopup="true" aria-expanded="false" aria-labelledby="HomeSubMenu">Home</a>
+                                        <li className="nav-item hs-has-sub-menu u-header__nav-item">
+                                        {/* <Link href="/"> */}
+                                            <a href="/" id="HomeMegaMenu" className="nav-link u-header__nav-link "   aria-haspopup="true" aria-expanded="false" aria-labelledby="HomeSubMenu">Home</a>
+                                            {/* </Link> */}
                                         </li>
                                         {/* <!--End Home--> */}
 
                                         {/* <!--Pages--> */}
-                                        <li className="nav-item hs-has-mega-menu u-header__nav-item"
-                                            data-event="hover"
-                                            data-animation-in="slideInUp"
-                                            data-animation-out="fadeOut">
-                                            <a id="pagesMegaMenu" className="nav-link u-header__nav-link" href="/shop" aria-haspopup="true" aria-expanded="false">All Shops</a>
-
+                                        <li className="nav-item hs-has-mega-menu u-header__nav-item">
+                                        {/* <Link href="/shop"> */}
+                                            <a href="/shop" id="pagesMegaMenu" className="nav-link u-header__nav-link" aria-haspopup="true" aria-expanded="false">All Shops</a>
+                                            {/* </Link> */}
                                             
                                         </li>
                                         {/* <!--End Pages--> */}
@@ -617,8 +626,8 @@ export default function HeaderAll(){
                                             data-unfold-animation-in="slideInUp"
                                             data-unfold-animation-out="fadeOut">
                                             <i className="font-size-22 ec ec-shopping-bag"></i>
-                                            <span className="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">2</span>
-                                            <span className="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">$1785.00</span>
+                                            <span className="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">{cart_item_count}</span>
+                                            {/* <span className="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">$1785.00</span> */}
                                         </div>
                                         <div id="basicDropdownHover" className="cart-dropdown dropdown-menu dropdown-unfold border-top border-top-primary mt-3 border-width-2 border-left-0 border-right-0 border-bottom-0 left-auto right-0" aria-labelledby="basicDropdownHoverInvoker">
                                             <ul className="list-unstyled px-3 pt-3">
@@ -1077,10 +1086,10 @@ export default function HeaderAll(){
                                     <li className="col"><a href="../shop/compare.html" className="text-gray-90" data-toggle="tooltip" data-placement="top" title="Compare"><i className="font-size-22 ec ec-compare"></i></a></li>
                                     <li className="col"><a href="../shop/wishlist.html" className="text-gray-90" data-toggle="tooltip" data-placement="top" title="Favorites"><i className="font-size-22 ec ec-favorites"></i></a></li>
                                     <li className="col pr-0">
-                                        <a href="../shop/cart.html" className="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="Cart">
+                                        <a href="/cart" className="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="Cart">
                                             <i className="font-size-22 ec ec-shopping-bag"></i>
-                                            <span className="width-22 height-22 bg-dark position-absolute flex-content-center text-white rounded-circle left-12 top-8 font-weight-bold font-size-12">2</span>
-                                            <span className="font-weight-bold font-size-16 text-gray-90 ml-3">$1785.00</span>
+                                            <span className="width-22 height-22 bg-dark position-absolute flex-content-center text-white rounded-circle left-12 top-8 font-weight-bold font-size-12">{cart_item_count}</span>
+                                            {/* <span className="font-weight-bold font-size-16 text-gray-90 ml-3">$1785.00</span> */}
                                         </a>
                                     </li>
                                 </ul>

@@ -7,7 +7,7 @@ import HeaderAll from './header_all';
 
 export default function Layout({children}) {
     const router = useRouter()
-    console.log(router.pathname);
+    // console.log(router.pathname);
     let head;
     if (router.pathname == '/'){
         head = <HeaderIndex />

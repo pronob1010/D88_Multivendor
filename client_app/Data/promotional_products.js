@@ -38,6 +38,11 @@ const PromotionalProductsList = [
         "id": 10,
         "type": "slider",
         "Select_Product": 5
+    },
+    {
+        "id": 11,
+        "type": "slider",
+        "Select_Product": 7
     }
 ]
 

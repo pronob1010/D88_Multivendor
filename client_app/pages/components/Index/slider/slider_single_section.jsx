@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 export default function SingleSliderBlock({item, category}){
 
-    console.log(item);
+    // console.log(item);
     // let cat = 
 
     return (

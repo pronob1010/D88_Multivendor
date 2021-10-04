@@ -1,3 +1,4 @@
+import { useRouter } from "next/dist/client/router";
 import Link from "next/link";
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -15,13 +16,20 @@ export default function ShopCard({data}) {
     // let cart_state = useSelector(state => state.cartState.cart)
     // console.log("cart_state",cart_state)
     const dispatch = useDispatch();
+
     let product_id;
+    let p_quantity = 1;
+
+    let router = useRouter();
     const cartHandeler =(e)=>{
+        
         product_id = e.target.attributes.pass.value;
         dispatch({
             type : "ADD_TO_CART", 
             value : product_id,
+            quantity : p_quantity,
         });
+        router.push('#');
     }
 
 
