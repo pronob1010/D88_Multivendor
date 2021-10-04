@@ -2,7 +2,10 @@ import { useSelector } from 'react-redux';
 import Link from 'next/link';
 
 export default function HeaderAll(){
-    let cart_item = useSelector(state => state.cartState.cart )
+    let cart_item = useSelector(state => state.cartState.cart)
+    
+    // console.log(cart_item);
+
     let cart_item_count = 0;
     if (cart_item){
         cart_item_count = cart_item.length;
@@ -497,17 +500,17 @@ export default function HeaderAll(){
                                     <ul className="navbar-nav u-header__navbar-nav">
                                         {/* <!--Home--> */}
                                         <li className="nav-item hs-has-sub-menu u-header__nav-item">
-                                        <Link href="/">
-                                            <a id="HomeMegaMenu" className="nav-link u-header__nav-link "   aria-haspopup="true" aria-expanded="false" aria-labelledby="HomeSubMenu">Home</a>
-                                            </Link>
+                                        {/* <Link href="/"> */}
+                                            <a href="/" id="HomeMegaMenu" className="nav-link u-header__nav-link "   aria-haspopup="true" aria-expanded="false" aria-labelledby="HomeSubMenu">Home</a>
+                                            {/* </Link> */}
                                         </li>
                                         {/* <!--End Home--> */}
 
                                         {/* <!--Pages--> */}
                                         <li className="nav-item hs-has-mega-menu u-header__nav-item">
-                                        <Link href="/shop">
-                                            <a id="pagesMegaMenu" className="nav-link u-header__nav-link" aria-haspopup="true" aria-expanded="false">All Shops</a>
-                                            </Link>
+                                        {/* <Link href="/shop"> */}
+                                            <a href="/shop" id="pagesMegaMenu" className="nav-link u-header__nav-link" aria-haspopup="true" aria-expanded="false">All Shops</a>
+                                            {/* </Link> */}
                                             
                                         </li>
                                         {/* <!--End Pages--> */}

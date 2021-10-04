@@ -2,7 +2,6 @@ import ShopCard from "../Shop/shop_single_card";
 import { useSelector } from 'react-redux';
 import IndexSlider from "./slider/slider";
 import BestDeals from './../BestDeals/bestdeals';
-import '../../../public/assets/js/loader.js';
 
 export default function MainContent(){
 

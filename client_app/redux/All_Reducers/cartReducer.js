@@ -6,44 +6,40 @@ const initialState = {
 };
 
 export const cartReducer = (state = initialState, action) => {
-    
-    // const [cookie, setCookie] = useCookies();
-
   switch (action.type) {
-    case "ADD_TO_CART": 
-    {
+    case "ADD_TO_CART": {
+      console.log("init ", state.cart);
+
       let flug = false;
       let fisrt = true;
 
-     
-        if (state.cart.length == 0) {
-          state.cart.push({
-            product_id: action.value,
-            product_quantity: action.quantity,
-          });
-          fisrt = false;
-        } else if (flug == false) {
-          state.cart.find((ele) => {
-            if (ele.product_id == action.value) {
-              ele.product_quantity += action.quantity;
-              flug = true;
-            }
-          });
-        }
+      if (state.cart.length == 0) {
+        state.cart.push({
+          product_id: action.value,
+          product_quantity: action.quantity,
+        });
+        fisrt = false;
+      } 
+      else if (flug == false) {
+        state.cart.find((ele) => {
+          if (ele.product_id == action.value) {
+            ele.product_quantity += action.quantity;
+            flug = true;
+          }
+        });
+      }
 
-        if (flug == false && fisrt == true) {
-          state.cart.push({
-            product_id: action.value,
-            product_quantity: action.quantity,
-          });
-        }
-      
-    //   console.log(state.cart);
+      if (flug == false && fisrt == true) {
+        state.cart.push({
+          product_id: action.value,
+          product_quantity: action.quantity,
+        });
+      }
 
-    // setCookie("cart_info", JSON.stringify(state.cart));
+      // console.log(state.cart);
+      // setCookie("cart_info", JSON.stringify(state.cart));
 
-    //   localStorage.setItem("cart", JSON.stringify(state.cart));
-    //   var myobj = localStorage.getItem("cart");
+      localStorage.setItem("cart", JSON.stringify(state.cart));
 
       return state;
     }

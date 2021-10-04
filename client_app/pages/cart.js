@@ -1,6 +1,15 @@
-export default function CartPage({data}){
+import { useSelector } from 'react-redux';
+import SingleProductBlock from './components/detailCart/singleproductblock';
 
-    console.log(data.cart_info);
+export default function CartPage(){
+
+    let cartItems = useSelector(state => state.cartState.cart)
+
+    let subtotal=0;
+
+    let cartBlocks = cartItems.map(item => {
+        return ( <SingleProductBlock item={item}/>) })
+
     return (
         <main id="content" role="main" className="cart-page">
         {/* <!-- breadcrumb --> */}
@@ -38,90 +47,12 @@ export default function CartPage({data}){
                             </tr>
                         </thead>
                         <tbody>
-                            <tr className="">
-                                <td className="text-center">
-                                    <a href="#" className="text-gray-32 font-size-26">×</a>
-                                </td>
-                                <td className="d-none d-md-table-cell">
-                                    <a href="#"><img className="img-fluid max-width-100 p-1 border border-color-1" src="/assets/img/300X300/img6.jpg" alt="Image Description" /></a>
-                                </td>
 
-                                <td data-title="Product">
-                                    <a href="#" className="text-gray-90">Ultra Wireless S50 Headphones S50 with Bluetooth</a>
-                                </td>
-
-                                <td data-title="Price">
-                                    <span className="">$1,100.00</span>
-                                </td>
-
-                                <td data-title="Quantity">
-                                    <span className="sr-only">Quantity</span>
-                                    {/* <!-- Quantity --> */}
-                                    <div className="border rounded-pill py-1 width-122 w-xl-80 px-3 border-color-1">
-                                        <div className="js-quantity row align-items-center">
-                                            <div className="col">
-                                                <input className="js-result form-control h-auto border-0 rounded p-0 shadow-none" type="text" value="1" />
-                                            </div>
-                                            <div className="col-auto pr-1">
-                                                <a className="js-minus btn btn-icon btn-xs btn-outline-secondary rounded-circle border-0" href="javascript:;">
-                                                    <small className="fas fa-minus btn-icon__inner"></small>
-                                                </a>
-                                                <a className="js-plus btn btn-icon btn-xs btn-outline-secondary rounded-circle border-0" href="javascript:;">
-                                                    <small className="fas fa-plus btn-icon__inner"></small>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* <!-- End Quantity --> */}
-                                </td>
-
-                                <td data-title="Total">
-                                    <span className="">$1,100.00</span>
-                                </td>
-                            </tr>
-                            <tr className="">
-                                <td className="text-center">
-                                    <a href="#" className="text-gray-32 font-size-26">×</a>
-                                </td>
-                                <td className="d-none d-md-table-cell">
-                                    <a href="#"><img className="img-fluid max-width-100 p-1 border border-color-1" src="/assets/img/300X300/img7.png" alt="Image Description" /></a>
-                                </td>
-
-                                <td data-title="Product">
-                                    <a href="#" className="text-gray-90">Widescreen NX Mini F1 SMART NX</a>
-                                </td>
-
-                                <td data-title="Price">
-                                    <span className="">$685.00</span>
-                                </td>
-
-                                <td data-title="Quantity">
-                                    <span className="sr-only">Quantity</span>
-                                    {/* <!-- Quantity --> */}
-                                    <div className="border rounded-pill py-1 width-122 w-xl-80 px-3 border-color-1">
-                                        <div className="js-quantity row align-items-center">
-                                            <div className="col">
-                                                <input className="js-result form-control h-auto border-0 rounded p-0 shadow-none" type="text" value="1" />
-                                            </div>
-                                            <div className="col-auto pr-1">
-                                                <a className="js-minus btn btn-icon btn-xs btn-outline-secondary rounded-circle border-0" href="javascript:;">
-                                                    <small className="fas fa-minus btn-icon__inner"></small>
-                                                </a>
-                                                <a className="js-plus btn btn-icon btn-xs btn-outline-secondary rounded-circle border-0" href="javascript:;">
-                                                    <small className="fas fa-plus btn-icon__inner"></small>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* <!-- End Quantity --> */}
-                                </td>
-
-                                <td data-title="Total">
-                                    <span className="">$685.00</span>
-                                </td>
-                            </tr>
+                        {cartBlocks}
+                            
+                            
                             <tr>
-                                <td colspan="6" className="border-top space-top-2 justify-content-center">
+                                <li colspan="6" className="border-top space-top-2 justify-content-center">
                                     <div className="pt-md-3">
                                         <div className="d-block d-md-flex flex-center-between">
                                             <div className="mb-3 mb-md-0 w-xl-40">
@@ -143,8 +74,9 @@ export default function CartPage({data}){
                                             </div>
                                         </div>
                                     </div>
-                                </td>
+                                </li>
                             </tr>
+                        
                         </tbody>
                     </table>
                 </form>
@@ -159,11 +91,11 @@ export default function CartPage({data}){
                             <tbody>
                                 <tr className="cart-subtotal">
                                     <th>Subtotal</th>
-                                    <td data-title="Subtotal"><span className="amount">$1,785.00</span></td>
+                                    <li data-title="Subtotal"><span className="amount">{subtotal}</span></li>
                                 </tr>
                                 <tr className="shipping">
                                     <th>Shipping</th>
-                                    <td data-title="Shipping">
+                                    <li data-title="Shipping">
                                         Flat Rate: <span className="amount">$300.00</span>
                                         <div className="mt-1">
                                             <a className="font-size-12 text-gray-90 text-decoration-on underline-on-hover font-weight-bold mb-3 d-inline-block" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -466,11 +398,11 @@ export default function CartPage({data}){
                                                 <button type="button" className="btn btn-soft-secondary mb-3 mb-md-0 font-weight-normal px-5 px-md-4 px-lg-5 w-100 w-md-auto">Update Totals</button>
                                             </div>
                                         </div>
-                                    </td>
+                                    </li>
                                 </tr>
                                 <tr className="order-total">
                                     <th>Total</th>
-                                    <td data-title="Total"><strong><span className="amount">$2,085.00</span></strong></td>
+                                    <li data-title="Total"><strong><span className="amount">$2,085.00</span></strong></li>
                                 </tr>
                             </tbody>
                         </table>
@@ -482,19 +414,3 @@ export default function CartPage({data}){
     </main>
     )
 }
-
-
-CartPage.getInitialProps = async ({ req }) => {
-    const data = parseCookies(req)
-  
-  if (res) {
-      if (Object.keys(data).length === 0 && data.constructor === Object) {
-        res.writeHead(301, { Location: "/" })
-        res.end()
-      }
-    }
-  
-    return {
-      data: data && data,
-    }
-  }
