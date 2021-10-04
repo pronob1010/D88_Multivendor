@@ -13,6 +13,7 @@ export const cartReducer = (state = initialState, action) => {
       let flug = false;
       let fisrt = true;
 
+
       if (state.cart.length == 0) {
         state.cart.push({
           product_id: action.value,
