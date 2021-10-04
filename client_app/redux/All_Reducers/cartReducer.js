@@ -1,5 +1,5 @@
 import CartData from "./../../Data/cart";
-import { useCookies } from "react-cookie";
+
 
 const initialState = {
   cart: CartData,
