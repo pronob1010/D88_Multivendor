@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import ImagePopover from './../../../public/assets/vendor/summernote/src/js/base/module/ImagePopover';
+
 
 export default function SingleProductBlock({ item }) {
 
