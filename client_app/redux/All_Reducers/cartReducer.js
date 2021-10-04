@@ -12,6 +12,7 @@ export const cartReducer = (state = initialState, action) => {
 
             localStorage.setItem("cart",state.cart);
             console.log(localStorage.getItem("cart"));
+            
             return state;
             
         }
