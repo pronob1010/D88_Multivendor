@@ -98,7 +98,7 @@ export default function CartPage() {
                         </div>
                         <div className="d-md-flex">
                           <a
-                            href="../shop/checkout.html"
+                            href="/checkout"
                             className="btn btn-primary-dark-w ml-md-2 px-5 px-md-4 px-lg-5 w-100 w-md-auto d-none d-md-inline-block"
                           >
                             Proceed to checkout

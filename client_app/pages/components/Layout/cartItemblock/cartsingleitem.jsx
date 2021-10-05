@@ -18,7 +18,9 @@ export default function CartSingleItem({item}){
                             <img className="img-fluid" style={{height:'5rem' }} src={singleProductData.image} alt="Image Description" />
                         </li>
                         <li className="px-2 col">
+                            <a  href={`/shop/${uid}`}>
                             <h5 className="text-blue font-size-14 font-weight-bold">{mod_title}</h5>
+                            </a>
                             <span className="font-size-14">{item.product_quantity} × ৳ {singleProductData.offer_price}</span>
                         </li>
                         <li className="px-2 col-auto">
