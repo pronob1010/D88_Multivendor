@@ -20,6 +20,7 @@ export const cartReducer = (state = initialState, action) => {
         });
         fisrt = false;
       } 
+      
       else if (flug == false) {
         state.cart.find((ele) => {
           if (ele.product_id == action.value) {
