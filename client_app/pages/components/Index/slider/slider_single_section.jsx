@@ -2,7 +2,10 @@ import { useSelector } from "react-redux";
 
 export default function SingleSliderBlock({item, category}){
 
+<<<<<<< HEAD
     // console.log(item);
+=======
+>>>>>>> Authentication_3
     // let cat = 
 
     return (

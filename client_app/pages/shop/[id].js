@@ -22,7 +22,6 @@ export default function ProductDetails() {
   let singleProductData = useSelector((state) =>
     state.productState.products.find((ele) => ele.id == uid)
   );
-  console.log(singleProductData);
   // console.log(singleProductData.find(ele => (ele.id ==uid)));
 
   return (
