@@ -15,7 +15,7 @@ export default function CartSingleItem({item}){
                 <div className="">
                     <ul className="list-unstyled row mx-n2">
                         <li className="px-2 col-auto">
-                            <img className="img-fluid" style={{height:'3rem' }} src={singleProductData.image} clalt="Image Description" />
+                            <img className="img-fluid" style={{height:'5rem' }} src={singleProductData.image} alt="Image Description" />
                         </li>
                         <li className="px-2 col">
                             <h5 className="text-blue font-size-14 font-weight-bold">{mod_title}</h5>
