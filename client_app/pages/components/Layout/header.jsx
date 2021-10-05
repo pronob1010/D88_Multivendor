@@ -1,6 +1,7 @@
+import { useSelector } from 'react-redux'
 import Link from "next/link";
-
 export default function HeaderIndex(){
+    const { token } = useSelector(state => state.userReducer)
     return (
         <header id="header" className="u-header u-header-left-aligned-nav">
         <div className="u-header__section">
@@ -50,6 +51,7 @@ export default function HeaderIndex(){
                                 </li>
                                 <li className="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
                                     {/* <!-- Account Sidebar Toggle Button --> */}
+                                    {token===null?
                                     <a id="sidebarNavToggler" href="javascript:;" role="button" className="u-header-topbar__nav-link"
                                         aria-controls="sidebarContent"
                                         aria-haspopup="true"
@@ -61,8 +63,23 @@ export default function HeaderIndex(){
                                         data-unfold-animation-in="fadeInRight"
                                         data-unfold-animation-out="fadeOutRight"
                                         data-unfold-duration="500">
-                                        <i className="ec ec-user mr-1"></i> Register <span className="text-gray-50">or</span> Sign in
-                                    </a>
+                                        <i className="ec ec-user mr-1"></i> Sign Up <span className="text-gray-50">or</span> Login
+                                    </a>:
+                                        <a id="sidebarNavToggler" href="javascript:;" role="button" className="u-header-topbar__nav-link"
+                                            aria-controls="sidebarContent"
+                                            aria-haspopup="true"
+                                            aria-expanded="false"
+                                            data-unfold-event="click"
+                                            data-unfold-hide-on-scroll="false"
+                                            data-unfold-target="#sidebarContent"
+                                            data-unfold-type="css-animation"
+                                            data-unfold-animation-in="fadeInRight"
+                                            data-unfold-animation-out="fadeOutRight"
+                                            data-unfold-duration="500">
+                                            <i className="ec ec-user mr-1"></i> Logout <span className="text-gray-50"></span>
+                                        </a>
+                                        
+                                        }
                                     {/* <!-- End Account Sidebar Toggle Button --> */}
                                 </li>
                             </ul>

@@ -110,6 +110,12 @@ $(window).on("load", function () {
 });
 
 $(document).on("ready", function () {
+
+
+    $('form').on('submit', function (event) {
+      event.preventDefault();
+    });
+
   $.HSCore.components.HSHeader.init($("#header"));
 
   $.HSCore.components.HSOnScrollAnimation.init("[data-animation]");
