@@ -11,7 +11,6 @@ export default function Shop(){
     // datatest.map(item => console.log(item));
 
     let RegularShopCardList = (
-
         datatest.map(item => { return(<ShopCard data = {item} key={item.id}/>) })
     )
 

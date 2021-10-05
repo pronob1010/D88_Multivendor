@@ -21,7 +21,7 @@ export default function ShopCard({data}) {
     let p_quantity = 1;
 
     let router = useRouter();
-    const cartHandeler =(e)=>{
+    const cartHandeler = (e)=>{
         
         product_id = e.target.attributes.pass.value;
         dispatch({
@@ -32,10 +32,6 @@ export default function ShopCard({data}) {
         router.push('#');
     }
 
-
-    
-
-   
 
     return (
         <li className="col-6 col-md-3 col-wd-2gdot4 product-item">

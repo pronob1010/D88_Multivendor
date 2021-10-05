@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import Link from 'next/link';
+import CartItemBlock from './cartItemblock/cartItemblock';
 
 export default function HeaderAll(){
     let cart_item = useSelector(state => state.cartState.cart)
@@ -501,7 +502,7 @@ export default function HeaderAll(){
                                         {/* <!--Home--> */}
                                         <li className="nav-item hs-has-sub-menu u-header__nav-item">
                                         {/* <Link href="/"> */}
-                                            <a href="/" id="HomeMegaMenu" className="nav-link u-header__nav-link "   aria-haspopup="true" aria-expanded="false" aria-labelledby="HomeSubMenu">Home</a>
+                                            <a href="/" id="HomeMegaMenu" className="nav-link u-header__nav-link ">Home</a>
                                             {/* </Link> */}
                                         </li>
                                         {/* <!--End Home--> */}
@@ -629,46 +630,7 @@ export default function HeaderAll(){
                                             <span className="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">{cart_item_count}</span>
                                             {/* <span className="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">$1785.00</span> */}
                                         </div>
-                                        <div id="basicDropdownHover" className="cart-dropdown dropdown-menu dropdown-unfold border-top border-top-primary mt-3 border-width-2 border-left-0 border-right-0 border-bottom-0 left-auto right-0" aria-labelledby="basicDropdownHoverInvoker">
-                                            <ul className="list-unstyled px-3 pt-3">
-                                                <li className="border-bottom pb-3 mb-3">
-                                                    <div className="">
-                                                        <ul className="list-unstyled row mx-n2">
-                                                            <li className="px-2 col-auto">
-                                                                <img className="img-fluid" src="/assets/img/75X75/img1.jpg" clalt="Image Description" />
-                                                            </li>
-                                                            <li className="px-2 col">
-                                                                <h5 className="text-blue font-size-14 font-weight-bold">Ultra Wireless S50 Headphones S50 with Bluetooth</h5>
-                                                                <span className="font-size-14">1 × $1,100.00</span>
-                                                            </li>
-                                                            <li className="px-2 col-auto">
-                                                                <a href="#" className="text-gray-90"><i className="ec ec-close-remove"></i></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </li>
-                                                <li className="border-bottom pb-3 mb-3">
-                                                    <div className="">
-                                                        <ul className="list-unstyled row mx-n2">
-                                                            <li className="px-2 col-auto">
-                                                                <img className="img-fluid" src="/assets/img/75X75/img2.jpg" clalt="Image Description" />
-                                                            </li>
-                                                            <li className="px-2 col">
-                                                                <h5 className="text-blue font-size-14 font-weight-bold">Widescreen NX Mini F1 SMART NX</h5>
-                                                                <span className="font-size-14">1 × $685.00</span>
-                                                            </li>
-                                                            <li className="px-2 col-auto">
-                                                                <a href="#" className="text-gray-90"><i className="ec ec-close-remove"></i></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <div className="flex-center-between px-4 pt-2">
-                                                <a href="../shop/cart.html" className="btn btn-soft-secondary mb-3 mb-md-0 font-weight-normal px-5 px-md-4 px-lg-5">View cart</a>
-                                                <a href="../shop/checkout.html" className="btn btn-primary-dark-w ml-md-2 px-5 px-md-4 px-lg-5">Checkout</a>
-                                            </div>
-                                        </div>
+                                        <CartItemBlock />
                                     </li>
                                     
                                     
