@@ -60,16 +60,20 @@ export const auth = (email, password, mode) => dispatch => {
             if (mode === "Sign Up") {
                 return axios.post("http://localhost:8000/api/token/", authData, header)
                     .then(response => {
-                        const token = response.data.access
+                        const token = response.data.access;
                         const user_id = storeLocally(token);
                         dispatch(authSuccess(token, user_id));
+                        user_details();
                     }
                 )
+
             }
             else {
-                const token = response.data.access
+                const token = response.data.access;
                 const user_id = storeLocally(token);
                 dispatch(authSuccess(token, user_id));
+                user_details();
+
             }
 
         })
@@ -104,3 +108,10 @@ export const authCheck = () => dispatch => {
         }
     }
 }
+
+
+// async function user_details(){
+//     await axios.get("http://localhost:8000/api/auth/"+1).then(()=>{
+//         console.log(response);
+//     })
+// }

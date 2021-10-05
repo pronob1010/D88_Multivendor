@@ -1,4 +1,89 @@
+import { useSelector } from 'react-redux';
+
 export default function Checkout(){
+    const { token } = useSelector(state => state.userReducer)
+
+    let custom_login;
+    if (token == null ){
+
+        custom_login = (
+            <>
+             {/* <!-- Accordion --> */}
+             <div id="shopCartAccordion" className="accordion rounded mb-5">
+             {/* <!-- Card --> */}
+             <div className="card border-0">
+                 <div id="shopCartHeadingOne" className="alert alert-primary mb-0" role="alert">
+                     Returning customer? <a href="#" className="alert-link" data-toggle="collapse" data-target="#shopCartOne" aria-expanded="false" aria-controls="shopCartOne">Click here to login</a>
+                 </div>
+                 <div id="shopCartOne" className="collapse border border-top-0" aria-labelledby="shopCartHeadingOne" data-parent="#shopCartAccordion" >
+                     {/* <!-- Form --> */}
+                     <form className="js-validate p-5">
+                         {/* <!-- Title --> */}
+                         <div className="mb-5">
+                             <p className="text-gray-90 mb-2">Welcome back! Sign in to your account.</p>
+                             <p className="text-gray-90">If you have shopped with us before, please enter your details below. If you are a new customer, please proceed to the Billing & Shipping section.</p>
+                         </div>
+                         {/* <!-- End Title --> */}
+
+                         <div className="row">
+                             <div className="col-lg-6">
+                                 {/* <!-- Form Group --> */}
+                                 <div className="js-form-message form-group">
+                                     <label className="form-label" for="signinSrEmailExample3">Email address</label>
+                                     <input type="email" className="form-control" name="email" id="signinSrEmailExample3" placeholder="Email address" aria-label="Email address" required
+                                     data-msg="Please enter a valid email address."
+                                     data-error-className="u-has-error"
+                                     data-success-className="u-has-success"/>
+                                 </div>
+                                 {/* <!-- End Form Group --> */}
+                             </div>
+                             <div className="col-lg-6">
+                                 {/* <!-- Form Group --> */}
+                                 <div className="js-form-message form-group">
+                                     <label className="form-label" for="signinSrPasswordExample2">Password</label>
+                                     <input type="password" className="form-control" name="password" id="signinSrPasswordExample2" placeholder="********" aria-label="********" required
+                                     data-msg="Your password is invalid. Please try again."
+                                     data-error-className="u-has-error"
+                                     data-success-className="u-has-success"/>
+                                 </div>
+                                 {/* <!-- End Form Group --> */}
+                             </div>
+                         </div>
+
+                         {/* <!-- Checkbox --> */}
+                         <div className="js-form-message mb-3">
+                             <div className="custom-control custom-checkbox d-flex align-items-center">
+                                 <input type="checkbox" className="custom-control-input" id="rememberCheckbox" name="rememberCheckbox" required
+                                 data-error-className="u-has-error"
+                                 data-success-className="u-has-success"/>
+                                 <label className="custom-control-label form-label" for="rememberCheckbox">
+                                     Remember me
+                                 </label>
+                             </div>
+                         </div>
+                         {/* <!-- End Checkbox --> */}
+
+                         {/* <!-- Button --> */}
+                         <div className="mb-1">
+                             <div className="mb-3">
+                                 <button type="submit" className="btn btn-primary-dark-w px-5">Login</button>
+                             </div>
+                             <div className="mb-2">
+                                 <a className="text-blue" href="#">Lost your password?</a>
+                             </div>
+                         </div>
+                         {/* <!-- End Button --> */}
+                     </form>
+                     {/* <!-- End Form --> */}
+                 </div>
+             </div>
+             {/* <!-- End Card --> */}
+         </div>
+         {/* <!-- End Accordion --> */}
+         </>
+        )
+    }
+
     return(
         <main id="content" role="main" className="checkout-page">
             {/* <!-- breadcrumb --> */}
@@ -22,88 +107,18 @@ export default function Checkout(){
                 <div className="mb-5">
                     <h1 className="text-center">Checkout</h1>
                 </div>
-                {/* <!-- Accordion --> */}
-                <div id="shopCartAccordion" className="accordion rounded mb-5">
-                    {/* <!-- Card --> */}
-                    <div className="card border-0">
-                        <div id="shopCartHeadingOne" className="alert alert-primary mb-0" role="alert">
-                            Returning customer? <a href="#" className="alert-link" data-toggle="collapse" data-target="#shopCartOne" aria-expanded="false" aria-controls="shopCartOne">Click here to login</a>
-                        </div>
-                        <div id="shopCartOne" className="collapse border border-top-0" aria-labelledby="shopCartHeadingOne" data-parent="#shopCartAccordion" style="">
-                            {/* <!-- Form --> */}
-                            <form className="js-validate p-5">
-                                {/* <!-- Title --> */}
-                                <div className="mb-5">
-                                    <p className="text-gray-90 mb-2">Welcome back! Sign in to your account.</p>
-                                    <p className="text-gray-90">If you have shopped with us before, please enter your details below. If you are a new customer, please proceed to the Billing & Shipping section.</p>
-                                </div>
-                                {/* <!-- End Title --> */}
 
-                                <div className="row">
-                                    <div className="col-lg-6">
-                                        {/* <!-- Form Group --> */}
-                                        <div className="js-form-message form-group">
-                                            <label className="form-label" for="signinSrEmailExample3">Email address</label>
-                                            <input type="email" className="form-control" name="email" id="signinSrEmailExample3" placeholder="Email address" aria-label="Email address" required
-                                            data-msg="Please enter a valid email address."
-                                            data-error-className="u-has-error"
-                                            data-success-className="u-has-success">
-                                        </div>
-                                        {/* <!-- End Form Group --> */}
-                                    </div>
-                                    <div className="col-lg-6">
-                                        {/* <!-- Form Group --> */}
-                                        <div className="js-form-message form-group">
-                                            <label className="form-label" for="signinSrPasswordExample2">Password</label>
-                                            <input type="password" className="form-control" name="password" id="signinSrPasswordExample2" placeholder="********" aria-label="********" required
-                                            data-msg="Your password is invalid. Please try again."
-                                            data-error-className="u-has-error"
-                                            data-success-className="u-has-success">
-                                        </div>
-                                        {/* <!-- End Form Group --> */}
-                                    </div>
-                                </div>
-
-                                {/* <!-- Checkbox --> */}
-                                <div className="js-form-message mb-3">
-                                    <div className="custom-control custom-checkbox d-flex align-items-center">
-                                        <input type="checkbox" className="custom-control-input" id="rememberCheckbox" name="rememberCheckbox" required
-                                        data-error-className="u-has-error"
-                                        data-success-className="u-has-success">
-                                        <label className="custom-control-label form-label" for="rememberCheckbox">
-                                            Remember me
-                                        </label>
-                                    </div>
-                                </div>
-                                {/* <!-- End Checkbox --> */}
-
-                                {/* <!-- Button --> */}
-                                <div className="mb-1">
-                                    <div className="mb-3">
-                                        <button type="submit" className="btn btn-primary-dark-w px-5">Login</button>
-                                    </div>
-                                    <div className="mb-2">
-                                        <a className="text-blue" href="#">Lost your password?</a>
-                                    </div>
-                                </div>
-                                {/* <!-- End Button --> */}
-                            </form>
-                            {/* <!-- End Form --> */}
-                        </div>
-                    </div>
-                    {/* <!-- End Card --> */}
-                </div>
-                {/* <!-- End Accordion --> */}
+               {custom_login}
 
                 {/* <!-- Accordion --> */}
                 <div id="shopCartAccordion1" className="accordion rounded mb-6">
                     {/* <!-- Card --> */}
                     <div className="card border-0">
-                        <div id="shopCartTwo" className="collapse border border-top-0" aria-labelledby="shopCartHeadingTwo" data-parent="#shopCartAccordion1" style="">
+                        <div id="shopCartTwo" className="collapse border border-top-0" aria-labelledby="shopCartHeadingTwo" data-parent="#shopCartAccordion1" >
                             <form className="js-validate p-5" novalidate="novalidate">
                                 <p className="w-100 text-gray-90">If you have a coupon code, please apply it below.</p>
                                 <div className="input-group input-group-pill max-width-660-xl">
-                                    <input type="text" className="form-control" name="name" placeholder="Coupon code" aria-label="Promo code">
+                                    <input type="text" className="form-control" name="name" placeholder="Coupon code" aria-label="Promo code"/>
                                     <div className="input-group-append">
                                         <button type="submit" className="btn btn-block btn-dark font-weight-normal btn-pill px-4">
                                             <i className="fas fa-tags d-md-none"></i>
@@ -171,7 +186,7 @@ export default function Checkout(){
                                                 <div className="border-bottom border-color-1 border-dotted-bottom">
                                                     <div className="p-3" id="basicsHeadingOne">
                                                         <div className="custom-control custom-radio">
-                                                            <input type="radio" className="custom-control-input" id="stylishRadio1" name="stylishRadio" checked>
+                                                            <input type="radio" className="custom-control-input" id="stylishRadio1" name="stylishRadio" checked />
                                                             <label className="custom-control-label form-label" for="stylishRadio1"
                                                                 data-toggle="collapse"
                                                                 data-target="#basicsCollapseOnee"
@@ -195,7 +210,7 @@ export default function Checkout(){
                                                 <div className="border-bottom border-color-1 border-dotted-bottom">
                                                     <div className="p-3" id="basicsHeadingTwo">
                                                         <div className="custom-control custom-radio">
-                                                            <input type="radio" className="custom-control-input" id="secondStylishRadio1" name="stylishRadio">
+                                                            <input type="radio" className="custom-control-input" id="secondStylishRadio1" name="stylishRadio" />
                                                             <label className="custom-control-label form-label" for="secondStylishRadio1"
                                                                 data-toggle="collapse"
                                                                 data-target="#basicsCollapseTwo"
@@ -219,7 +234,7 @@ export default function Checkout(){
                                                 <div className="border-bottom border-color-1 border-dotted-bottom">
                                                     <div className="p-3" id="basicsHeadingThree">
                                                         <div className="custom-control custom-radio">
-                                                            <input type="radio" className="custom-control-input" id="thirdstylishRadio1" name="stylishRadio">
+                                                            <input type="radio" className="custom-control-input" id="thirdstylishRadio1" name="stylishRadio" />
                                                             <label className="custom-control-label form-label" for="thirdstylishRadio1"
                                                                 data-toggle="collapse"
                                                                 data-target="#basicsCollapseThree"
@@ -243,7 +258,7 @@ export default function Checkout(){
                                                 <div className="border-bottom border-color-1 border-dotted-bottom">
                                                     <div className="p-3" id="basicsHeadingFour">
                                                         <div className="custom-control custom-radio">
-                                                            <input type="radio" className="custom-control-input" id="FourstylishRadio1" name="stylishRadio">
+                                                            <input type="radio" className="custom-control-input" id="FourstylishRadio1" name="stylishRadio" />
                                                             <label className="custom-control-label form-label" for="FourstylishRadio1"
                                                                 data-toggle="collapse"
                                                                 data-target="#basicsCollapseFour"
@@ -270,7 +285,7 @@ export default function Checkout(){
                                                 <input className="form-check-input" type="checkbox" value="" id="defaultCheck10" required
                                                     data-msg="Please agree terms and conditions."
                                                     data-error-className="u-has-error"
-                                                    data-success-className="u-has-success">
+                                                    data-success-className="u-has-success"/>
                                                 <label className="form-check-label form-label" for="defaultCheck10">
                                                     I have read and agree to the website <a href="#" className="text-blue">terms and conditions </a>
                                                     <span className="text-danger">*</span>
@@ -301,7 +316,7 @@ export default function Checkout(){
                                                 First name
                                                 <span className="text-danger">*</span>
                                             </label>
-                                            <input type="text" className="form-control" name="firstName" placeholder="Jack" aria-label="Jack" required="" data-msg="Please enter your frist name." data-error-className="u-has-error" data-success-className="u-has-success" autocomplete="off">
+                                            <input type="text" className="form-control" name="firstName" placeholder="Jack" aria-label="Jack" required="" data-msg="Please enter your frist name." data-error-className="u-has-error" data-success-className="u-has-success" autocomplete="off"/>
                                         </div>
                                         {/* <!-- End Input --> */}
                                     </div>
@@ -313,7 +328,7 @@ export default function Checkout(){
                                                 Last name
                                                 <span className="text-danger">*</span>
                                             </label>
-                                            <input type="text" className="form-control" name="lastName" placeholder="Wayley" aria-label="Wayley" required="" data-msg="Please enter your last name." data-error-className="u-has-error" data-success-className="u-has-success">
+                                            <input type="text" className="form-control" name="lastName" placeholder="Wayley" aria-label="Wayley" required="" data-msg="Please enter your last name." data-error-className="u-has-error" data-success-className="u-has-success"/>
                                         </div>
                                         {/* <!-- End Input --> */}
                                     </div>
@@ -326,7 +341,7 @@ export default function Checkout(){
                                             <label className="form-label">
                                                 Company name (optional)
                                             </label>
-                                            <input type="text" className="form-control" name="companyName" placeholder="Company Name" aria-label="Company Name" data-msg="Please enter a company name." data-error-className="u-has-error" data-success-className="u-has-success">
+                                            <input type="text" className="form-control" name="companyName" placeholder="Company Name" aria-label="Company Name" data-msg="Please enter a company name." data-error-className="u-has-error" data-success-className="u-has-success"/>
                                         </div>
                                         {/* <!-- End Input --> */}
                                     </div>
@@ -603,7 +618,7 @@ export default function Checkout(){
                                                 Street address
                                                 <span className="text-danger">*</span>
                                             </label>
-                                            <input type="text" className="form-control" name="streetAddress" placeholder="470 Lucy Forks" aria-label="470 Lucy Forks" required="" data-msg="Please enter a valid address." data-error-className="u-has-error" data-success-className="u-has-success">
+                                            <input type="text" className="form-control" name="streetAddress" placeholder="470 Lucy Forks" aria-label="470 Lucy Forks" required="" data-msg="Please enter a valid address." data-error-className="u-has-error" data-success-className="u-has-success"/>
                                         </div>
                                         {/* <!-- End Input --> */}
                                     </div>
@@ -614,7 +629,7 @@ export default function Checkout(){
                                             <label className="form-label">
                                                 Apt, suite, etc.
                                             </label>
-                                            <input type="text" className="form-control" placeholder="YC7B 3UT" aria-label="YC7B 3UT" data-msg="Please enter a valid address." data-error-className="u-has-error" data-success-className="u-has-success">
+                                            <input type="text" className="form-control" placeholder="YC7B 3UT" aria-label="YC7B 3UT" data-msg="Please enter a valid address." data-error-className="u-has-error" data-success-className="u-has-success"/>
                                         </div>
                                         {/* <!-- End Input --> */}
                                     </div>
@@ -626,7 +641,7 @@ export default function Checkout(){
                                                 City
                                                 <span className="text-danger">*</span>
                                             </label>
-                                            <input type="text" className="form-control" name="cityAddress" placeholder="London" aria-label="London" required="" data-msg="Please enter a valid address." data-error-className="u-has-error" data-success-className="u-has-success" autocomplete="off">
+                                            <input type="text" className="form-control" name="cityAddress" placeholder="London" aria-label="London" required="" data-msg="Please enter a valid address." data-error-className="u-has-error" data-success-className="u-has-success" autocomplete="off"/>
                                         </div>
                                         {/* <!-- End Input --> */}
                                     </div>
@@ -638,7 +653,7 @@ export default function Checkout(){
                                                 Postcode/Zip
                                                 <span className="text-danger">*</span>
                                             </label>
-                                            <input type="text" className="form-control" name="postcode" placeholder="99999" aria-label="99999" required="" data-msg="Please enter a postcode or zip code." data-error-className="u-has-error" data-success-className="u-has-success">
+                                            <input type="text" className="form-control" name="postcode" placeholder="99999" aria-label="99999" required="" data-msg="Please enter a postcode or zip code." data-error-className="u-has-error" data-success-className="u-has-success"/>
                                         </div>
                                         {/* <!-- End Input --> */}
                                     </div>
@@ -917,7 +932,7 @@ export default function Checkout(){
                                                 Email address
                                                 <span className="text-danger">*</span>
                                             </label>
-                                            <input type="email" className="form-control" name="emailAddress" placeholder="jackwayley@gmail.com" aria-label="jackwayley@gmail.com" required="" data-msg="Please enter a valid email address." data-error-className="u-has-error" data-success-className="u-has-success">
+                                            <input type="email" className="form-control" name="emailAddress" placeholder="jackwayley@gmail.com" aria-label="jackwayley@gmail.com" required="" data-msg="Please enter a valid email address." data-error-className="u-has-error" data-success-className="u-has-success"/>
                                         </div>
                                         {/* <!-- End Input --> */}
                                     </div>
@@ -928,7 +943,7 @@ export default function Checkout(){
                                             <label className="form-label">
                                                 Phone
                                             </label>
-                                            <input type="text" className="form-control" placeholder="+1 (062) 109-9222" aria-label="+1 (062) 109-9222" data-msg="Please enter your last name." data-error-className="u-has-error" data-success-className="u-has-success">
+                                            <input type="text" className="form-control" placeholder="+1 (062) 109-9222" aria-label="+1 (062) 109-9222" data-msg="Please enter your last name." data-error-className="u-has-error" data-success-className="u-has-success"/>
                                         </div>
                                         {/* <!-- End Input --> */}
                                     </div>
@@ -942,12 +957,12 @@ export default function Checkout(){
                                     {/* <!-- Card --> */}
                                     <div className="card border-0">
                                         <div id="shopCartHeadingThree" className="custom-control custom-checkbox d-flex align-items-center">
-                                            <input type="checkbox" className="custom-control-input" id="createAnaccount" name="createAnaccount" >
+                                            <input type="checkbox" className="custom-control-input" id="createAnaccount" name="createAnaccount" />
                                             <label className="custom-control-label form-label" for="createAnaccount" data-toggle="collapse" data-target="#shopCartThree" aria-expanded="false" aria-controls="shopCartThree">
                                                 Create an account?
                                             </label>
                                         </div>
-                                        <div id="shopCartThree" className="collapse" aria-labelledby="shopCartHeadingThree" data-parent="#shopCartAccordion2" style="">
+                                        <div id="shopCartThree" className="collapse" aria-labelledby="shopCartHeadingThree" data-parent="#shopCartAccordion2" >
                                             {/* <!-- Form Group --> */}
                                             <div className="js-form-message form-group py-5">
                                                 <label className="form-label" for="signinSrPasswordExample1">
@@ -957,7 +972,7 @@ export default function Checkout(){
                                                 <input type="password" className="form-control" name="password" id="signinSrPasswordExample1" placeholder="********" aria-label="********" required
                                                 data-msg="Enter password."
                                                 data-error-className="u-has-error"
-                                                data-success-className="u-has-success">
+                                                data-success-className="u-has-success"/>
                                             </div>
                                             {/* <!-- End Form Group --> */}
                                         </div>
@@ -975,12 +990,12 @@ export default function Checkout(){
                                     {/* <!-- Card --> */}
                                     <div className="card border-0">
                                         <div id="shopCartHeadingFour" className="custom-control custom-checkbox d-flex align-items-center">
-                                            <input type="checkbox" className="custom-control-input" id="shippingdiffrentAddress" name="shippingdiffrentAddress" >
+                                            <input type="checkbox" className="custom-control-input" id="shippingdiffrentAddress" name="shippingdiffrentAddress" />
                                             <label className="custom-control-label form-label" for="shippingdiffrentAddress" data-toggle="collapse" data-target="#shopCartfour" aria-expanded="false" aria-controls="shopCartfour">
                                                 Ship to a different address?
                                             </label>
                                         </div>
-                                        <div id="shopCartfour" className="collapse mt-5" aria-labelledby="shopCartHeadingFour" data-parent="#shopCartAccordion3" style="">
+                                        <div id="shopCartfour" className="collapse mt-5" aria-labelledby="shopCartHeadingFour" data-parent="#shopCartAccordion3" >
                                             {/* <!-- Shipping Form --> */}
                                             <div className="row">
                                                 <div className="col-md-6">
@@ -990,7 +1005,7 @@ export default function Checkout(){
                                                             First name
                                                             <span className="text-danger">*</span>
                                                         </label>
-                                                        <input type="text" className="form-control" name="firstName" placeholder="Jack" aria-label="Jack" required="" data-msg="Please enter your frist name." data-error-className="u-has-error" data-success-className="u-has-success" autocomplete="off">
+                                                        <input type="text" className="form-control" name="firstName" placeholder="Jack" aria-label="Jack" required="" data-msg="Please enter your frist name." data-error-className="u-has-error" data-success-className="u-has-success" autocomplete="off"/>
                                                     </div>
                                                     {/* <!-- End Input --> */}
                                                 </div>
@@ -1002,7 +1017,7 @@ export default function Checkout(){
                                                             Last name
                                                             <span className="text-danger">*</span>
                                                         </label>
-                                                        <input type="text" className="form-control" name="lastName" placeholder="Wayley" aria-label="Wayley" required="" data-msg="Please enter your last name." data-error-className="u-has-error" data-success-className="u-has-success">
+                                                        <input type="text" className="form-control" name="lastName" placeholder="Wayley" aria-label="Wayley" required="" data-msg="Please enter your last name." data-error-className="u-has-error" data-success-className="u-has-success"/>
                                                     </div>
                                                     {/* <!-- End Input --> */}
                                                 </div>
@@ -1015,7 +1030,7 @@ export default function Checkout(){
                                                         <label className="form-label">
                                                             Company name (optional)
                                                         </label>
-                                                        <input type="text" className="form-control" name="companyName" placeholder="Company Name" aria-label="Company Name" data-msg="Please enter a company name." data-error-className="u-has-error" data-success-className="u-has-success">
+                                                        <input type="text" className="form-control" name="companyName" placeholder="Company Name" aria-label="Company Name" data-msg="Please enter a company name." data-error-className="u-has-error" data-success-className="u-has-success"/>
                                                     </div>
                                                     {/* <!-- End Input --> */}
                                                 </div>
@@ -1292,7 +1307,7 @@ export default function Checkout(){
                                                             Street address
                                                             <span className="text-danger">*</span>
                                                         </label>
-                                                        <input type="text" className="form-control" name="streetAddress" placeholder="470 Lucy Forks" aria-label="470 Lucy Forks" required="" data-msg="Please enter a valid address." data-error-className="u-has-error" data-success-className="u-has-success">
+                                                        <input type="text" className="form-control" name="streetAddress" placeholder="470 Lucy Forks" aria-label="470 Lucy Forks" required="" data-msg="Please enter a valid address." data-error-className="u-has-error" data-success-className="u-has-success"/>
                                                     </div>
                                                     {/* <!-- End Input --> */}
                                                 </div>
@@ -1303,7 +1318,7 @@ export default function Checkout(){
                                                         <label className="form-label">
                                                             Apt, suite, etc.
                                                         </label>
-                                                        <input type="text" className="form-control" placeholder="YC7B 3UT" aria-label="YC7B 3UT" data-msg="Please enter a valid address." data-error-className="u-has-error" data-success-className="u-has-success">
+                                                        <input type="text" className="form-control" placeholder="YC7B 3UT" aria-label="YC7B 3UT" data-msg="Please enter a valid address." data-error-className="u-has-error" data-success-className="u-has-success"/>
                                                     </div>
                                                     {/* <!-- End Input --> */}
                                                 </div>
@@ -1315,7 +1330,7 @@ export default function Checkout(){
                                                             City
                                                             <span className="text-danger">*</span>
                                                         </label>
-                                                        <input type="text" className="form-control" name="cityAddress" placeholder="London" aria-label="London" required="" data-msg="Please enter a valid address." data-error-className="u-has-error" data-success-className="u-has-success" autocomplete="off">
+                                                        <input type="text" className="form-control" name="cityAddress" placeholder="London" aria-label="London" required="" data-msg="Please enter a valid address." data-error-className="u-has-error" data-success-className="u-has-success" autocomplete="off"/>
                                                     </div>
                                                     {/* <!-- End Input --> */}
                                                 </div>
@@ -1327,7 +1342,7 @@ export default function Checkout(){
                                                             Postcode/Zip
                                                             <span className="text-danger">*</span>
                                                         </label>
-                                                        <input type="text" className="form-control" name="postcode" placeholder="99999" aria-label="99999" required="" data-msg="Please enter a postcode or zip code." data-error-className="u-has-error" data-success-className="u-has-success">
+                                                        <input type="text" className="form-control" name="postcode" placeholder="99999" aria-label="99999" required="" data-msg="Please enter a postcode or zip code." data-error-className="u-has-error" data-success-className="u-has-success"/>
                                                     </div>
                                                     {/* <!-- End Input --> */}
                                                 </div>
@@ -1606,7 +1621,7 @@ export default function Checkout(){
                                                             Email address
                                                             <span className="text-danger">*</span>
                                                         </label>
-                                                        <input type="email" className="form-control" name="emailAddress" placeholder="jackwayley@gmail.com" aria-label="jackwayley@gmail.com" required="" data-msg="Please enter a valid email address." data-error-className="u-has-error" data-success-className="u-has-success">
+                                                        <input type="email" className="form-control" name="emailAddress" placeholder="jackwayley@gmail.com" aria-label="jackwayley@gmail.com" required="" data-msg="Please enter a valid email address." data-error-className="u-has-error" data-success-className="u-has-success"/>
                                                     </div>
                                                     {/* <!-- End Input --> */}
                                                 </div>
@@ -1617,7 +1632,7 @@ export default function Checkout(){
                                                         <label className="form-label">
                                                             Phone
                                                         </label>
-                                                        <input type="text" className="form-control" placeholder="+1 (062) 109-9222" aria-label="+1 (062) 109-9222" data-msg="Please enter your last name." data-error-className="u-has-error" data-success-className="u-has-success">
+                                                        <input type="text" className="form-control" placeholder="+1 (062) 109-9222" aria-label="+1 (062) 109-9222" data-msg="Please enter your last name." data-error-className="u-has-error" data-success-className="u-has-success"/>
                                                     </div>
                                                     {/* <!-- End Input --> */}
                                                 </div>

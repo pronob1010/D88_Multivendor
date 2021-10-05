@@ -1018,7 +1018,7 @@ export default function MainContent(){
                 </a>
             </div>
             
-            <RecentViewed />
+            {/* <RecentViewed /> */}
 
             <div className="mb-8">
                 <div className="py-2 border-top border-bottom">

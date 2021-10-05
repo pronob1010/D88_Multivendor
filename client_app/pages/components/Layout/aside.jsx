@@ -113,14 +113,15 @@ const Sidebar = () => {
                                                         data-msg="Password does not match the confirm password."
                                                         data-error-className="u-has-error"
                                                         data-success-className="u-has-success" />
-                                                </div> : null}
+                                                </div> : null
+                                                }
 
 
                                             <button type="submit" className="btn btn-block btn-sm btn-primary transition-3d-hover mt-2">{mode === "Sign Up" ? "Sign Up" : "Login"}</button>
                                         </form>
                                         {error !== "" && mode==="Sign Up" ? <div className="text-center mb-4" style={{ color: "red", fontSize: 16 }}>{error}</div> : null}
                                         <div className="text-center mb-4">
-                                            <span className="small">Already have an account?</span>
+                                            <span className="small">{mode === "Sign Up" ? "Already have an account?" : "Wanna be a friend ?"}</span>
                                             <button className="btn btn-block btn-sm btn-primary transition-3d-hover mt-2"
                                                 data-target="#login"
                                                 data-link-group="idForm"

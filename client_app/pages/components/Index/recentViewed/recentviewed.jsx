@@ -15,8 +15,9 @@ export default function RecentViewed() {
     let ProductCardList = recentProducts.map(ele => {
         
         s_item = all_p.find((item) => item.id == ele)
+        
 
-        return (<ShopCard data={s_item} key={s_item.id}/>)
+        return <ShopCard data={s_item} key={s_item.id}/>
     })
 
     // console.log(ProductCardList);
