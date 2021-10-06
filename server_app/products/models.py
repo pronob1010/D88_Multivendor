@@ -5,6 +5,8 @@ from django.db.models.deletion import CASCADE, SET_NULL
 from django.db.models.expressions import Value
 from django.template.defaultfilters import default, slugify, title
 import random
+from django.utils.timezone import now
+
 # Create your models here.
 class ProductsCategory(models.Model):
     title = models.CharField(max_length=50)
@@ -19,7 +21,7 @@ class ProductsCategory(models.Model):
         return self.title
 
 class ProductsSubCategory(models.Model):
-    base_category = models.ForeignKey(ProductsCategory, on_delete=SET_NULL, null=True)
+    base_category = models.ForeignKey(ProductsCategory, on_delete=SET_NULL, null=True, related_name="subcat")
     title = models.CharField(max_length=50)
     slug = models.SlugField(unique=True, null=True, blank=True)
 
@@ -96,8 +98,11 @@ rating_choice =(
     (5, "*****"),
 )
 
+from datetime import datetime
 class CustomerReview(models.Model):
     product = models.ForeignKey(product, on_delete=CASCADE, related_name="c_review", null=True)
     customer = models.ForeignKey(User, on_delete=CASCADE)
     rating = models.PositiveIntegerField(choices = rating_choice, null=True)
     review = models.TextField(max_length=200, null=True, blank=True)
+    updated_on = models.DateTimeField(auto_now=True, null=True)
+    created_on = models.DateTimeField(auto_now_add=True, null=True)
