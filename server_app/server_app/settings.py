@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'vendor_catalog',
     'rest_framework',
     "corsheaders",
+    'recommendation_engin',
 ]
 
 MIDDLEWARE = [
