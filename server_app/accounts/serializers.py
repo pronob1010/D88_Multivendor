@@ -8,15 +8,12 @@ class UserSerializer(ModelSerializer):
         model = User
         exclude = ('is_active', 'user_permissions','groups')
         extra_kwargs = {
-            "password" : {"write_only" : True, "style":{"inpute_type":"password"}}
+            "password" : {"write_only" : True, "style":{"input_type":"password"}}
         }
 
     def create(self, validated_data):
         user = User.objects.create_user(
             email = validated_data['email'],
-            username = validated_data['username'],
-            firstname = validated_data['firstname'],
-            lastname = validated_data['lastname'],
             password = validated_data["password"],
         )
         return user

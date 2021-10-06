@@ -5,7 +5,7 @@ import RecentShopCard from './recent_viewed_single_card';
 
 export default function RecentViewed() {
 
-    let recentProducts = useSelector((state) => state.recentState.recent);
+    let recentProducts = useSelector((state) => state.recentState.recent).reverse();
 
 
     let all_p = useSelector(state => state.productState.products);
@@ -15,8 +15,9 @@ export default function RecentViewed() {
     let ProductCardList = recentProducts.map(ele => {
         
         s_item = all_p.find((item) => item.id == ele)
+        
 
-        return <ShopCard data={s_item} key={s_item.id} />
+        return <ShopCard data={s_item} key={s_item.id}/>
     })
 
     // console.log(ProductCardList);
@@ -60,6 +61,7 @@ export default function RecentViewed() {
                     "slidesToShow": 2
                   }
                 }]'>
+
                     {ProductCardList}
 
                 </div>
