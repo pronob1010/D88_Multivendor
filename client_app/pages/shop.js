@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import BrowseCategories from './components/Shop/BrowseCategories/BrowseCategories';
 import RecommendedProductCard from './components/Shop/Recommended/RecommendedProductCard';
 import ShopCard from './components/Shop/shop_single_card';
@@ -7,11 +8,22 @@ import LatestProduct from './components/Shop/LatestProduct/latestproduct';
 export default function Shop(){
 
     let datatest = useSelector((state) => state.productState.products);
+    let length_data = datatest.length
+    let paginate_product = 4
 
-    // datatest.map(item => console.log(item));
-
+    const [count, setCount] = useState(paginate_product);
+    if (count > length_data){
+        () => setCount(length_data)
+    }
+    let counter_loop = 0;
     let RegularShopCardList = (
-        datatest.map(item => { return(<ShopCard data = {item} key={item.id}/>) })
+        datatest.map(item => {
+            counter_loop+=1;
+            if(counter_loop<=count)
+                return(
+                <ShopCard data = {item} key={item.id}/>
+                )
+            })
     )
 
     return(
@@ -325,6 +337,7 @@ export default function Shop(){
                                 <ul className="row list-unstyled products-group no-gutters">
                                 
                                 { RegularShopCardList }
+                                   
                                 
                                 {/* <ShopCard />
                                 <ShopCard />
@@ -347,11 +360,11 @@ export default function Shop(){
                         {/* <!-- Shop Pagination --> */}
                         
                         <nav className="d-md-flex justify-content-between align-items-center border-top pt-3" aria-label="Page navigation example">
-                            <div className="text-center text-md-left mb-3 mb-md-0">Showing 1–25 of 56 results</div>
+                            <div className="text-center text-md-left mb-3 mb-md-0">Showing 1–{count} of {length_data} results</div>
                             <ul className="pagination mb-0 pagination-shop justify-content-center justify-content-md-start">
-                                <li className="page-item"><a className="page-link current" href="#">1</a></li>
-                                <li className="page-item"><a className="page-link" href="#">2</a></li>
-                                <li className="page-item"><a className="page-link" href="#">3</a></li>
+                                {count<length_data?
+                                    <button onClick={() => setCount((length_data - count) >= paginate_product ? (count + paginate_product) : (count + (length_data - count)))} className="btn btn-primary" href="#">Show more</button>
+                                    : <button onClick={() => setCount(length_data>paginate_product? paginate_product: length_data)} className="btn btn-primary" href="#">Go Up</button> }
                             </ul>
                         </nav>
                         {/* <!-- End Shop Pagination --> */}
