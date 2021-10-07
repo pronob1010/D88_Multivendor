@@ -36,9 +36,8 @@ export default function ShopCard({data}) {
         
         product_id = e.target.attributes.pass.value;
         dispatch({
-            type : "ADD_TO_CART", 
+            type : "ADD_TO_WISHLIST",
             value : product_id,
-            quantity : p_quantity,
         });
         router.push('#');
     }
