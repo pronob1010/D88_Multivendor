@@ -19,6 +19,11 @@ export const userReducer = (state = INITIAL_STATE, action) => {
                 token: action.payload.token,
                 userId: action.payload.userId
             }
+        case actionTypes.USER_DETAILS:
+            return {
+                ...state,
+                user_details: action.payload
+            }
         case actionTypes.AUTH_LOGOUT:
             return {
                 ...state,
