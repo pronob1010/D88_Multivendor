@@ -78,8 +78,7 @@ export const auth = (email, password, mode) => dispatch => {
 
         })
         .catch(err => {
-            const key = Object.keys(err.response.data)[0]
-            dispatch(authFailed(`${key.toUpperCase()}: ${err.response.data[key]}`));
+            console.log(err)
         })
 }
 
