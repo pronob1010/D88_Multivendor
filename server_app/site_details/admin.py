@@ -17,4 +17,11 @@ class AllAdmins(admin.ModelAdmin):
 
 admin.site.register(WebsiteDetails, AllAdmins)
 
-# admin.site.register(Explainations)
+class FAQsSubSectionAdmin(admin.StackedInline):
+    model = FAQsSubSection
+
+class FAQsAdmin(admin.ModelAdmin):
+    inlines = [FAQsSubSection,]
+
+admin.site.register(FAQs)
+admin.site.register(FAQsSubSection)

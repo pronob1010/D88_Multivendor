@@ -56,3 +56,18 @@ class Explainations(models.Model):
         if not self.slug:
             self.slug = slugify(self.title+"-"+str(random.randint(101, 1022222222))+"-"+str(random.randint(88, 80000000)))
         return super().save(*args,**kwargs)
+
+
+class FAQs(models.Model):
+    FAQ_Branch = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.FAQ_Branch
+
+class FAQsSubSection(models.Model):
+    faqs = models.ForeignKey(FAQs, on_delete=CASCADE, default=None)
+    title = models.CharField(max_length=200)
+    short_description = models.TextField(max_length=500)
+
+    def __str__(self):
+        return self.title
