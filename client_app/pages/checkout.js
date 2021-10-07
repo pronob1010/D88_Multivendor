@@ -1,7 +1,12 @@
 import { useSelector } from 'react-redux';
+import CheckoutSingleProductBlock from './components/Checkout/CheckoutSingleProductBlock';
 
 export default function Checkout(){
     const { token } = useSelector(state => state.userReducer)
+    
+    let cartItems = useSelector((state) => state.cartState.cart);
+
+    let cartBlocks = cartItems.map((item) => { return (<CheckoutSingleProductBlock item={item}/>) });
 
     let custom_login;
     if (token == null ){
@@ -154,14 +159,7 @@ export default function Checkout(){
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr className="cart_item">
-                                                    <td>Ultra Wireless S50 Headphones S50 with Bluetooth&nbsp;<strong className="product-quantity">× 1</strong></td>
-                                                    <td>$1,100.00</td>
-                                                </tr>
-                                                <tr className="cart_item">
-                                                    <td>Widescreen NX Mini F1 SMART NX&nbsp;<strong className="product-quantity">× 1</strong></td>
-                                                    <td>$685.00</td>
-                                                </tr>
+                                            {cartBlocks}
                                             </tbody>
                                             <tfoot>
                                                 <tr>

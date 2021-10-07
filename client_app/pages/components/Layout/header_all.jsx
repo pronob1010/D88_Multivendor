@@ -279,16 +279,16 @@ export default function HeaderAll(){
                                                                     <li><a className="u-header-collapse__submenu-nav-link" href="../home/home-v7.html">Home v7</a></li>
                                                                     {/* <!--End Home - v7--> */}
                                                                     {/* <!--About--> */}
-                                                                    <li><a className="u-header-collapse__submenu-nav-link" href="../home/about.html">About</a></li>
+                                                                    <li><a className="u-header-collapse__submenu-nav-link" href="/aboutus">About</a></li>
                                                                     {/* <!--End About--> */}
-                                                                    {/* <!--Contact v1--> */}
-                                                                    <li><a className="u-header-collapse__submenu-nav-link" href="../home/contact-v1.html">Contact v1</a></li>
-                                                                    {/* <!--End Contact v1--> */}
+                                                                    {/* <!--Contact--> */}
+                                                                    <li><a className="u-header-collapse__submenu-nav-link" href="/contact">Contact</a></li>
+                                                                    {/* <!--End Contact--> */}
                                                                     {/* <!--Contact v2--> */}
                                                                     <li><a className="u-header-collapse__submenu-nav-link" href="../home/contact-v2.html">Contact v2</a></li>
                                                                     {/* <!--End Contact v2--> */}
                                                                     {/* <!--FAQ--> */}
-                                                                    <li><a className="u-header-collapse__submenu-nav-link" href="../home/faq.html">FAQ</a></li>
+                                                                    <li><a className="u-header-collapse__submenu-nav-link" href="/faq">FAQ</a></li>
                                                                     {/* <!--End FAQ--> */}
                                                                     {/* <!--Store Directory--> */}
                                                                     <li><a className="u-header-collapse__submenu-nav-link" href="../home/store-directory.html">Store Directory</a></li>
@@ -556,19 +556,19 @@ export default function HeaderAll(){
 
                                         {/* <!--About us--> */}
                                         <li className="nav-item u-header__nav-item">
-                                            <a className="nav-link u-header__nav-link" href="about.html">About us</a>
+                                            <a className="nav-link u-header__nav-link" href="/aboutus">About us</a>
                                         </li>
                                         {/* <!--End About us--> */}
 
                                         {/* <!--FAQs--> */}
                                         <li className="nav-item u-header__nav-item">
-                                            <a className="nav-link u-header__nav-link" href="faq.html">FAQs</a>
+                                            <a className="nav-link u-header__nav-link" href="/faq">FAQs</a>
                                         </li>
                                         {/* <!--End FAQs--> */}
 
                                         {/* <!--Contact Us--> */}
                                         <li className="nav-item u-header__nav-item">
-                                            <a className="nav-link u-header__nav-link" href="contact-v1.html">Contact Us</a>
+                                            <a className="nav-link u-header__nav-link" href="/contact">Contact Us</a>
                                         </li>
                                         {/* <!--End Contact Us--> */}
                                     </ul>
