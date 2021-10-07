@@ -8,8 +8,7 @@ const initialState = {
 export const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_TO_CART": {
-      console.log("init ", state.cart);
-
+      
       let flug = false;
       let fisrt = true;
 
@@ -21,6 +20,7 @@ export const cartReducer = (state = initialState, action) => {
         });
         fisrt = false;
       } 
+      
       else if (flug == false) {
         state.cart.find((ele) => {
           if (ele.product_id == action.value) {

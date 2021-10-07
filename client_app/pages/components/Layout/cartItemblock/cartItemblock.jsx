@@ -6,7 +6,7 @@ export default function CartItemBlock(){
     let cartItems = useSelector(state => state.cartState.cart)
 
     let cartBlocks = cartItems.map(item => {
-        return ( <CartSingleItem item={item} key={item.id} /> )
+        return <CartSingleItem item={item} key={item.id}/> 
         // console.log(item);
     })
 
@@ -17,7 +17,7 @@ export default function CartItemBlock(){
         </ul>
         <div className="flex-center-between px-4 pt-2">
             <a href="/cart" className="btn btn-soft-secondary mb-3 mb-md-0 font-weight-normal px-5 px-md-4 px-lg-5">View cart</a>
-            <a href="../shop/checkout.html" className="btn btn-primary-dark-w ml-md-2 px-5 px-md-4 px-lg-5">Checkout</a>
+            <a href="/checkout" className="btn btn-primary-dark-w ml-md-2 px-5 px-md-4 px-lg-5">Checkout</a>
         </div>
     </div>
     )

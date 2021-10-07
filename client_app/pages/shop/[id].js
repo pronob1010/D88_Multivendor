@@ -1,19 +1,27 @@
 import RelatedProductCard from "./../components/Shop/RelatedProductCard/RelatedProductCard";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/dist/client/router";
 
 export default function ProductDetails() {
+
   let router = useRouter();
-  // console.log(router.query);
+
+  const dispatch = useDispatch();
+  
   let uid = 4;
   if (router.query.id) {
     uid = router.query.id;
+
+    dispatch({
+      type : "ADD_TO_RECENT",
+      value: uid,
+    });
+
   }
 
   let singleProductData = useSelector((state) =>
     state.productState.products.find((ele) => ele.id == uid)
   );
-  console.log(singleProductData);
   // console.log(singleProductData.find(ele => (ele.id ==uid)));
 
   return (

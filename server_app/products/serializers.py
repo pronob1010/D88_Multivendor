@@ -3,14 +3,17 @@ from rest_framework.relations import PrimaryKeyRelatedField, RelatedField
 from rest_framework.serializers import ModelSerializer, HyperlinkedModelSerializer, HyperlinkedIdentityField
 from . models import *
 
-class ProductsCategorySerializer(ModelSerializer):
-    class Meta:
-        model = ProductsCategory
-        fields = '__all__'
+
 
 class ProductsSubCategorySerializer(ModelSerializer):
     class Meta:
         model = ProductsSubCategory
+        fields = '__all__'
+
+class ProductsCategorySerializer(ModelSerializer):
+    subcategory = ProductsSubCategorySerializer(source="subcat", many=True, read_only=True)
+    class Meta:
+        model = ProductsCategory
         fields = '__all__'
 
 
