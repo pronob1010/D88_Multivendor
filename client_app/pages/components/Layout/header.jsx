@@ -41,8 +41,6 @@ export default function HeaderIndex() {
     const { token, userId } = useSelector(state => state.userReducer)
     const user_details = useSelector(state => state.userDataState.user_details)
 
-    console.log(user_details, "user_details");
-
     return (
         <header id="header" className="u-header u-header-left-aligned-nav">
             <div className="u-header__section">
