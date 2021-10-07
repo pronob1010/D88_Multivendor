@@ -32,6 +32,17 @@ export default function ShopCard({data}) {
         router.push('#');
     }
 
+    const fevHandeler = (e)=>{
+        
+        product_id = e.target.attributes.pass.value;
+        dispatch({
+            type : "ADD_TO_CART", 
+            value : product_id,
+            quantity : p_quantity,
+        });
+        router.push('#');
+    }
+
 
     return (
         <li className="col-6 col-md-3 col-wd-2gdot4 product-item">
@@ -59,8 +70,8 @@ export default function ShopCard({data}) {
                     </div>
                     <div className="product-item__footer">
                         <div className="border-top pt-2 flex-center-between flex-wrap">
-                            <a href="../shop/compare.html" className="text-gray-6 font-size-13"><i className="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                            <a href="../shop/wishlist.html" className="text-gray-6 font-size-13"><i className="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a>
+                            <a className="text-gray-6 font-size-13"><i className="ec ec-compare mr-1 font-size-15"></i> Compare</a>
+                            <a onClick={fevHandeler} pass={data.id} className="text-gray-6 font-size-13"><i className="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a>
                         </div>
                     </div>
                 </div>
