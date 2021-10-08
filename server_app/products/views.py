@@ -12,7 +12,7 @@ class ProductsViewSet(ModelViewSet):
 
 class ProductsCategoryViewSet(ModelViewSet):
     serializer_class = ProductsCategorySerializer
-    queryset = ProductsCategory.objects.all()
+    queryset = ProductCategory.objects.all()
 
 class ReviewViewSet(ModelViewSet):
     serializer_class = CustomerReviewSerializer

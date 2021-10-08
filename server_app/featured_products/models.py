@@ -11,7 +11,7 @@ choice_list = (
     ('specialdiscount','Special Discount'),
 )
 
-class PromotionalProducts(models.Model):
+class PromotionalProduct(models.Model):
     Select_Product = models.ForeignKey(product, on_delete=CASCADE, related_name="featured_products")
     type = models.CharField(max_length=100, choices = choice_list, null=True, blank= True)
 

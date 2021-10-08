@@ -6,4 +6,4 @@ from.serializers import *
 from.models import *
 class PromotionalProductsViewSet(ModelViewSet):
     serializer_class = PromotionalProductsSerializer
-    queryset =  PromotionalProducts.objects.all()
+    queryset =  PromotionalProduct.objects.all()

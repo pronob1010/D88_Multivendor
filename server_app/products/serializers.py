@@ -7,13 +7,13 @@ from . models import *
 
 class ProductsSubCategorySerializer(ModelSerializer):
     class Meta:
-        model = ProductsSubCategory
+        model = ProductSubCategory
         fields = '__all__'
 
 class ProductsCategorySerializer(ModelSerializer):
     subcategory = ProductsSubCategorySerializer(source="subcat", many=True, read_only=True)
     class Meta:
-        model = ProductsCategory
+        model = ProductCategory
         fields = '__all__'
 
 
