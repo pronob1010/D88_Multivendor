@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { auth, logout, authCheck } from '../../../redux/All_Reducers/authActionCreator'
 import { Alert } from 'reactstrap'
+import Link from 'next/link'
 
 const Sidebar = () => {
     const [email, setEmail] = useState('')
@@ -14,6 +15,7 @@ const Sidebar = () => {
     const dispatch = useDispatch()
     const { token } = useSelector(state => state.userReducer)
     const { authFailedMsg } = useSelector(state => state.userReducer)
+    const { username } = useSelector(state => state.userReducer.user_details)
     let err = null;
     if (authFailedMsg!==null){
         err = <Alert color="danger">{authFailedMsg}</Alert>
@@ -178,7 +180,8 @@ const Sidebar = () => {
                                             <h2 className="h4 mb-0">Do you want to logout?</h2>
                                             <p>Logout your account.</p>
                                         </header>
-
+                                        <Link href="/profile"><a className="btn btn-block btn-primary transition-3d-hover" >{username} Profile </a></Link>
+                                        
                                         <button onClick={user_logout} type="submit" className="btn btn-block btn-sm btn-primary transition-3d-hover">Logout</button>
                                     </div>
                                 </div>
