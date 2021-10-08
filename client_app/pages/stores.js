@@ -25,7 +25,7 @@ export default function AllShop() {
                     </div>
 
                     <ul className="row list-unstyled products-group no-gutters mb-6">
-                        {/* <li className="col-6 col-md-2 col-xl-1gdot7 product-item">
+                        <li className="col-6 col-md-2 col-xl-1gdot7 product-item">
                             <div className="product-item__outer h-100 w-100">
                                 <div className="product-item__inner px-xl-4 p-3">
                                     <div className="product-item__body pb-xl-2">
@@ -109,7 +109,7 @@ export default function AllShop() {
                                 </div>
                             </div>
                         </li>
-                         */}
+                        
                         <li className="col-6 col-md-2 col-xl-1gdot7 product-item">
                             <div className="product-item__outer h-100 w-100">
                                 <div className="product-item__inner px-xl-4 p-3">
