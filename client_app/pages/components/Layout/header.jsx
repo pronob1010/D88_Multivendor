@@ -1,17 +1,14 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useSelector } from 'react-redux';
-import { useEffect } from "react";
 import CartItemBlock from './cartItemblock/cartItemblock';
-import axios from 'axios';
 import { IndexBrowseCategories } from "../Shop/BrowseCategories/BrowseCategories";
 import { IndexBrowseCategoriesMain } from './../Shop/BrowseCategories/BrowseCategories';
 
-
-
 export default function HeaderIndex() {
+    const { username } = useSelector(state => state.userReducer.user_details)
 
-
+    
     // if (process.browser) {
     //     let authUrl = null;
 
@@ -116,7 +113,7 @@ export default function HeaderIndex() {
                                                 data-unfold-animation-in="fadeInRight"
                                                 data-unfold-animation-out="fadeOutRight"
                                                 data-unfold-duration="500">
-                                                <i className="ec ec-user mr-1"></i> Logout <span className="text-gray-50"></span>
+                                                <i className="ec ec-user mr-1"></i> {username} <span className="text-gray-50"></span>
                                             </a>
 
                                         }
