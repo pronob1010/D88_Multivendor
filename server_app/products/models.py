@@ -8,7 +8,7 @@ import random
 from django.utils.timezone import now
 
 # Create your models here.
-class ProductsCategory(models.Model):
+class ProductCategory(models.Model):
     title = models.CharField(max_length=50)
     slug = models.SlugField(unique=True, null=True, blank=True)
 
@@ -20,8 +20,8 @@ class ProductsCategory(models.Model):
     def __str__(self):
         return self.title
 
-class ProductsSubCategory(models.Model):
-    base_category = models.ForeignKey(ProductsCategory, on_delete=SET_NULL, null=True, related_name="subcat")
+class ProductSubCategory(models.Model):
+    base_category = models.ForeignKey(ProductCategory, on_delete=SET_NULL, null=True, related_name="subcat")
     title = models.CharField(max_length=50)
     slug = models.SlugField(unique=True, null=True, blank=True)
 
@@ -38,8 +38,8 @@ from accounts .models import User
 class product(models.Model):
     seller = models.ForeignKey(User, on_delete=models.CASCADE, null = True, related_name="seller")
     Title = models.CharField(max_length=200)   
-    category = models.ForeignKey(ProductsCategory, on_delete=models.SET_NULL, blank= True, null = True)
-    sub_category = models.ForeignKey(ProductsSubCategory, on_delete=models.SET_NULL, blank= True, null = True)
+    category = models.ForeignKey(ProductCategory, on_delete=models.SET_NULL, blank= True, null = True)
+    sub_category = models.ForeignKey(ProductSubCategory, on_delete=models.SET_NULL, blank= True, null = True)
     digital_item = models.BooleanField(default=False, blank=False)
     stock = models.PositiveIntegerField(default=0)
     selling_price = models.FloatField(default=0)

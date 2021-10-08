@@ -15,13 +15,15 @@ class ExplainationsAdmin(admin.StackedInline):
 class AllAdmins(admin.ModelAdmin):
     inlines = [PartnerProgramAdmin, AddressAdmin, ExplainationsAdmin]
 
-admin.site.register(WebsiteDetails, AllAdmins)
+admin.site.register(WebsiteDetail, AllAdmins)
 
-class FAQsSubSectionAdmin(admin.StackedInline):
-    model = FAQsSubSection
+# class FAQAdmin(admin.StackedInline):
+#     model = FAQs
+# class FAQsSubSectionAdmin(admin.StackedInline):
+#     model = FAQsSubSection
 
-class FAQsAdmin(admin.ModelAdmin):
-    inlines = [FAQsSubSection,]
+# class FAQsAdmin(admin.ModelAdmin):
+#     inlines = [FAQAdmin, FAQsSubSectionAdmin]
 
-admin.site.register(FAQs)
-admin.site.register(FAQsSubSection)
+admin.site.register(FAQ)
+admin.site.register(FaqSubSection)

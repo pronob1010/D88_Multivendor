@@ -7,6 +7,6 @@ from products.models import *
 class PromotionalProductsSerializer(ModelSerializer):
 
     class Meta:
-        model = PromotionalProducts
+        model = PromotionalProduct
         fields = '__all__'
 

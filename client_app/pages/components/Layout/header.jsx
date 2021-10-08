@@ -11,26 +11,6 @@ import { IndexBrowseCategoriesMain } from './../Shop/BrowseCategories/BrowseCate
 
 export default function HeaderIndex() {
 
-
-    // if (process.browser) {
-    //     let authUrl = null;
-
-    //     let userId = localStorage.getItem('userId');
-    //     let res;
-
-    //     console.log("process.browser ", userId);
-    //     if (userId != null) {
-
-    //         axios.get("http://localhost:8000/api/auth/" + userId).then(response => {
-    //             res = response.data;
-    //         });
-
-    //         console.log("process.browser ", res);
-    //         // user_data.push(res);
-    //     }
-
-    // }
-
     let cart_item = useSelector(state => state.cartState.cart);
     let cart_item_count = 0;
 
@@ -461,9 +441,17 @@ export default function HeaderIndex() {
 
                                         <li className="nav-item u-header__nav-item">
                                             {/* <Link href="/shop" > */}
+                                            <a className="nav-link u-header__nav-link" href="/stores" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">All Stores</a>
+                                            {/* </Link> */}
+                                        </li>
+
+                                        <li className="nav-item u-header__nav-item">
+                                            {/* <Link href="/shop" > */}
                                             <a className="nav-link u-header__nav-link" href="/shop" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">Shop</a>
                                             {/* </Link> */}
                                         </li>
+
+                                       
 
                                         <li className="nav-item u-header__nav-item">
                                             <a className="nav-link u-header__nav-link" href="/faq" aria-haspopup="true" aria-expanded="false" aria-labelledby="blogSubMenu">FAQs</a>

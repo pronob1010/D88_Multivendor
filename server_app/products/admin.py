@@ -2,8 +2,8 @@ from django.contrib import admin
 
 # Register your models here.
 from.models import *
-admin.site.register(ProductsCategory),
-admin.site.register(ProductsSubCategory),
+admin.site.register(ProductCategory),
+admin.site.register(ProductSubCategory),
 
 class Default_Product_Specifications_Admin(admin.TabularInline):
     model = Default_Product_Specifications

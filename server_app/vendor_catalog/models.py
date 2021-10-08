@@ -32,17 +32,17 @@ def create_seller(sender, instance, created, **kwargs):
         if created == False and instance.is_vendor == True:
             Seller.objects.create(user = instance)
 
-class ShopProfile(models.Model):
+class ShopInfo(models.Model):
     shop_owner = models.OneToOneField(Seller, on_delete=CASCADE, related_name="shop_root")
     primary_logo = models.ImageField(upload_to='logo')
     primary_background = models.ImageField(upload_to='vendor/background', null=True)
     short_description = models.TextField(max_length=200, null=True)
 
     def __str__(self):
-        return self.shop_owner.shop_name
+        return self.shop_owner.shop_name+"'s info"
 
 @receiver(post_save, sender=Seller)
 def create_shop_profile(sender, instance, created, **kwargs):
-    if ShopProfile.objects.filter(shop_owner= instance).exists() == False:
+    if ShopInfo.objects.filter(shop_owner= instance).exists() == False:
         if created == True:
-            ShopProfile.objects.create(shop_owner = instance)
+            ShopInfo.objects.create(shop_owner = instance)

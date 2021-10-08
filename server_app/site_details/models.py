@@ -6,7 +6,7 @@ import random
 
 
 # Create your models here.
-class WebsiteDetails(models.Model):
+class WebsiteDetail(models.Model):
     site_title = models.CharField(max_length=200)
 
     primary_logo = models.ImageField(upload_to='logo')
@@ -22,14 +22,14 @@ class WebsiteDetails(models.Model):
         return self.site_title
 
 class PartnerProgram(models.Model):
-    site = models.ForeignKey(WebsiteDetails, on_delete=CASCADE, default=None)
+    site = models.ForeignKey(WebsiteDetail, on_delete=CASCADE, default=None)
     heading = models.CharField(max_length=200)
     logo = models.ImageField(upload_to='PartnerLogo')
     short_description = models.TextField(max_length=250, null=True)
     partner_link = models.URLField(null=True, blank=True)
 
 class Address(models.Model):
-    site = models.ForeignKey(WebsiteDetails, on_delete=CASCADE, default=None)
+    site = models.ForeignKey(WebsiteDetail, on_delete=CASCADE, default=None)
     branch_name = models.CharField(max_length=500, null=True)
     street = models.CharField(max_length=500, blank = True)
     city = models.CharField(max_length=500)
@@ -46,7 +46,7 @@ choice_list = (
     ('popable','Popable'),
 )
 class Explainations(models.Model):
-    site = models.ForeignKey(WebsiteDetails, on_delete=CASCADE, default=None)
+    site = models.ForeignKey(WebsiteDetail, on_delete=CASCADE, default=None)
     type = models.CharField(max_length=100, choices = choice_list, null=True, blank= True)
     title = models.CharField(max_length=200)
     short_description = models.TextField(max_length=500)
@@ -58,14 +58,14 @@ class Explainations(models.Model):
         return super().save(*args,**kwargs)
 
 
-class FAQs(models.Model):
+class FAQ(models.Model):
     FAQ_Branch = models.CharField(max_length=200)
 
     def __str__(self):
         return self.FAQ_Branch
 
-class FAQsSubSection(models.Model):
-    faqs = models.ForeignKey(FAQs, on_delete=CASCADE, default=None)
+class FaqSubSection(models.Model):
+    faqs = models.ForeignKey(FAQ, on_delete=CASCADE, default=None)
     title = models.CharField(max_length=200)
     short_description = models.TextField(max_length=500)
 
