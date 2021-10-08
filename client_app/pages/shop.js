@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import BrowseCategories from './components/Shop/BrowseCategories/BrowseCategories';
 import RecommendedProductCard from './components/Shop/Recommended/RecommendedProductCard';
 import ShopCard from './components/Shop/shop_single_card';
@@ -7,11 +8,31 @@ import LatestProduct from './components/Shop/LatestProduct/latestproduct';
 export default function Shop(){
 
     let datatest = useSelector((state) => state.productState.products);
+    let length_data = datatest.length
+    let paginate_product = 4;
 
-    // datatest.map(item => console.log(item));
+    let total_page = Math.ceil(length_data/paginate_product);
+    const [PageCount, setPageCount] = useState(0);
 
+    const [count, setCount] = useState(paginate_product);
+    if (count > length_data){
+        () => {
+            setCount(length_data);
+        }
+    }
+
+    
+
+    
+    let counter_loop = 0;
     let RegularShopCardList = (
-        datatest.map(item => { return(<ShopCard data = {item} key={item.id}/>) })
+        datatest.map(item => {
+            counter_loop+=1;
+            if(counter_loop<=count)
+                return(
+                <ShopCard data = {item} key={item.id}/>
+                )
+            })
     )
 
     return(
@@ -251,7 +272,7 @@ export default function Shop(){
                         {/* <!-- Shop-control-bar Title --> */}
                         <div className="flex-center-between mb-3">
                             <h3 className="font-size-25 mb-0">Shop</h3>
-                            <p className="font-size-14 text-gray-90 mb-0">Showing 1–25 of 56 results</p>
+                            <p className="font-size-14 text-gray-90 mb-0">Showing 1–{count} of {length_data} results</p>
                         </div>
                         {/* <!-- End shop-control-bar Title --> */}
                         {/* <!-- Shop-control-bar --> */}
@@ -299,22 +320,22 @@ export default function Shop(){
                                     </select>
                                     {/* <!-- End Select --> */}
                                 </form>
-                                <form method="POST" className="ml-2 d-none d-xl-block">
-                                    {/* <!-- Select --> */}
+
+                                {/* <form method="POST" className="ml-2 d-none d-xl-block">
                                     <select className="js-select selectpicker dropdown-select max-width-120"
                                         data-style="btn-sm bg-white font-weight-normal py-2 border text-gray-20 bg-lg-down-transparent border-lg-down-0">
                                         <option value="one" selected>Show 20</option>
                                         <option value="two">Show 40</option>
                                         <option value="three">Show All</option>
                                     </select>
-                                    {/* <!-- End Select --> */}
-                                </form>
+                                </form> */}
+
                             </div>
                             <nav className="px-3 flex-horizontal-center text-gray-20 d-none d-xl-flex">
                                 <form method="post" className="min-width-50 mr-1">
-                                    <input size="2" min="1" max="3" step="1" type="number" className="form-control text-center px-2 height-35" value="1" />
-                                </form> of 3
-                                <a className="text-gray-30 font-size-20 ml-2" href="#">→</a>
+                                    <input size="2" min="1" max="3" step="1" type="number" className="form-control text-center px-2 height-35" value={Math.ceil(count/paginate_product)} />
+                                </form> of {total_page}
+                                {/* <a className="text-gray-30 font-size-20 ml-2" href="#">→</a> */}
                             </nav>
                         </div>
                         {/* <!-- End Shop-control-bar --> */}
@@ -325,19 +346,9 @@ export default function Shop(){
                                 <ul className="row list-unstyled products-group no-gutters">
                                 
                                 { RegularShopCardList }
+                                   
                                 
-                                {/* <ShopCard />
-                                <ShopCard />
-                                <ShopCard />
-                                <ShopCard />
-                                <ShopCard />
-                                <ShopCard />
-                                <ShopCard />
-                                <ShopCard />
-                                <ShopCard />
-                                <ShopCard />
-                                <ShopCard />
-                                <ShopCard /> */}
+                
                                 </ul>
                             </div>
                         </div>
@@ -347,11 +358,12 @@ export default function Shop(){
                         {/* <!-- Shop Pagination --> */}
                         
                         <nav className="d-md-flex justify-content-between align-items-center border-top pt-3" aria-label="Page navigation example">
-                            <div className="text-center text-md-left mb-3 mb-md-0">Showing 1–25 of 56 results</div>
+                            <div className="text-center text-md-left mb-3 mb-md-0">Showing 1–{count} of {length_data} results</div>
                             <ul className="pagination mb-0 pagination-shop justify-content-center justify-content-md-start">
-                                <li className="page-item"><a className="page-link current" href="#">1</a></li>
-                                <li className="page-item"><a className="page-link" href="#">2</a></li>
-                                <li className="page-item"><a className="page-link" href="#">3</a></li>
+                                {count<length_data?
+                                    <button onClick={() => setCount((length_data - count) >= paginate_product ? (count + paginate_product) : (count + (length_data - count)))} className="btn btn-primary" href="#">Show more</button>
+                                    // : <button onClick={() => setCount(length_data>paginate_product? paginate_product: length_data)} className="btn btn-primary" href="#">Go Up</button> }
+                                    : <button className="btn btn-warning" disabled style={{ cursor: 'not-allowed'}} href="#" onClick={() => disable = true }>All Done</button> }
                             </ul>
                         </nav>
                         {/* <!-- End Shop Pagination --> */}

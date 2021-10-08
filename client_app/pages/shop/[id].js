@@ -1,22 +1,47 @@
 import RelatedProductCard from "./../components/Shop/RelatedProductCard/RelatedProductCard";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/dist/client/router";
+import { useState } from "react";
 
 export default function ProductDetails() {
+ 
 
   let router = useRouter();
 
   const dispatch = useDispatch();
-  
+
   let uid = 4;
   if (router.query.id) {
     uid = router.query.id;
 
     dispatch({
-      type : "ADD_TO_RECENT",
+      type: "ADD_TO_RECENT",
       value: uid,
     });
 
+  }
+
+  const [detail_quantity, setdetail_quantity] = useState(1);
+
+  function minusHandel() {
+    if (detail_quantity > 1) {
+      setdetail_quantity(detail_quantity - 1);
+    }
+  }
+
+  function plusHandel() {
+    setdetail_quantity(detail_quantity + 1);
+  }
+
+  function cartHandeler() {
+    
+    dispatch({
+      type : "ADD_TO_CART",
+      value : uid,
+      quantity : detail_quantity,
+  });
+
+  router.push("#");
   }
 
   let singleProductData = useSelector((state) =>
@@ -180,13 +205,13 @@ export default function ProductDetails() {
                   <hr></hr>
                   <div className="flex-horizontal-center flex-wrap mb-2">
                     <div className="text-gray-9 font-size-14">
-                      SKU:{" "}
+                      SKU:
                       <span className="text-gray-9 font-weight-bold">
                         {singleProductData.SKU}
                       </span>
                     </div>
                     <div className="text-gray-9 font-size-14 ml-2">
-                      Availability:{" "}
+                      Availability:
                       <span className="text-gray-9 font-weight-bold">
                         {singleProductData.stock} in stock
                       </span>
@@ -195,14 +220,14 @@ export default function ProductDetails() {
                       href="#"
                       className="text-gray-9 font-size-14 font-weight-bold ml-md-2 mt-1"
                     >
-                      <i className="ec ec-favorites mr-1 text-gray-9 font-size-15"></i>{" "}
+                      <i className="ec ec-favorites mr-1 text-gray-9 font-size-15"></i>
                       Wishlist
                     </a>
                     <a
                       href="#"
                       className="text-gray-9 font-size-14 font-weight-bold ml-md-2 ml-2 mt-1"
                     >
-                      <i className="ec ec-compare mr-1 text-gray-9 font-size-15"></i>{" "}
+                      <i className="ec ec-compare mr-1 text-gray-9 font-size-15"></i>
                       Compare
                     </a>
                   </div>
@@ -243,21 +268,23 @@ export default function ProductDetails() {
                           <input
                             className="js-result form-control h-auto border-0 rounded p-0 shadow-none"
                             type="text"
-                            value="1"
+                            value={detail_quantity}
                           />
                         </div>
                         <div className="col-auto pr-1">
                           <a
                             className="js-minus btn btn-icon btn-xs btn-outline-secondary rounded-circle border-0"
                             href="javascript:;"
+                            
                           >
-                            <small className="fas fa-minus btn-icon__inner"></small>
+                            <small className="fas fa-minus btn-icon__inner" onClick={minusHandel}></small>
                           </a>
                           <a
                             className="js-plus btn btn-icon btn-xs btn-outline-secondary rounded-circle border-0"
                             href="javascript:;"
+                           
                           >
-                            <small className="fas fa-plus btn-icon__inner"></small>
+                            <small className="fas fa-plus btn-icon__inner"  onClick={plusHandel}></small>
                           </a>
                         </div>
                       </div>
@@ -266,10 +293,10 @@ export default function ProductDetails() {
                   </div>
                   <div className="ml-md-3">
                     <a
-                      href="#"
+                      href="#" onClick={cartHandeler}
                       className="btn px-5 btn-primary-dark transition-3d-hover"
                     >
-                      <i className="ec ec-add-to-cart mr-2 font-size-20"></i>{" "}
+                      <i className="ec ec-add-to-cart mr-2 font-size-20"></i>
                       Add to Cart
                     </a>
                   </div>
@@ -497,7 +524,7 @@ export default function ProductDetails() {
                         for="inlineCheckbox1"
                       >
                         <strong>This product: </strong> Ultra Wireless S50
-                        Headphones S50 with Bluetooth -{" "}
+                        Headphones S50 with Bluetooth -
                         <span className="text-red font-size-16">$35.00</span>
                       </label>
                     </div>
@@ -515,7 +542,7 @@ export default function ProductDetails() {
                       >
                         <span className="text-decoration-on cursor-pointer-on">
                           Universal Headphones Case in Black
-                        </span>{" "}
+                        </span>
                         - <span className="text-red font-size-16">$159.00</span>
                       </label>
                     </div>
@@ -533,7 +560,7 @@ export default function ProductDetails() {
                       >
                         <span className="text-decoration-on cursor-pointer-on">
                           Headphones USB Wires
-                        </span>{" "}
+                        </span>
                         - <span className="text-red font-size-16">$50.00</span>
                       </label>
                     </div>
@@ -636,14 +663,14 @@ export default function ProductDetails() {
                 </div>
                 <ul className="nav flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
                   <li className="nav-item text-gray-111 flex-shrink-0 flex-xl-shrink-1">
-                    <strong>SKU:</strong>{" "}
+                    <strong>SKU:</strong>
                     <span className="sku">FW511948218</span>
                   </li>
                   <li className="nav-item text-gray-111 mx-3 flex-shrink-0 flex-xl-shrink-1">
                     /
                   </li>
                   <li className="nav-item text-gray-111 flex-shrink-0 flex-xl-shrink-1">
-                    <strong>Category:</strong>{" "}
+                    <strong>Category:</strong>
                     <a href="#" className="text-blue">
                       Headphones
                     </a>
@@ -652,15 +679,15 @@ export default function ProductDetails() {
                     /
                   </li>
                   <li className="nav-item text-gray-111 flex-shrink-0 flex-xl-shrink-1">
-                    <strong>Tags:</strong>{" "}
+                    <strong>Tags:</strong>
                     <a href="#" className="text-blue">
                       Fast
                     </a>
-                    ,{" "}
+                    ,
                     <a href="#" className="text-blue">
                       Gaming
                     </a>
-                    ,{" "}
+                    ,
                     <a href="#" className="text-blue">
                       Strong
                     </a>

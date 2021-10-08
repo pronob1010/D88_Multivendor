@@ -13,6 +13,13 @@ export const authSuccess = (token, userId) => {
     }
 }
 
+export const user_details = (data) => {
+    return {
+        type: actionTypes.USER_DETAILS,
+        payload: data
+    }
+}
+
 
 export const authFailed = errMsg => {
     return {
@@ -78,9 +85,27 @@ export const auth = (email, password, mode) => dispatch => {
 
         })
         .catch(err => {
-            const key = Object.keys(err.response.data)[0]
-            dispatch(authFailed(`${key.toUpperCase()}: ${err.response.data[key]}`));
+            console.log(err)
         })
+}
+
+export const userDetails = (userId) => dispatch=> {
+
+    const header = {
+        headers: {
+            "content-type": "application/json"
+        }
+    }
+
+    const authData = {
+        id:userId,
+    }
+
+    let authUrl = 'http://localhost:8000/api/auth/' + userId
+    axios.get(authUrl, authData, header)
+    .then(response=>{
+        dispatch(user_details(response.data))
+    })
 }
 
 export const logout = () => {
@@ -105,9 +130,11 @@ export const authCheck = () => dispatch => {
         else {
             const userId = localStorage.getItem('userId');
             dispatch(authSuccess(token, userId));
+            dispatch(userDetails(userId));
         }
     }
 }
+
 
 
 // async function user_details(){

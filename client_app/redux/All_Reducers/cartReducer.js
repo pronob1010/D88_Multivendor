@@ -8,10 +8,8 @@ const initialState = {
 export const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_TO_CART": {
-      
       let flug = false;
       let fisrt = true;
-
 
       if (state.cart.length == 0) {
         state.cart.push({
@@ -19,9 +17,7 @@ export const cartReducer = (state = initialState, action) => {
           product_quantity: action.quantity,
         });
         fisrt = false;
-      } 
-      
-      else if (flug == false) {
+      } else if (flug == false) {
         state.cart.find((ele) => {
           if (ele.product_id == action.value) {
             ele.product_quantity += action.quantity;
@@ -43,6 +39,17 @@ export const cartReducer = (state = initialState, action) => {
       localStorage.setItem("cart", JSON.stringify(state.cart));
 
       return state;
+    }
+
+    case "ADD_TO_CART_FINAL": {
+      
+      state.cart.find((ele) => {
+        if (ele.product_id == action.value) {
+          ele.product_quantity = action.quantity;
+        }
+      });
+
+      localStorage.setItem("cart", JSON.stringify(state.cart));
     }
 
     default:
