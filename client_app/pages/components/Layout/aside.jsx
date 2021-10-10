@@ -3,8 +3,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { auth, logout, authCheck } from '../../../redux/All_Reducers/authActionCreator'
 import { Alert } from 'reactstrap'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const Sidebar = () => {
+    let router = useRouter()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     // const [username, setUsername] = useState('')
@@ -39,12 +41,14 @@ const Sidebar = () => {
         }
         else {
             seterror('')
+            // router.push("#")
             dispatch(auth(email, password, mode))
             event.preventDefault();
         }
     }
     
     let user_logout =()=>{
+        // router.push("#")
         dispatch(logout())
     }
 
@@ -180,7 +184,9 @@ const Sidebar = () => {
                                             <h2 className="h4 mb-0">Do you want to logout?</h2>
                                             <p>Logout your account.</p>
                                         </header>
-                                        <Link href="/profile"><a className="btn btn-block btn-primary transition-3d-hover" >{username} Profile </a></Link>
+                                        {/* <Link href="/profile"> */}
+                                        <a href="/profile" className="btn btn-block btn-primary transition-3d-hover" >{username} Profile </a>
+                                        {/* </Link> */}
                                         
                                         <button onClick={user_logout} type="submit" className="btn btn-block btn-sm btn-primary transition-3d-hover">Logout</button>
                                     </div>
