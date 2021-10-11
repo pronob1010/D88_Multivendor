@@ -39,7 +39,13 @@ const storeLocally = (token) => {
     return user_id;
 }
 
-export const auth = (email, password, mode) => dispatch => {
+export const auth = (email, password, arg) => dispatch => {
+    const mode = arg[0]
+    let username = ''
+    if (arg[1]){
+        username += arg[1]
+    }
+
     const authData = {
         email: email,
         password: password,
@@ -49,6 +55,7 @@ export const auth = (email, password, mode) => dispatch => {
     let authUrl = null;
     if (mode === "Sign Up") {
         authUrl = "http://localhost:8000/api/auth/";
+        authData.username = username
     }
     else {
         authUrl = "http://localhost:8000/api/token/";

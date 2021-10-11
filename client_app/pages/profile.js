@@ -216,7 +216,7 @@ const Profile = () => {
                                             <div className="mb-3">
                                                 <div className="text-gray-6">Update your personal info :</div>
                                             </div>
-                                            <a href="#"
+                                            <a href={`/profile/edit/${userId}`}
                                                 className="btn btn-sm btn-block btn-primary-dark btn-wide transition-3d-hover">
                                                 Edit</a>
                                         </div>

@@ -6,7 +6,7 @@ from. usermanager import UserProfileManager
 
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=255, unique=True)
-    username = models.CharField(max_length=30, null=True, blank=True)
+    username = models.CharField(max_length=30, unique=True)
     firstname = models.CharField(max_length=30, null=True, blank=True)
     lastname = models.CharField(max_length=30, null=True, blank=True)
 
