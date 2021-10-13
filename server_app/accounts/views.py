@@ -14,14 +14,15 @@ class UserViewSet(ModelViewSet):
     def update(self, request, *args, **kwargs):
         user = self.get_object()
         data = request.data
-        get_username = data['username']
         get_firstname = data['firstname']
         get_lastname = data['lastname']
-        user.username = get_username
         user.firstname = get_firstname
         user.lastname = get_lastname
+        get_phone = data['phone']
+        get_home_address = data['home_address']
+        user.phone = get_phone
+        user.home_address = get_home_address
         user.save()
-        
         serializer = UserSerializer(user)
         return Response(serializer.data)
 
