@@ -39,7 +39,13 @@ const storeLocally = (token) => {
     return user_id;
 }
 
-export const auth = (email, password, mode) => dispatch => {
+export const auth = (email, password, arg) => dispatch => {
+    const mode = arg[0]
+    let username = ''
+    if (arg[1]) {
+        username += arg[1]
+    }
+
     const authData = {
         email: email,
         password: password,
@@ -49,6 +55,7 @@ export const auth = (email, password, mode) => dispatch => {
     let authUrl = null;
     if (mode === "Sign Up") {
         authUrl = "http://localhost:8000/api/auth/";
+        authData.username = username
     }
     else {
         authUrl = "http://localhost:8000/api/token/";
@@ -69,16 +76,14 @@ export const auth = (email, password, mode) => dispatch => {
                         const token = response.data.access;
                         const user_id = storeLocally(token);
                         dispatch(authSuccess(token, user_id));
-                        user_details();
                     }
-                )
+                    )
 
             }
             else {
                 const token = response.data.access;
                 const user_id = storeLocally(token);
                 dispatch(authSuccess(token, user_id));
-                user_details();
 
             }
 
@@ -88,7 +93,7 @@ export const auth = (email, password, mode) => dispatch => {
         })
 }
 
-export const userDetails = (userId) => dispatch=> {
+export const userDetails = (userId) => dispatch => {
 
     const header = {
         headers: {
@@ -97,14 +102,14 @@ export const userDetails = (userId) => dispatch=> {
     }
 
     const authData = {
-        id:userId,
+        id: userId,
     }
 
     let authUrl = 'http://localhost:8000/api/auth/' + userId
     axios.get(authUrl, authData, header)
-    .then(response=>{
-        dispatch(user_details(response.data))
-    })
+        .then(response => {
+            dispatch(user_details(response.data))
+        })
 }
 
 export const logout = () => {
@@ -133,11 +138,3 @@ export const authCheck = () => dispatch => {
         }
     }
 }
-
-
-
-// async function user_details(){
-//     await axios.get("http://localhost:8000/api/auth/"+1).then(()=>{
-//         console.log(response);
-//     })
-// }

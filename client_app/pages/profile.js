@@ -9,89 +9,89 @@ const Profile = () => {
     const { userId } = useSelector(state => state.userReducer)
     return (
         <div>
-                {/* <!-- breadcrumb --> */}
-                <div className="bg-gray-13 bg-md-transparent">
-                    <div className="container">
-                        <div className="my-md-3"></div>
-                    </div>
-                </div>
-                {/* <!-- End breadcrumb --> */}
+            {/* <!-- breadcrumb --> */}
+            <div className="bg-gray-13 bg-md-transparent">
                 <div className="container">
-                    {/* <!-- Single Product Body --> */}
-                    <div className="mb-xl-14 mb-6">
-                        <div className="row">
-                            <div className="col-md-3 mb-4 mb-md-0">
-                                <div id="sliderSyncingNav" className="js-slick-carousel u-slick mb-2" data-infinite="true"
-                                    data-arrows-classes="d-none d-lg-inline-block u-slick__arrow-classic u-slick__arrow-centered--y rounded-circle"
-                                    data-arrow-left-classes="fas fa-arrow-left u-slick__arrow-classic-inner u-slick__arrow-classic-inner--left ml-lg-2 ml-xl-4"
-                                    data-arrow-right-classes="fas fa-arrow-right u-slick__arrow-classic-inner u-slick__arrow-classic-inner--right mr-lg-2 mr-xl-4"
-                                    data-nav-for="#sliderSyncingThumb">
-                                    <div className="js-slide">
+                    <div className="my-md-3"></div>
+                </div>
+            </div>
+            {/* <!-- End breadcrumb --> */}
+            <div className="container">
+                {/* <!-- Single Product Body --> */}
+                <div className="mb-xl-14 mb-6">
+                    <div className="row">
+                        <div className="col-md-3 mb-4 mb-md-0">
+                            <div id="sliderSyncingNav" className="js-slick-carousel u-slick mb-2" data-infinite="true"
+                                data-arrows-classes="d-none d-lg-inline-block u-slick__arrow-classic u-slick__arrow-centered--y rounded-circle"
+                                data-arrow-left-classes="fas fa-arrow-left u-slick__arrow-classic-inner u-slick__arrow-classic-inner--left ml-lg-2 ml-xl-4"
+                                data-arrow-right-classes="fas fa-arrow-right u-slick__arrow-classic-inner u-slick__arrow-classic-inner--right mr-lg-2 mr-xl-4"
+                                data-nav-for="#sliderSyncingThumb">
+                                <div className="js-slide">
                                     <img className="img-fluid" layout='fill' src="/assets/img/320X300/img1.jpg" alt="Image Description" />
-                                    </div>
                                 </div>
                             </div>
-                            <div className="col-md-9 mb-md-6 mb-lg-0">
-                                <div className="mb-2">
-                                    <div className="border-bottom mb-3 pb-md-1 pb-3">
+                        </div>
+                        <div className="col-md-9 mb-md-6 mb-lg-0">
+                            <div className="mb-2">
+                                <div className="border-bottom mb-3 pb-md-1 pb-3">
                                     <a href="#" className="font-size-12 text-gray-5 mb-2 d-inline-block">Customer ID: {userId}</a>
                                     <h2 className="font-size-25 text-lh-1dot2">{username}</h2>
-                                        <div className="mb-2">
-                                            <a className="d-inline-flex align-items-center small font-size-15 text-lh-1" href="#">
-                                                <div className="text-warning mr-2">
-                                                    <small className="fas fa-star"></small>
-                                                    <small className="fas fa-star"></small>
-                                                    <small className="fas fa-star"></small>
-                                                    <small className="fas fa-star"></small>
-                                                    <small className="far fa-star text-muted"></small>
-                                                </div>
-                                                <span className="text-secondary font-size-13">(customer level: 4)</span>
-                                            </a>
-                                        </div>
+                                    <div className="mb-2">
+                                        <a className="d-inline-flex align-items-center small font-size-15 text-lh-1" href="#">
+                                            <div className="text-warning mr-2">
+                                                <small className="fas fa-star"></small>
+                                                <small className="fas fa-star"></small>
+                                                <small className="fas fa-star"></small>
+                                                <small className="fas fa-star"></small>
+                                                <small className="far fa-star text-muted"></small>
+                                            </div>
+                                            <span className="text-secondary font-size-13">(customer level: 4)</span>
+                                        </a>
                                     </div>
+                                </div>
 
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-                                    </p>
-                                    <div className="border-top border-bottom py-3 mb-4">
-                                        <p><strong>Total Order</strong>: 10</p>
-                                        <p><strong>Total Perchased</strong>: 1000</p>
-                                    </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+                                </p>
+                                <div className="border-top border-bottom py-3 mb-4">
+                                    <p><strong>Total Order</strong>: 10</p>
+                                    <p><strong>Total Perchased</strong>: 1000</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {/* <!-- End Single Product Body --> */}
-                    {/* <!-- Single Product Tab --> */}
-                    <div className="mb-8">
-                        <div className="position-relative position-md-static px-md-6">
-                            <ul className="nav nav-classNameic nav-tab nav-tab-lg justify-content-xl-center flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble border-0 pb-1 pb-xl-0 mb-n1 mb-xl-0"
-                                id="pills-tab-8" role="tablist">
-                                <li className="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
-                                    <a className="nav-link active" id="Jpills-one-example1-tab" data-toggle="pill"
-                                        href="#Jpills-one-example1" role="tab" aria-controls="Jpills-one-example1"
-                                        aria-selected="true">Dashboard</a>
-                                </li>
-                                <li className="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
-                                    <a className="nav-link" id="Jpills-two-example1-tab" data-toggle="pill" href="#Jpills-two-example1"
-                                        role="tab" aria-controls="Jpills-two-example1" aria-selected="false">Shiping Status</a>
-                                </li>
-                                <li className="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
-                                    <a className="nav-link" id="Jpills-three-example1-tab" data-toggle="pill"
-                                        href="#Jpills-three-example1" role="tab" aria-controls="Jpills-three-example1"
-                                        aria-selected="false">Order Details</a>
-                                </li>
-                                <li className="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
-                                    <a className="nav-link" id="Jpills-four-example1-tab" data-toggle="pill"
-                                        href="#Jpills-four-example1" role="tab" aria-controls="Jpills-four-example1"
-                                        aria-selected="false">Reviews</a>
-                                </li>
-                            </ul>
-                        </div>
-                        {/* <!-- Tab Content --> */}
-                        <div className="borders-radius-17 border p-4 mt-4 mt-md-0 px-lg-10 py-lg-9">
-                            <div className="tab-content" id="Jpills-tabContent">
+                </div>
+                {/* <!-- End Single Product Body --> */}
+                {/* <!-- Single Product Tab --> */}
+                <div className="mb-8">
+                    <div className="position-relative position-md-static px-md-6">
+                        <ul className="nav nav-classNameic nav-tab nav-tab-lg justify-content-xl-center flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble border-0 pb-1 pb-xl-0 mb-n1 mb-xl-0"
+                            id="pills-tab-8" role="tablist">
+                            <li className="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
+                                <a className="nav-link active" id="Jpills-one-example1-tab" data-toggle="pill"
+                                    href="#Jpills-one-example1" role="tab" aria-controls="Jpills-one-example1"
+                                    aria-selected="true">Dashboard</a>
+                            </li>
+                            <li className="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
+                                <a className="nav-link" id="Jpills-two-example1-tab" data-toggle="pill" href="#Jpills-two-example1"
+                                    role="tab" aria-controls="Jpills-two-example1" aria-selected="false">Shiping Status</a>
+                            </li>
+                            <li className="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
+                                <a className="nav-link" id="Jpills-three-example1-tab" data-toggle="pill"
+                                    href="#Jpills-three-example1" role="tab" aria-controls="Jpills-three-example1"
+                                    aria-selected="false">Order Details</a>
+                            </li>
+                            <li className="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
+                                <a className="nav-link" id="Jpills-four-example1-tab" data-toggle="pill"
+                                    href="#Jpills-four-example1" role="tab" aria-controls="Jpills-four-example1"
+                                    aria-selected="false">Reviews</a>
+                            </li>
+                        </ul>
+                    </div>
+                    {/* <!-- Tab Content --> */}
+                    <div className="borders-radius-17 border p-4 mt-4 mt-md-0 px-lg-10 py-lg-9">
+                        <div className="tab-content" id="Jpills-tabContent">
                             <div className="tab-pane fade active show" id="Jpills-one-example1" role="tabpanel"
                                 aria-labelledby="Jpills-one-example1-tab">
                                 <div className="row no-gutters">
@@ -112,7 +112,7 @@ const Profile = () => {
                                                             <div className="mb-2">
                                                                 <a href="../shop/single-product-fullwidth.html"
                                                                     className="d-block text-center"><img className="img-fluid"
-                                                                    src="/assets/img/320X300/img1.jpg"
+                                                                        src="/assets/img/320X300/img1.jpg"
                                                                         alt="Image Description" /></a>
                                                             </div>
                                                             <div className="flex-center-between mb-1 d-none d-md-block">
@@ -138,7 +138,7 @@ const Profile = () => {
                                                             <div className="mb-2">
                                                                 <a href="../shop/single-product-fullwidth.html"
                                                                     className="d-block text-center"><img className="img-fluid"
-                                                                    src="/assets/img/320X300/img1.jpg"
+                                                                        src="/assets/img/320X300/img1.jpg"
                                                                         alt="Image Description" /></a>
                                                             </div>
                                                             <div className="flex-center-between mb-1 d-none d-md-block">
@@ -170,8 +170,8 @@ const Profile = () => {
                                                             <div className="mb-2">
                                                                 <a href="../shop/single-product-fullwidth.html"
                                                                     className="d-block text-center"><img className="img-fluid"
-                                                                    src="/assets/img/320X300/img1.jpg"
-                                                                        alt="Image Description"/></a>
+                                                                        src="/assets/img/320X300/img1.jpg"
+                                                                        alt="Image Description" /></a>
                                                             </div>
                                                             <div className="flex-center-between mb-1 d-none d-md-block">
                                                                 <div className="prodcut-price">
@@ -186,28 +186,28 @@ const Profile = () => {
                                         <div
                                             className="form-check pl-4 pl-md-0 ml-md-4 mb-2 pb-2 pb-md-0 mb-md-0 border-bottom border-md-bottom-0">
                                             <input className="form-check-input" type="checkbox" value="" id="inlineCheckbox1"
-                                                checked disabled/>
-                                        <label className="form-check-label mb-1" htmlFor="inlineCheckbox1">
-                                            <strong>This product: </strong> Ultra Wireless S50 Headphones S50 with Bluetooth
-                                            - <span className ="text-red font-size-16">$35.00</span>
+                                                checked disabled />
+                                            <label className="form-check-label mb-1" htmlFor="inlineCheckbox1">
+                                                <strong>This product: </strong> Ultra Wireless S50 Headphones S50 with Bluetooth
+                                                - <span className="text-red font-size-16">$35.00</span>
                                             </label>
                                         </div>
                                         <div
                                             className="form-check pl-4 pl-md-0 ml-md-4 mb-2 pb-2 pb-md-0 mb-md-0 border-bottom border-md-bottom-0">
                                             <input className="form-check-input" type="checkbox" id="inlineCheckbox2" value="option1"
-                                                checked/>
-                                            <label className ="form-check-label mb-1 text-blue" htmlFor="inlineCheckbox2">
-                                            <span className ="text-decoration-on cursor-pointer-on">Universal Headphones Case in
-                                            Black</span> - <span className ="text-red font-size-16">$159.00</span>
+                                                checked />
+                                            <label className="form-check-label mb-1 text-blue" htmlFor="inlineCheckbox2">
+                                                <span className="text-decoration-on cursor-pointer-on">Universal Headphones Case in
+                                                    Black</span> - <span className="text-red font-size-16">$159.00</span>
                                             </label>
                                         </div>
                                         <div
                                             className="form-check pl-4 pl-md-0 ml-md-4 mb-2 pb-2 pb-md-0 mb-md-0 border-bottom border-md-bottom-0">
                                             <input className="form-check-input" type="checkbox" id="inlineCheckbox3" value="option2"
-                                                checked/>
-                                        <label className="form-check-label mb-1 text-blue" htmlFor="inlineCheckbox3">
-                                            <span className ="text-decoration-on cursor-pointer-on">Headphones USB Wires</span> -
-                                            <span className ="text-red font-size-16">$50.00</span>
+                                                checked />
+                                            <label className="form-check-label mb-1 text-blue" htmlFor="inlineCheckbox3">
+                                                <span className="text-decoration-on cursor-pointer-on">Headphones USB Wires</span> -
+                                                <span className="text-red font-size-16">$50.00</span>
                                             </label>
                                         </div>
                                     </div>
@@ -216,13 +216,13 @@ const Profile = () => {
                                             <div className="mb-3">
                                                 <div className="text-gray-6">Update your personal info :</div>
                                             </div>
-                                            <a href="#"
+                                            <a href={`/profile/edit/`}
                                                 className="btn btn-sm btn-block btn-primary-dark btn-wide transition-3d-hover">
                                                 Edit</a>
                                         </div>
                                     </div>
                                 </div>
-                            
+
                             </div>
                             <div className="tab-pane fade" id="Jpills-two-example1" role="tabpanel"
                                 aria-labelledby="Jpills-two-example1-tab">
@@ -440,7 +440,7 @@ const Profile = () => {
                                             <li className="py-1">
                                                 <a className="row align-items-center mx-gutters-2 font-size-1" href="javascript:;">
                                                     <div className="col-auto mb-2 mb-md-0">
-                                                        <div className="text-warning text-ls-n2 font-size-16" style={{width: "80px"}}>
+                                                        <div className="text-warning text-ls-n2 font-size-16" style={{ width: "80px" }}>
                                                             <small className="fas fa-star"></small>
                                                             <small className="fas fa-star"></small>
                                                             <small className="fas fa-star"></small>
@@ -449,8 +449,8 @@ const Profile = () => {
                                                         </div>
                                                     </div>
                                                     <div className="col-auto mb-2 mb-md-0">
-                                                        <div className="progress ml-xl-5" style={{height: "10px", width: "200px"}}>
-                                                            <div className="progress-bar" role="progressbar" style={{width: "100%"}}
+                                                        <div className="progress ml-xl-5" style={{ height: "10px", width: "200px" }}>
+                                                            <div className="progress-bar" role="progressbar" style={{ width: "100%" }}
                                                                 aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
                                                     </div>
@@ -493,7 +493,7 @@ const Profile = () => {
                                                         </div>
                                                     </div>
                                                     <div className="col-auto mb-2 mb-md-0">
-                                                        <div className="progress ml-xl-5" style={{height: "10px", width: "200px"}}>
+                                                        <div className="progress ml-xl-5" style={{ height: "10px", width: "200px" }}>
                                                             <div className="progress-bar" role="progressbar" style={{ width: "20%" }}
                                                                 aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
@@ -515,7 +515,7 @@ const Profile = () => {
                                                         </div>
                                                     </div>
                                                     <div className="col-auto mb-2 mb-md-0">
-                                                        <div className="progress ml-xl-5" style={{height: "10px", width: "200px"}}>
+                                                        <div className="progress ml-xl-5" style={{ height: "10px", width: "200px" }}>
                                                             <div className="progress-bar" role="progressbar" style={{ width: "0%" }}
                                                                 aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
@@ -537,7 +537,7 @@ const Profile = () => {
                                                         </div>
                                                     </div>
                                                     <div className="col-auto mb-2 mb-md-0">
-                                                        <div className="progress ml-xl-5" style={{height: "10px", width: "200px"}}>
+                                                        <div className="progress ml-xl-5" style={{ height: "10px", width: "200px" }}>
                                                             <div className="progress-bar" stylerole="progressbar" style={{ width: "1%" }}
                                                                 aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
@@ -615,11 +615,11 @@ const Profile = () => {
                                     </div>
                                 </div>
                             </div>
-                            </div>
                         </div>
-                        {/* <!-- End Tab Content --> */}
                     </div>
-                    {/* <!-- End Single Product Tab --> */}
+                    {/* <!-- End Tab Content --> */}
+                </div>
+                {/* <!-- End Single Product Tab --> */}
             </div>
         </div>
     )
