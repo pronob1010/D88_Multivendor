@@ -7,6 +7,20 @@ export default function Checkout(){
     let cartItems = useSelector((state) => state.cartState.cart);
 
     let cartBlocks = cartItems.map((item) => { return (<CheckoutSingleProductBlock item={item}/>) });
+    let cartTotal = ''
+    cartTotal = cartTotal + cartItems.map((item) =>  {
+        let uid = item.product_id;
+
+        let singleProductData = useSelector((state) =>
+            state.productState.products.find((ele) => ele.id == uid))
+        console.log(typeof (parseInt(singleProductData.offer_price * item.product_quantity)))
+            return parseInt(singleProductData.offer_price * item.product_quantity);
+        })
+    let prices = cartTotal.split(',')
+    let totalPrice = 0
+    for( let i=0; i<prices.length; i+=1){
+        totalPrice+= parseInt(prices[i])
+    }
 
     let custom_login;
     if (token == null ){
@@ -164,15 +178,15 @@ export default function Checkout(){
                                             <tfoot>
                                                 <tr>
                                                     <th>Subtotal</th>
-                                                    <td>$1,785.00</td>
+                                                    <td>৳{totalPrice}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Shipping</th>
-                                                    <td>Flat rate $300.00</td>
+                                                    <td>৳300</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Total</th>
-                                                    <td><strong>$2,085.00</strong></td>
+                                                    <td><strong>৳{totalPrice+300}</strong></td>
                                                 </tr>
                                             </tfoot>
                                         </table>

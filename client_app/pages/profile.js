@@ -27,7 +27,7 @@ const Profile = () => {
                                 data-arrow-right-classes="fas fa-arrow-right u-slick__arrow-classic-inner u-slick__arrow-classic-inner--right mr-lg-2 mr-xl-4"
                                 data-nav-for="#sliderSyncingThumb">
                                 <div className="js-slide">
-                                    <img className="img-fluid" layout='fill' src="/assets/img/320X300/img1.jpg" alt="Image Description" />
+                                    <img style={{width: "320px" }} className="img-fluid" layout='fill' src="/assets/img/profile.jpg" alt="Image Description" />
                                 </div>
                             </div>
                         </div>

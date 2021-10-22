@@ -32,7 +32,7 @@ export default function AllShop() {
                                         <div className="mb-2">
                                             <a href='/stores/selldoom' className="d-block text-center"><img className="img-fluid" src="/assets/img/300X300/img8.jpg" alt="Image Description"/></a>
                                         </div>
-                                        <h5 className="text-center mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="font-size-15 text-gray-90">Accessories</a></h5>
+                                        <h5 className="text-center mb-1 product-item__title"><a href='/stores/selldoom' className="font-size-15 text-gray-90">Selldoom</a></h5>
                                     </div>
                                 </div>
                             </div>
