@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import ShopCard from "./../components/Shop/shop_single_card";
-import VendorSlider from "./../components/Index/slider/vendor_slider";
+import ShopCard from "../components/Shop/shop_single_card";
+import VendorSlider from "../components/Index/slider/vendor_slider";
 import BestSeller from "../components/Bestsellers/bestsellers";
 
 export default function VendorShop() {

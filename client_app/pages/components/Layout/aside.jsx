@@ -9,17 +9,17 @@ const Sidebar = () => {
     let router = useRouter()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    // const [username, setUsername] = useState('')
+    const [stateusername, setUsername] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [mode, setMode] = useState('Login')
     const [error, seterror] = useState('')
-    
+
     const dispatch = useDispatch()
     const { token } = useSelector(state => state.userReducer)
     const { authFailedMsg } = useSelector(state => state.userReducer)
     const { username } = useSelector(state => state.userReducer.user_details)
     let err = null;
-    if (authFailedMsg!==null){
+    if (authFailedMsg !== null) {
         err = <Alert color="danger">{authFailedMsg}</Alert>
     }
 
@@ -27,12 +27,12 @@ const Sidebar = () => {
         dispatch(authCheck())
     }, [])
 
-    
+
     let handleSubmit = (event) => {
         if (mode === "Sign Up") {
             if (password === confirmPassword) {
                 seterror('')
-                dispatch(auth(email, password, mode))
+                dispatch(auth(email, password, [mode, stateusername]))
                 event.preventDefault();
             }
             else {
@@ -95,16 +95,16 @@ const Sidebar = () => {
                                                 data-msg="Please enter a valid email address."
                                                 data-error-className="u-has-error"
                                                 data-success-className="u-has-success" />
-                                            {/*                                             
+
                                             {mode === "Sign Up" ?
-                                            <div>
-                                            <label className="mt-2 ml-1">Username</label>
-                                            <input type="text" className="form-control" name="username"
-                                                        onChange={(event) => { setUsername(event.target.value) }} id="signUpUsername" value={username} placeholder="Username" aria-label="username" aria-describedby="signinUsernameLabel" required
+                                                <div>
+                                                    <label className="mt-2 ml-1">Username</label>
+                                                    <input type="text" className="form-control" name="username"
+                                                        onChange={(event) => { setUsername(event.target.value) }} id="signUpUsername" value={stateusername} placeholder="Username" aria-label="username" aria-describedby="signinUsernameLabel" required
                                                         data-msg="Please enter username address."
-                                                data-error-className="u-has-error"
-                                                data-success-className="u-has-success" />
-                                            </div> : null} */}
+                                                        data-error-className="u-has-error"
+                                                        data-success-className="u-has-success" />
+                                                </div> : null}
 
                                             <label className="mt-2 ml-1">Password</label>
                                             <input type="password" onChange={(event) => { setPassword(event.target.value) }} className="form-control" name="password" id="signinPassword" placeholder="Password" aria-label="Password" value={password} aria-describedby="signinPasswordLabel" required
@@ -120,12 +120,12 @@ const Sidebar = () => {
                                                         data-error-className="u-has-error"
                                                         data-success-className="u-has-success" />
                                                 </div> : null
-                                                }
+                                            }
 
 
                                             <button type="submit" className="btn btn-block btn-sm btn-primary transition-3d-hover mt-2">{mode === "Sign Up" ? "Sign Up" : "Login"}</button>
                                         </form>
-                                        {error !== "" && mode==="Sign Up" ? <div className="text-center mb-4" style={{ color: "red", fontSize: 16 }}>{error}</div> : null}
+                                        {error !== "" && mode === "Sign Up" ? <div className="text-center mb-4" style={{ color: "red", fontSize: 16 }}>{error}</div> : null}
                                         <div className="text-center mb-4">
                                             <span className="small">{mode === "Sign Up" ? "Already have an account?" : "Wanna be a friend ?"}</span>
                                             <button className="btn btn-block btn-sm btn-primary transition-3d-hover mt-2"
@@ -206,7 +206,7 @@ const Sidebar = () => {
                     <span className="fas fa-arrow-up u-go-to__inner"></span>
                 </a>
 
-            </div >
+            </div>
         )
     }
 
