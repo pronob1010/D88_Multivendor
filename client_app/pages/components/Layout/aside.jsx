@@ -183,9 +183,9 @@ const Sidebar = () => {
                                             <p>Logout your account.</p>
                                         </header>
                                         {/* <Link href="/profile"> */}
-                                        <a href="/profile" className="btn btn-block btn-primary transition-3d-hover" >{username} Profile </a>
-                                        {/* </Link> */}
-
+                                            <a href="/profile" className="btn btn-block btn-primary transition-3d-hover" >{username} Profile </a>
+                                            {/* </Link> */}
+                                        
                                         <button onClick={user_logout} type="submit" className="btn btn-block btn-sm btn-primary transition-3d-hover">Logout</button>
                                     </div>
                                 </div>
