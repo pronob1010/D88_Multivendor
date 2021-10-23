@@ -109,17 +109,6 @@ export default function MainContent(){
                     </div>
                     {/* <!-- End Feature List --> */}
 
-                    {/* <!-- Feature List --> */}
-                    <div class="media col px-6 px-xl-4 px-wd-8 flex-shrink-0 flex-xl-shrink-1 min-width-270-all border-left py-3">
-                        <div class="u-avatar mr-2">
-                            <i class="text-primary ec ec-tag font-size-46"></i>
-                        </div>
-                        <div class="media-body text-center">
-                            <span class="d-block font-weight-bold text-dark">Only Best</span>
-                            <div class=" text-secondary">Brands</div>
-                        </div>
-                    </div>
-                    {/* <!-- End Feature List --> */}
                 </div>
 
             <div className="mb-5">
