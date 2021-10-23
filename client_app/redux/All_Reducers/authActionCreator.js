@@ -2,7 +2,6 @@ import * as actionTypes from './actionTypes';
 import axios from 'axios';
 import jwt_decode from 'jwt-decode'
 
-
 export const authSuccess = (token, userId) => {
     return {
         type: actionTypes.AUTH_SUCCESS,
