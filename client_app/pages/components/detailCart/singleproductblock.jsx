@@ -54,22 +54,22 @@ export default function SingleProductBlock({ item }) {
 
     return (
         <tr>
-            <td className="text-center">
+            <th className="text-center">
                 <a href="#" className="text-gray-32 font-size-26">×</a>
-            </td>
-            <td className="d-none d-md-table-cell">
+            </th>
+            <th className="d-none d-md-table-cell">
                 <a href="#"><img className="img-fluid max-width-100 p-1 border border-color-1" src={singleProductData.image} alt="Image Description" /></a>
-            </td>
+            </th>
 
-            <td data-title="Product">
+            <th data-title="Product">
                 <a href="#" className="text-gray-90">{mod_title}</a>
-            </td>
+            </th>
 
-            <td data-title="Price">
+            <th data-title="Price">
                 <span className="">৳ {singleProductData.offer_price}</span>
-            </td>
+            </th>
 
-            <td data-title="Quantity">
+            <th data-title="Quantity">
                 <span className="sr-only">Quantity</span>
 
                 <div className="border rounded-pill py-1 width-122 w-xl-80 px-3 border-color-1">
@@ -88,11 +88,11 @@ export default function SingleProductBlock({ item }) {
                     </div>
                 </div>
 
-            </td>
+            </th>
 
-            <td data-title="Total">
+            <th data-title="Total">
                 <span className="">৳ {this_product_final_price}</span>
-            </td>
+            </th>
         </tr>
     )
 }
