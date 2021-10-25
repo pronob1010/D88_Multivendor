@@ -10346,7 +10346,7 @@ button.bg-indigo:focus {
   }
 }
 
-@media (min-width: 1480px) {
+@media (min-width: 1280px) {
   .d-wd-none {
     display: none !important;
   }
