@@ -21,7 +21,12 @@ export default function BestDeals(){
     function cate_product(id){
         let products = allProducts.filter(prod => prod.category===id)
         setCateProducts(products)
+        let prod_box = document.querySelector('.prod_box')
+        prod_box.id = "id_"+id
+        let cate = categories.filter(cate=>cate.id===id)
+        localStorage.setItem("cate_name", cate[0].title);
     }
+
 
     return (
     <div>
@@ -51,25 +56,20 @@ export default function BestDeals(){
                     </div>
 
                     <div className="tab-content" id="Tpills-tabContent">
-
-                        {categories.map(cate => {
-                            return (
-                                <div className="tab-pane fade pt-2" id={"id_"+cate.id} role="tabpanel" aria-labelledby={"id_"+cate.id+"-tab"}>
-                                    <div className="row no-gutters">
-                                        <div className="col-md-12 d-md-flex d-wd-block">
-                                            <ul className="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
-                                                {cateProducts!==null?cateProducts.map(prod=>{
-                                                    return(
-                                                        <Cate_product key={prod.id} prod={prod}/>
-                                                    )
-                                                }):null}
-                                            </ul>
-                                        </div>
-
-                                    </div>
+                        <div className="tab-pane fade pt-2 prod_box" id="id" role="tabpanel" >
+                            <div className="row no-gutters">
+                                <div className="col-md-12 d-md-flex d-wd-block">
+                                    <ul className="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
+                                        {cateProducts!==null?cateProducts.map(prod=>{
+                                            return(
+                                                <Cate_product key={prod.id} prod={prod}/>
+                                            )
+                                        }):null}
+                                    </ul>
                                 </div>
-                            )
-                        })}
+                            </div>
+                        </div>
+                         
                     </div>
 
                 </div>
