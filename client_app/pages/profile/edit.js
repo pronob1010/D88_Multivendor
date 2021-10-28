@@ -12,28 +12,15 @@ const ProfileEdit = () => {
     const [lastname, setlastname] = useState('')
     const [phone, setphone] = useState('')
     const [home_address, sethome_address] = useState('')
-
+    const [response_msg, setResponse_msg] = useState()
     let handleSubmit = () => {
-        if (user_details.firstname !== "" && firstname === "") {
-            setfirstname(user_details.firstname);
-        }
-        if (user_details.lastname !== "" && lastname === "") {
-            setlastname(user_details.lastname)
-        }
-        if (user_details.phone !== "" && phone === "") {
-            setphone(user_details.phone)
-        }
-        if (user_details.home_address !== "" && home_address === "") {
-            sethome_address(user_details.home_address)
-        }
-
         const data = {
             "firstname": firstname,
             "lastname": lastname,
             "phone": phone,
             "home_address": home_address
         }
-
+        
         let url = "http://localhost:8000/api/auth/" + userId + "/";
         const header = {
             headers: {
@@ -43,10 +30,10 @@ const ProfileEdit = () => {
 
         axios.put(url, data, header)
             .then(response => {
-                console.log(response)
+                setResponse_msg(response.data)
             })
     }
-
+    
     return (
         <div>
             <div className="container col-lg-11 order-lg-1 mt-3">
@@ -54,6 +41,24 @@ const ProfileEdit = () => {
                     <div className="border-bottom border-color-1 mb-5">
                         <h3 className="section-title text-center  mb-0 pb-2 font-size-25">Profile Edit</h3>
                     </div>
+                    {(() => {
+                        if (response_msg != null) {
+                            return (
+                            <span style={
+                                {
+                                    "backgroundColor":response_msg.type=="success"?"green":"red",
+                                    "fontSize":"20px",
+                                    "color":"white",
+                                    "padding":'4px',
+                                    "marginBottom":"15px",
+                                }
+                            }>{response_msg.text}</span>
+                            )
+                        }
+
+                        return null;
+                    })()}
+
                     <form onSubmit={handleSubmit} method="PUT" id="edit_profile">
                         <div className="row">
                             <div className="col-md-6">
