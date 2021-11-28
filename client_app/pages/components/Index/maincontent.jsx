@@ -122,27 +122,27 @@ export default function MainContent(){
                                 <h3 className="font-size-22 mb-0 font-weight-normal text-lh-28 max-width-120">Special Offer</h3>
                                 <div className="d-flex align-items-center flex-column justify-content-center bg-primary rounded-pill height-75 width-75 text-lh-1">
                                     <span className="font-size-12">Save</span>
-                                    <div className="font-size-20 font-weight-bold">$120</div>
+                                    <div className="font-size-20 font-weight-bold">{OnSales[0].offer_percent}%</div>
                                 </div>
                             </div>
                             <div className="mb-4">
-                                <a href="../shop/single-product-fullwidth.html" className="d-block text-center"><img className="img-fluid" src="/assets/img/320X300/img1.jpg" alt="Image Description" /></a>
+                                <a href="../shop/single-product-fullwidth.html" className="d-block text-center"><img className="img-fluid" src={OnSales[1].image} width="170rem" alt="Image Description" /></a>
                             </div>
-                            <h5 className="mb-2 font-size-14 text-center mx-auto max-width-180 text-lh-18"><a href="../shop/single-product-fullwidth.html" className="text-blue font-weight-bold">Game Console Controller + USB 3.0 Cable</a></h5>
+                            <h5 className="mb-2 font-size-14 text-center mx-auto max-width-180 text-lh-18"><a href="../shop/single-product-fullwidth.html" className="text-blue font-weight-bold">{OnSales[0].Title}</a></h5>
                             <div className="d-flex align-items-center justify-content-center mb-3">
-                                <del className="font-size-18 mr-2 text-gray-2">$99,00</del>
-                                <ins className="font-size-30 text-red text-decoration-none">$79,00</ins>
+                                <del className="font-size-18 mr-2 text-gray-2">৳{OnSales[0].offer_price}</del>
+                                <ins className="font-size-30 text-red text-decoration-none">৳{OnSales[0].selling_price}</ins>
                             </div>
                             <div className="mb-3 mx-2">
                                 <div className="d-flex justify-content-between align-items-center mb-2">
-                                    <span className="">Availavle: <strong>6</strong></span>
-                                    <span className="">Already Sold: <strong>28</strong></span>
+                                    <span className="">Availavle: <strong>{OnSales[0].stock}</strong></span>
+                                    <span className="">Customer Review: <strong>{OnSales[0].customer_review.length}</strong></span>
                                 </div>
                                 <div className="rounded-pill bg-gray-3 height-20 position-relative">
                                     <span className="position-absolute left-0 top-0 bottom-0 rounded-pill w-30 bg-primary"></span>
                                 </div>
                             </div>
-                            <div className="mb-2">
+                            {/* <div className="mb-2">
                                 <h6 className="font-size-15 text-gray-2 text-center mb-3">Hurry Up! Offer ends in:</h6>
                                 <div className="js-countdown d-flex justify-content-center"
                                     data-end-date="2020/11/30"
@@ -170,7 +170,7 @@ export default function MainContent(){
                                         <div className="text-gray-2 font-size-12 text-center">SECS</div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     
