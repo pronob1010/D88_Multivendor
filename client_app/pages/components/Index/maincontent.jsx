@@ -54,6 +54,8 @@ export default function MainContent(){
         TopRated.map(item => { return(<ShopCard data = {item} key={item.id}/>) })
     )
 
+    
+
     return (
         <>
         <main id="content" role="main">
