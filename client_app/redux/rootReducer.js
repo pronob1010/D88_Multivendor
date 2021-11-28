@@ -6,8 +6,15 @@ import { cartReducer } from './All_Reducers/cartReducer';
 import { PromotionalProductReducer } from "./All_Reducers/promotionalproductsReducer";
 import { recentReducer } from './All_Reducers/recentReducer';
 
+// console.log(productReducer);
+
+
+
+
 
 export const rootReducer = combineReducers({
+
+    
 
     productState : productReducer,
     PromotionalProductState : PromotionalProductReducer,
@@ -16,4 +23,6 @@ export const rootReducer = combineReducers({
     recentState : recentReducer,
     userReducer: userReducer,
     userDataState: userDataReducer,
+    // data,
+
 })

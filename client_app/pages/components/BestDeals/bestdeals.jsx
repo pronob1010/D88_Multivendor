@@ -11,9 +11,9 @@ export default function BestDeals() {
 
     let dataset = useSelector((state) => state.productState.products);
 
-    console.log("-----")
-    console.log(dataset[0])
-    console.log("-----")
+    // console.log("-----")
+    // console.log(dataset[0])
+    // console.log("-----")
 
 
     let updateSubSection = (e) => {

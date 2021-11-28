@@ -5,9 +5,27 @@ import ShopCard from './components/Shop/shop_single_card';
 import { useSelector } from 'react-redux';
 import LatestProduct from './components/Shop/LatestProduct/latestproduct';
 
-export default function Shop(){
+export async function getStaticProps(context) {
+    const res = await fetch(`http://localhost:8000/api/data/allproducts/`)
+    const data = await res.json()
+  
+    if (!data) {
+        // console.log("API data :");
+        // console.log(data);
+      return {
+        notFound: true,
+      }
+    }
+  
+    return {
+      props: { data }, // will be passed to the page component as props
+    }
+  }
 
-    let datatest = useSelector((state) => state.productState.products);
+export default function Shop({data}){
+
+    let datatest = data;
+    // let datatest = useSelector((state) => state.productState.products);
     let length_data = datatest.length
     let paginate_product = 13;
 
