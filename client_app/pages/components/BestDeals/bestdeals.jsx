@@ -67,11 +67,9 @@ export default function BestDeals() {
                 console.log(data_item);
                 product_list.push(data_item); } })
 
-        // console.log("------")
+    
 
-        // console.log(product_list[0]);
-
-        // console.log("------")
+        
 
         
         return (
@@ -79,88 +77,19 @@ export default function BestDeals() {
                 <div className="row no-gutters">
                     <div className="col-md-3 col-wd-4 d-md-flex d-wd-block">
                         <ul className="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
-                            <ShopCard2 data = {product_list[0]} key = {product_list[0].id}/>
-                            <li className="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                <div className="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                    <div className="product-item__inner bg-white p-3">
-                                        <div className="product-item__body pb-xl-2">
-                                            <div className="mb-2"><a href="../shop/product-categories-7-column-full-width.html" className="font-size-12 text-gray-5">Speakers</a></div>
-                                            <h5 className="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</a></h5>
-                                            <div className="mb-2">
-                                                <a href="../shop/single-product-fullwidth.html" className="d-block text-center"><img className="img-fluid" src="/assets/img/212X200/img2.jpg" alt="Image Description" /></a>
-                                            </div>
-                                            <div className="flex-center-between mb-1">
-                                                <div className="prodcut-price">
-                                                    <div className="text-gray-100">$685,00</div>
-                                                </div>
-                                                <div className="d-none d-xl-block prodcut-add-cart">
-                                                    <a href="../shop/single-product-fullwidth.html" className="btn-add-cart btn-primary transition-3d-hover"><i className="ec ec-add-to-cart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="product-item__footer">
-                                            <div className="border-top pt-2 flex-center-between flex-wrap">
-                                                <a href="../shop/compare.html" className="text-gray-6 font-size-13"><i className="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                <a href="../shop/wishlist.html" className="text-gray-6 font-size-13"><i className="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                <div className="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                    <div className="product-item__inner bg-white p-3">
-                                        <div className="product-item__body pb-xl-2">
-                                            <div className="mb-2"><a href="../shop/product-categories-7-column-full-width.html" className="font-size-12 text-gray-5">Speakers</a></div>
-                                            <h5 className="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                            <div className="mb-2">
-                                                <a href="../shop/single-product-fullwidth.html" className="d-block text-center"><img className="img-fluid" src="/assets/img/212X200/img1.jpg" alt="Image Description" /></a>
-                                            </div>
-                                            <div className="flex-center-between mb-1">
-                                                <div className="prodcut-price">
-                                                    <div className="text-gray-100">$685,00</div>
-                                                </div>
-                                                <div className="d-none d-xl-block prodcut-add-cart">
-                                                    <a href="../shop/single-product-fullwidth.html" className="btn-add-cart btn-primary transition-3d-hover"><i className="ec ec-add-to-cart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="product-item__footer">
-                                            <div className="border-top pt-2 flex-center-between flex-wrap">
-                                                <a href="../shop/compare.html" className="text-gray-6 font-size-13"><i className="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                <a href="../shop/wishlist.html" className="text-gray-6 font-size-13"><i className="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                <div className="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                    <div className="product-item__inner bg-white p-3">
-                                        <div className="product-item__body pb-xl-2">
-                                            <div className="mb-2"><a href="../shop/product-categories-7-column-full-width.html" className="font-size-12 text-gray-5">Speakers</a></div>
-                                            <h5 className="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="text-blue font-weight-bold">GameConsole Destiny  Special Edition</a></h5>
-                                            <div className="mb-2">
-                                                <a href="../shop/single-product-fullwidth.html" className="d-block text-center"><img className="img-fluid" src="/assets/img/212X200/img7.jpg" alt="Image Description" /></a>
-                                            </div>
-                                            <div className="flex-center-between mb-1">
-                                                <div className="prodcut-price">
-                                                    <div className="text-gray-100">$685,00</div>
-                                                </div>
-                                                <div className="d-none d-xl-block prodcut-add-cart">
-                                                    <a href="../shop/single-product-fullwidth.html" className="btn-add-cart btn-primary transition-3d-hover"><i className="ec ec-add-to-cart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="product-item__footer">
-                                            <div className="border-top pt-2 flex-center-between flex-wrap">
-                                                <a href="../shop/compare.html" className="text-gray-6 font-size-13"><i className="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                <a href="../shop/wishlist.html" className="text-gray-6 font-size-13"><i className="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
+                            {/* {
+                                for (let i = 0; i < 4; i++) {
+                                    if (product_list[i] != null){
+                                        console.log(i);
+                                    }
+                                }
+                            } */}
+
+                        <ShopCard2 data = {product_list[0]} key = {product_list[0].id}/>
+                        <ShopCard2 data = {product_list[1]} key = {product_list[1].id}/>
+                        <ShopCard2 data = {product_list[2]} key = {product_list[2].id}/>
+                        <ShopCard2 data = {product_list[3]} key = {product_list[3].id}/>
+                            
                         </ul>
                     </div>
                     <div className="col-md-6 col-wd-4 products-group-1">
@@ -171,10 +100,10 @@ export default function BestDeals() {
                                         <div className="product-item__body d-flex flex-column">
                                             <div className="mb-1">
                                                 <div className="mb-2"><a href="../shop/product-categories-7-column-full-width.html" className="font-size-12 text-gray-5">Game Consoles</a></div>
-                                                <h5 className="mb-0 product-item__title"><a href="../shop/single-product-fullwidth.html" className="text-blue font-weight-bold">Game Console Controller + USB 3.0 Cable</a></h5>
+                                                <h5 className="mb-0 product-item__title"><a href="../shop/single-product-fullwidth.html" className="text-blue font-weight-bold">{product_list[1].Title}</a></h5>
                                             </div>
                                             <div className="mb-1 min-height-4-1-4">
-                                                <a href="#" className="d-block text-center my-4 mt-lg-6 mb-lg-5 mt-xl-0 mb-xl-0 mt-wd-6 mb-wd-5"><img className="img-fluid" src="/assets/img/564X520/img2.jpg" alt="Image Description" /></a>
+                                                <a href="#" className="d-block text-center my-4 mt-lg-6 mb-lg-5 mt-xl-0 mb-xl-0 mt-wd-6 mb-wd-5"><img className="img-fluid" src={product_list[1].image} alt="Image Description" /></a>
 
                                                 <div className="row mx-gutters-2 mb-3">
                                                     <div className="col-auto">
@@ -239,7 +168,7 @@ export default function BestDeals() {
                                             </div>
                                             <div className="flex-center-between">
                                                 <div className="prodcut-price">
-                                                    <div className="text-gray-100">$685,00</div>
+                                                    <div className="text-gray-100">৳{product_list[1].offer_price}</div>
                                                 </div>
                                                 <div className="d-none d-xl-block prodcut-add-cart">
                                                     <a href="../shop/single-product-fullwidth.html" className="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover"><i className="ec ec-add-to-cart mr-2"></i> Add to Cart</a>
@@ -258,115 +187,20 @@ export default function BestDeals() {
                         </ul>
                     </div>
                     <div className="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                        <ul className="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
-                            <li className="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                <div className="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                    <div className="product-item__inner bg-white p-3">
-                                        <div className="product-item__body pb-xl-2">
-                                            <div className="mb-2"><a href="../shop/product-categories-7-column-full-width.html" className="font-size-12 text-gray-5">Speakers</a></div>
-                                            <h5 className="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                            <div className="mb-2">
-                                                <a href="../shop/single-product-fullwidth.html" className="d-block text-center"><img className="img-fluid" src="/assets/img/212X200/img1.jpg" alt="Image Description" /></a>
-                                            </div>
-                                            <div className="flex-center-between mb-1">
-                                                <div className="prodcut-price">
-                                                    <div className="text-gray-100">$685,00</div>
-                                                </div>
-                                                <div className="d-none d-xl-block prodcut-add-cart">
-                                                    <a href="../shop/single-product-fullwidth.html" className="btn-add-cart btn-primary transition-3d-hover"><i className="ec ec-add-to-cart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="product-item__footer">
-                                            <div className="border-top pt-2 flex-center-between flex-wrap">
-                                                <a href="../shop/compare.html" className="text-gray-6 font-size-13"><i className="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                <a href="../shop/wishlist.html" className="text-gray-6 font-size-13"><i className="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                <div className="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                    <div className="product-item__inner bg-white p-3">
-                                        <div className="product-item__body pb-xl-2">
-                                            <div className="mb-2"><a href="../shop/product-categories-7-column-full-width.html" className="font-size-12 text-gray-5">Speakers</a></div>
-                                            <h5 className="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</a></h5>
-                                            <div className="mb-2">
-                                                <a href="../shop/single-product-fullwidth.html" className="d-block text-center"><img className="img-fluid" src="/assets/img/212X200/img2.jpg" alt="Image Description" /></a>
-                                            </div>
-                                            <div className="flex-center-between mb-1">
-                                                <div className="prodcut-price">
-                                                    <div className="text-gray-100">$685,00</div>
-                                                </div>
-                                                <div className="d-none d-xl-block prodcut-add-cart">
-                                                    <a href="../shop/single-product-fullwidth.html" className="btn-add-cart btn-primary transition-3d-hover"><i className="ec ec-add-to-cart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="product-item__footer">
-                                            <div className="border-top pt-2 flex-center-between flex-wrap">
-                                                <a href="../shop/compare.html" className="text-gray-6 font-size-13"><i className="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                <a href="../shop/wishlist.html" className="text-gray-6 font-size-13"><i className="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                <div className="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                    <div className="product-item__inner bg-white p-3">
-                                        <div className="product-item__body pb-xl-2">
-                                            <div className="mb-2"><a href="../shop/product-categories-7-column-full-width.html" className="font-size-12 text-gray-5">Speakers</a></div>
-                                            <h5 className="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                            <div className="mb-2">
-                                                <a href="../shop/single-product-fullwidth.html" className="d-block text-center"><img className="img-fluid" src="/assets/img/212X200/img1.jpg" alt="Image Description" /></a>
-                                            </div>
-                                            <div className="flex-center-between mb-1">
-                                                <div className="prodcut-price">
-                                                    <div className="text-gray-100">$685,00</div>
-                                                </div>
-                                                <div className="d-none d-xl-block prodcut-add-cart">
-                                                    <a href="../shop/single-product-fullwidth.html" className="btn-add-cart btn-primary transition-3d-hover"><i className="ec ec-add-to-cart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="product-item__footer">
-                                            <div className="border-top pt-2 flex-center-between flex-wrap">
-                                                <a href="../shop/compare.html" className="text-gray-6 font-size-13"><i className="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                <a href="../shop/wishlist.html" className="text-gray-6 font-size-13"><i className="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                <div className="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                    <div className="product-item__inner bg-white p-3">
-                                        <div className="product-item__body pb-xl-2">
-                                            <div className="mb-2"><a href="../shop/product-categories-7-column-full-width.html" className="font-size-12 text-gray-5">Speakers</a></div>
-                                            <h5 className="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="text-blue font-weight-bold">GameConsole Destiny  Special Edition</a></h5>
-                                            <div className="mb-2">
-                                                <a href="../shop/single-product-fullwidth.html" className="d-block text-center"><img className="img-fluid" src="/assets/img/212X200/img7.jpg" alt="Image Description" /></a>
-                                            </div>
-                                            <div className="flex-center-between mb-1">
-                                                <div className="prodcut-price">
-                                                    <div className="text-gray-100">$685,00</div>
-                                                </div>
-                                                <div className="d-none d-xl-block prodcut-add-cart">
-                                                    <a href="../shop/single-product-fullwidth.html" className="btn-add-cart btn-primary transition-3d-hover"><i className="ec ec-add-to-cart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="product-item__footer">
-                                            <div className="border-top pt-2 flex-center-between flex-wrap">
-                                                <a href="../shop/compare.html" className="text-gray-6 font-size-13"><i className="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                <a href="../shop/wishlist.html" className="text-gray-6 font-size-13"><i className="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
+                    <ul className="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
+                            {/* {
+                                for (let i = 0; i < 4; i++) {
+                                    if (product_list[i] != null){
+                                        console.log(i);
+                                    }
+                                }
+                            } */}
+
+                        <ShopCard2 data = {product_list[0]} key = {product_list[0].id}/>
+                        <ShopCard2 data = {product_list[1]} key = {product_list[1].id}/>
+                        <ShopCard2 data = {product_list[2]} key = {product_list[2].id}/>
+                        <ShopCard2 data = {product_list[3]} key = {product_list[3].id}/>
+                            
                         </ul>
                     </div>
                 </div>
@@ -401,89 +235,11 @@ export default function BestDeals() {
                                 <ul className="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
                                     
                                 <ShopCard2 data = {dataset[0]} key = {dataset[0].id}/>
+                                <ShopCard2 data = {dataset[1]} key = {dataset[1].id}/>
+                                <ShopCard2 data = {dataset[2]} key = {dataset[2].id}/>
+                                <ShopCard2 data = {dataset[3]} key = {dataset[3].id}/>
 
-
-                                    <li className="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                        <div className="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                            <div className="product-item__inner bg-white p-3">
-                                                <div className="product-item__body pb-xl-2">
-                                                    <div className="mb-2"><a href="../shop/product-categories-7-column-full-width.html" className="font-size-12 text-gray-5">Speakers</a></div>
-                                                    <h5 className="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</a></h5>
-                                                    <div className="mb-2">
-                                                        <a href="../shop/single-product-fullwidth.html" className="d-block text-center"><img className="img-fluid" src="/assets/img/212X200/img2.jpg" alt="Image Description" /></a>
-                                                    </div>
-                                                    <div className="flex-center-between mb-1">
-                                                        <div className="prodcut-price">
-                                                            <div className="text-gray-100">$685,00</div>
-                                                        </div>
-                                                        <div className="d-none d-xl-block prodcut-add-cart">
-                                                            <a href="../shop/single-product-fullwidth.html" className="btn-add-cart btn-primary transition-3d-hover"><i className="ec ec-add-to-cart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="product-item__footer">
-                                                    <div className="border-top pt-2 flex-center-between flex-wrap">
-                                                        <a href="../shop/compare.html" className="text-gray-6 font-size-13"><i className="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                        <a href="../shop/wishlist.html" className="text-gray-6 font-size-13"><i className="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li className="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                        <div className="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                            <div className="product-item__inner bg-white p-3">
-                                                <div className="product-item__body pb-xl-2">
-                                                    <div className="mb-2"><a href="../shop/product-categories-7-column-full-width.html" className="font-size-12 text-gray-5">Speakers</a></div>
-                                                    <h5 className="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                    <div className="mb-2">
-                                                        <a href="../shop/single-product-fullwidth.html" className="d-block text-center"><img className="img-fluid" src="/assets/img/212X200/img1.jpg" alt="Image Description" /></a>
-                                                    </div>
-                                                    <div className="flex-center-between mb-1">
-                                                        <div className="prodcut-price">
-                                                            <div className="text-gray-100">$685,00</div>
-                                                        </div>
-                                                        <div className="d-none d-xl-block prodcut-add-cart">
-                                                            <a href="../shop/single-product-fullwidth.html" className="btn-add-cart btn-primary transition-3d-hover"><i className="ec ec-add-to-cart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="product-item__footer">
-                                                    <div className="border-top pt-2 flex-center-between flex-wrap">
-                                                        <a href="../shop/compare.html" className="text-gray-6 font-size-13"><i className="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                        <a href="../shop/wishlist.html" className="text-gray-6 font-size-13"><i className="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li className="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                        <div className="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                            <div className="product-item__inner bg-white p-3">
-                                                <div className="product-item__body pb-xl-2">
-                                                    <div className="mb-2"><a href="../shop/product-categories-7-column-full-width.html" className="font-size-12 text-gray-5">Speakers</a></div>
-                                                    <h5 className="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="text-blue font-weight-bold">GameConsole Destiny  Special Edition</a></h5>
-                                                    <div className="mb-2">
-                                                        <a href="../shop/single-product-fullwidth.html" className="d-block text-center"><img className="img-fluid" src="/assets/img/212X200/img7.jpg" alt="Image Description" /></a>
-                                                    </div>
-                                                    <div className="flex-center-between mb-1">
-                                                        <div className="prodcut-price">
-                                                            <div className="text-gray-100">$685,00</div>
-                                                        </div>
-                                                        <div className="d-none d-xl-block prodcut-add-cart">
-                                                            <a href="../shop/single-product-fullwidth.html" className="btn-add-cart btn-primary transition-3d-hover"><i className="ec ec-add-to-cart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="product-item__footer">
-                                                    <div className="border-top pt-2 flex-center-between flex-wrap">
-                                                        <a href="../shop/compare.html" className="text-gray-6 font-size-13"><i className="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                        <a href="../shop/wishlist.html" className="text-gray-6 font-size-13"><i className="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
+ 
                                 </ul>
                             </div>
                             <div className="col-md-6 col-wd-4 products-group-1">
@@ -494,10 +250,10 @@ export default function BestDeals() {
                                                 <div className="product-item__body d-flex flex-column">
                                                     <div className="mb-1">
                                                         <div className="mb-2"><a href="../shop/product-categories-7-column-full-width.html" className="font-size-12 text-gray-5">Game Consoles</a></div>
-                                                        <h5 className="mb-0 product-item__title"><a href="../shop/single-product-fullwidth.html" className="text-blue font-weight-bold">Game Console Controller + USB 3.0 Cable</a></h5>
+                                                        <h5 className="mb-0 product-item__title"><a href="../shop/single-product-fullwidth.html" className="text-blue font-weight-bold">{dataset[0].Title} </a></h5>
                                                     </div>
                                                     <div className="mb-1 min-height-4-1-4">
-                                                        <a href="#" className="d-block text-center my-4 mt-lg-6 mb-lg-5 mt-xl-0 mb-xl-0 mt-wd-6 mb-wd-5"><img className="img-fluid" src="/assets/img/564X520/img2.jpg" alt="Image Description" /></a>
+                                                        <a href="#" className="d-block text-center my-4 mt-lg-6 mb-lg-5 mt-xl-0 mb-xl-0 mt-wd-6 mb-wd-5"><img className="img-fluid" src={dataset[0].image} alt="Image Description" /></a>
 
                                                         <div className="row mx-gutters-2 mb-3">
                                                             <div className="col-auto">
@@ -562,7 +318,7 @@ export default function BestDeals() {
                                                     </div>
                                                     <div className="flex-center-between">
                                                         <div className="prodcut-price">
-                                                            <div className="text-gray-100">$685,00</div>
+                                                            <div className="text-gray-100">৳{dataset[0].offer_price}</div>
                                                         </div>
                                                         <div className="d-none d-xl-block prodcut-add-cart">
                                                             <a href="../shop/single-product-fullwidth.html" className="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover"><i className="ec ec-add-to-cart mr-2"></i> Add to Cart</a>
@@ -581,116 +337,13 @@ export default function BestDeals() {
                                 </ul>
                             </div>
                             <div className="col-md-3 col-wd-4 d-md-flex d-wd-block">
-                                <ul className="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
-                                    <li className="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                        <div className="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                            <div className="product-item__inner bg-white p-3">
-                                                <div className="product-item__body pb-xl-2">
-                                                    <div className="mb-2"><a href="../shop/product-categories-7-column-full-width.html" className="font-size-12 text-gray-5">Speakers</a></div>
-                                                    <h5 className="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                    <div className="mb-2">
-                                                        <a href="../shop/single-product-fullwidth.html" className="d-block text-center"><img className="img-fluid" src="/assets/img/212X200/img1.jpg" alt="Image Description" /></a>
-                                                    </div>
-                                                    <div className="flex-center-between mb-1">
-                                                        <div className="prodcut-price">
-                                                            <div className="text-gray-100">$685,00</div>
-                                                        </div>
-                                                        <div className="d-none d-xl-block prodcut-add-cart">
-                                                            <a href="../shop/single-product-fullwidth.html" className="btn-add-cart btn-primary transition-3d-hover"><i className="ec ec-add-to-cart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="product-item__footer">
-                                                    <div className="border-top pt-2 flex-center-between flex-wrap">
-                                                        <a href="../shop/compare.html" className="text-gray-6 font-size-13"><i className="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                        <a href="../shop/wishlist.html" className="text-gray-6 font-size-13"><i className="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li className="col-xl-6 product-item max-width-xl-100 remove-divider">
-                                        <div className="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                            <div className="product-item__inner bg-white p-3">
-                                                <div className="product-item__body pb-xl-2">
-                                                    <div className="mb-2"><a href="../shop/product-categories-7-column-full-width.html" className="font-size-12 text-gray-5">Speakers</a></div>
-                                                    <h5 className="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="text-blue font-weight-bold">Tablet White EliteBook Revolve 810 G2</a></h5>
-                                                    <div className="mb-2">
-                                                        <a href="../shop/single-product-fullwidth.html" className="d-block text-center"><img className="img-fluid" src="/assets/img/212X200/img2.jpg" alt="Image Description" /></a>
-                                                    </div>
-                                                    <div className="flex-center-between mb-1">
-                                                        <div className="prodcut-price">
-                                                            <div className="text-gray-100">$685,00</div>
-                                                        </div>
-                                                        <div className="d-none d-xl-block prodcut-add-cart">
-                                                            <a href="../shop/single-product-fullwidth.html" className="btn-add-cart btn-primary transition-3d-hover"><i className="ec ec-add-to-cart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="product-item__footer">
-                                                    <div className="border-top pt-2 flex-center-between flex-wrap">
-                                                        <a href="../shop/compare.html" className="text-gray-6 font-size-13"><i className="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                        <a href="../shop/wishlist.html" className="text-gray-6 font-size-13"><i className="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li className="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                        <div className="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                            <div className="product-item__inner bg-white p-3">
-                                                <div className="product-item__body pb-xl-2">
-                                                    <div className="mb-2"><a href="../shop/product-categories-7-column-full-width.html" className="font-size-12 text-gray-5">Speakers</a></div>
-                                                    <h5 className="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="text-blue font-weight-bold">Wireless Audio System Multiroom 360 degree Full base audio</a></h5>
-                                                    <div className="mb-2">
-                                                        <a href="../shop/single-product-fullwidth.html" className="d-block text-center"><img className="img-fluid" src="/assets/img/212X200/img1.jpg" alt="Image Description" /></a>
-                                                    </div>
-                                                    <div className="flex-center-between mb-1">
-                                                        <div className="prodcut-price">
-                                                            <div className="text-gray-100">$685,00</div>
-                                                        </div>
-                                                        <div className="d-none d-xl-block prodcut-add-cart">
-                                                            <a href="../shop/single-product-fullwidth.html" className="btn-add-cart btn-primary transition-3d-hover"><i className="ec ec-add-to-cart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="product-item__footer">
-                                                    <div className="border-top pt-2 flex-center-between flex-wrap">
-                                                        <a href="../shop/compare.html" className="text-gray-6 font-size-13"><i className="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                        <a href="../shop/wishlist.html" className="text-gray-6 font-size-13"><i className="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li className="col-xl-6 product-item max-width-xl-100 d-md-none d-wd-block product-item remove-divider">
-                                        <div className="product-item__outer h-100 w-100 prodcut-box-shadow">
-                                            <div className="product-item__inner bg-white p-3">
-                                                <div className="product-item__body pb-xl-2">
-                                                    <div className="mb-2"><a href="../shop/product-categories-7-column-full-width.html" className="font-size-12 text-gray-5">Speakers</a></div>
-                                                    <h5 className="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="text-blue font-weight-bold">GameConsole Destiny  Special Edition</a></h5>
-                                                    <div className="mb-2">
-                                                        <a href="../shop/single-product-fullwidth.html" className="d-block text-center"><img className="img-fluid" src="/assets/img/212X200/img7.jpg" alt="Image Description" /></a>
-                                                    </div>
-                                                    <div className="flex-center-between mb-1">
-                                                        <div className="prodcut-price">
-                                                            <div className="text-gray-100">$685,00</div>
-                                                        </div>
-                                                        <div className="d-none d-xl-block prodcut-add-cart">
-                                                            <a href="../shop/single-product-fullwidth.html" className="btn-add-cart btn-primary transition-3d-hover"><i className="ec ec-add-to-cart"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="product-item__footer">
-                                                    <div className="border-top pt-2 flex-center-between flex-wrap">
-                                                        <a href="../shop/compare.html" className="text-gray-6 font-size-13"><i className="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                        <a href="../shop/wishlist.html" className="text-gray-6 font-size-13"><i className="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
+                            <ul className="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
+                                    
+                            <ShopCard2 data = {dataset[4]} key = {dataset[4].id}/>
+                                <ShopCard2 data = {dataset[5]} key = {dataset[5].id}/>
+                                <ShopCard2 data = {dataset[6]} key = {dataset[6].id}/>
+                                <ShopCard2 data = {dataset[7]} key = {dataset[7].id}/>
+                                    </ul>
                             </div>
                         </div>
                     </div>

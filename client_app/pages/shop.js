@@ -9,7 +9,7 @@ export default function Shop(){
 
     let datatest = useSelector((state) => state.productState.products);
     let length_data = datatest.length
-    let paginate_product = 4;
+    let paginate_product = 13;
 
     let total_page = Math.ceil(length_data/paginate_product);
     const [PageCount, setPageCount] = useState(0);

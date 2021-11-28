@@ -545,10 +545,15 @@ export default function HeaderAll() {
                                                 <a id="homeMegaMenu" className="nav-link u-header__nav-link" aria-haspopup="true" href='/' aria-expanded="false">Home</a>
                                         </li>
                                         {/* <!--End Home --> */}
+                                        <li className="nav-item hs-has-mega-menu u-header__nav-item">
+                                        <a className="nav-link u-header__nav-link" href="/shop" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">Shop</a>
+                                        </li>
 
                                         <li className="nav-item hs-has-mega-menu u-header__nav-item">
                                             <a id="homeMegaMenu" className="nav-link u-header__nav-link" href="/stores" aria-haspopup="true" aria-expanded="false">All Stores</a>
                                         </li>
+
+                                        
 
                                         {menu_items}
 
