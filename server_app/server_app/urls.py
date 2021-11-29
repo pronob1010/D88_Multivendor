@@ -27,7 +27,7 @@ urlpatterns = [
     path('api/promotional', include('featured_products.urls')),
     path('api/site_details', include('site_details.urls')),
     path('api/tracking_order', include('tracking_order.urls')),
-    path('api/vendor_catalog', include('vendor_catalog.urls')),
+    path('api/vendors', include('vendor_catalog.urls')),
 ]
 
 urlpatterns+=static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
