@@ -36,35 +36,7 @@ export default function HeaderIndex() {
                                     <li className="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
                                         <a href="../shop/track-your-order.html" className="u-header-topbar__nav-link"><i className="ec ec-transport mr-1"></i> Track Your Order</a>
                                     </li>
-                                    <li className="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single">
-                                        <div className="d-flex align-items-center">
-                                            {/* <!-- Language --> */}
-                                            <div className="position-relative">
-                                                <a id="languageDropdownInvoker" className="dropdown-nav-link dropdown-toggle d-flex align-items-center u-header-topbar__nav-link font-weight-normal" href="javascript:;" role="button"
-                                                    aria-controls="languageDropdown"
-                                                    aria-haspopup="true"
-                                                    aria-expanded="false"
-                                                    data-unfold-event="hover"
-                                                    data-unfold-target="#languageDropdown"
-                                                    data-unfold-type="css-animation"
-                                                    data-unfold-duration="300"
-                                                    data-unfold-delay="300"
-                                                    data-unfold-hide-on-scroll="true"
-                                                    data-unfold-animation-in="slideInUp"
-                                                    data-unfold-animation-out="fadeOut">
-                                                    <span className="d-inline-block d-sm-none">US</span>
-                                                    <span className="d-none d-sm-inline-flex align-items-center"><i className="ec ec-dollar mr-1"></i> Dollar (US)</span>
-                                                </a>
-
-                                                <div id="languageDropdown" className="dropdown-menu dropdown-unfold" aria-labelledby="languageDropdownInvoker">
-                                                    <a className="dropdown-item active" href="#">English</a>
-                                                    <a className="dropdown-item" href="#">Deutsch</a>
-                                                    <a className="dropdown-item" href="#">Español‎</a>
-                                                </div>
-                                            </div>
-                                            {/* <!-- End Language --> */}
-                                        </div>
-                                    </li>
+                                     
                                     <li className="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
                                         {/* <!-- Account Sidebar Toggle Button --> */}
                                         {token === null ?
