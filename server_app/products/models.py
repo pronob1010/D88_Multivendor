@@ -10,6 +10,7 @@ from django.utils.timezone import now
 # Create your models here.
 class ProductCategory(models.Model):
     title = models.CharField(max_length=50)
+    image =  models.ImageField(upload_to='products/category/image', blank=True, null = True)
     slug = models.SlugField(unique=True, null=True, blank=True)
 
     def save(self, *args, **kwargs):
@@ -23,6 +24,7 @@ class ProductCategory(models.Model):
 class ProductSubCategory(models.Model):
     base_category = models.ForeignKey(ProductCategory, on_delete=SET_NULL, null=True, related_name="subcat")
     title = models.CharField(max_length=50)
+    image =  models.ImageField(upload_to='products/category/subCategory/image', blank=True, null = True)
     slug = models.SlugField(unique=True, null=True, blank=True)
 
     def save(self, *args, **kwargs):
