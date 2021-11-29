@@ -4,10 +4,6 @@ from rest_framework.serializers import ModelSerializer, HyperlinkedModelSerializ
 from . models import *
 
 
-class WebsiteDetailSerializer(ModelSerializer):
-    class Meta:
-        model = WebsiteDetail
-        fields = '__all__'
 
 class PartnerProgramSerializer(ModelSerializer):
     class Meta:
@@ -24,12 +20,23 @@ class ExplainationsSerializer(ModelSerializer):
         model = Explainations
         fields = '__all__'
 
-class FAQSerializer(ModelSerializer):
-    class Meta:
-        model = FAQ
-        fields = '__all__'
-
 class FaqSubSectionSerializer(ModelSerializer):
     class Meta:
         model = FaqSubSection
+        fields = '__all__'
+
+
+class FAQSerializer(ModelSerializer):
+
+    FaqSubSection = FaqSubSectionSerializer(source="faq_sub_section", many=True, read_only=True)
+    class Meta:
+        model = FAQ
+        fields = '__all__'
+class WebsiteDetailSerializer(ModelSerializer):
+    partnerprogram = PartnerProgramSerializer(source="partnerprogram_source", many=True, read_only=True)
+    address = AddressSerializer(source="address_source", many=True, read_only=True)
+    explainations = ExplainationsSerializer(source="explainations_source", many=True, read_only=True)
+    faq = FAQSerializer(source="faqs_source", many=True, read_only=True)
+    class Meta:
+        model = WebsiteDetail
         fields = '__all__'

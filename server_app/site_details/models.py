@@ -8,28 +8,25 @@ import random
 # Create your models here.
 class WebsiteDetail(models.Model):
     site_title = models.CharField(max_length=200)
-
     primary_logo = models.ImageField(upload_to='logo')
     secondary_logo = models.ImageField(upload_to='logo', null=True, blank=True)
     fev_icon =  models.ImageField(upload_to='logo', null=True, blank=True)
-
     primary_background = models.ImageField(upload_to='background', null=True)
     secondary_background = models.ImageField(upload_to='background', null=True)
-
     short_description = models.TextField(max_length=500)
 
     def __str__(self):
         return self.site_title
 
 class PartnerProgram(models.Model):
-    site = models.ForeignKey(WebsiteDetail, on_delete=CASCADE, default=None)
+    site = models.ForeignKey(WebsiteDetail, on_delete=CASCADE, default=None, related_name="partnerprogram_source")
     heading = models.CharField(max_length=200)
     logo = models.ImageField(upload_to='PartnerLogo')
     short_description = models.TextField(max_length=250, null=True)
     partner_link = models.URLField(null=True, blank=True)
 
 class Address(models.Model):
-    site = models.ForeignKey(WebsiteDetail, on_delete=CASCADE, default=None)
+    site = models.ForeignKey(WebsiteDetail, on_delete=CASCADE, default=None, related_name="address_source")
     branch_name = models.CharField(max_length=500, null=True)
     street = models.CharField(max_length=500, blank = True)
     city = models.CharField(max_length=500)
@@ -46,7 +43,7 @@ choice_list = (
     ('popable','Popable'),
 )
 class Explainations(models.Model):
-    site = models.ForeignKey(WebsiteDetail, on_delete=CASCADE, default=None)
+    site = models.ForeignKey(WebsiteDetail, on_delete=CASCADE, default=None, related_name="explainations_source")
     type = models.CharField(max_length=100, choices = choice_list, null=True, blank= True)
     title = models.CharField(max_length=200)
     short_description = models.TextField(max_length=500)
@@ -59,13 +56,14 @@ class Explainations(models.Model):
 
 
 class FAQ(models.Model):
+    site = models.ForeignKey(WebsiteDetail, on_delete=CASCADE, default=None, related_name="faqs_source", null=True, blank=True)
     FAQ_Branch = models.CharField(max_length=200)
 
     def __str__(self):
         return self.FAQ_Branch
 
 class FaqSubSection(models.Model):
-    faqs = models.ForeignKey(FAQ, on_delete=CASCADE, default=None)
+    faqs = models.ForeignKey(FAQ, on_delete=CASCADE, default=None, related_name="faq_sub_section")
     title = models.CharField(max_length=200)
     short_description = models.TextField(max_length=500)
 

@@ -6,9 +6,7 @@ from rest_framework.generics import ListAPIView, RetrieveAPIView
 from.serializers import *
 from rest_framework.viewsets import ModelViewSet
 
-class WebsiteDetailViewSet(ModelViewSet):
-    serializer_class = WebsiteDetailSerializer
-    queryset = WebsiteDetail.objects.all()
+
 
 class PartnerProgramViewSet(ModelViewSet):
     serializer_class = PartnerProgramSerializer
@@ -29,4 +27,7 @@ class FAQViewSet(ModelViewSet):
 class FaqSubSectionViewSet(ModelViewSet):
     serializer_class = FaqSubSectionSerializer
     queryset = FaqSubSection.objects.all()
-    
+
+class WebsiteDetailViewSet(ModelViewSet):
+    serializer_class = WebsiteDetailSerializer
+    queryset = WebsiteDetail.objects.all()
