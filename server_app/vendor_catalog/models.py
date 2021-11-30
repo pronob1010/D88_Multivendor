@@ -33,7 +33,7 @@ def create_seller(sender, instance, created, **kwargs):
             Seller.objects.create(user = instance)
 
 class ShopInfo(models.Model):
-    shop_owner = models.OneToOneField(Seller, on_delete=CASCADE, related_name="shop_root")
+    shop_owner = models.ForeignKey(Seller, on_delete=CASCADE, related_name="shop_root")
     primary_logo = models.ImageField(upload_to='logo')
     primary_background = models.ImageField(upload_to='vendor/background', null=True)
     short_description = models.TextField(max_length=200, null=True)
@@ -46,3 +46,4 @@ def create_shop_profile(sender, instance, created, **kwargs):
     if ShopInfo.objects.filter(shop_owner= instance).exists() == False:
         if created == True:
             ShopInfo.objects.create(shop_owner = instance)
+
