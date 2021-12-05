@@ -20,10 +20,6 @@ export default function AllShop({seller_data}) {
 
     let categories_list = useSelector(state => state.categoryState.categories);
 
-    
-      
-
-    
     let cat_items = categories_list.map(item => {
         // console.log(item);
         return (
