@@ -242,7 +242,7 @@ export default function AllShop() {
                     {/* <!-- People buying in this category --> */}
                     <div className="position-relative">
                         <div className="border-bottom border-color-1 mb-2">
-                            <h3 className="section-title section-title__full d-inline-block mb-0 pb-2 font-size-22">People buying in this category</h3>
+                            <h3 className="section-title section-title__full d-inline-block mb-0 pb-2 font-size-22">People category</h3>
                         </div>
                         <div className="js-slick-carousel u-slick position-static overflow-hidden u-slick-overflow-visble pb-7 pt-2 px-1"
                             data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-3 mt-md-0"
