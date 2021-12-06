@@ -1,21 +1,15 @@
 from django.db.models import fields
 from rest_framework.serializers import ModelSerializer
-from . models import *     
-
-# class ProductsSubCategorySerializer(ModelSerializer):
-#     class Meta:
-#         model = ProductSubCategory
-#         fields = '__all__'
-
-
+from . models import *
 
 class ShopInfoSerializer(ModelSerializer):
     class Meta:
-        models = ShopInfo
+        model = ShopInfo
         fields = '__all__'
 
 class SellerSerializer(ModelSerializer):
-    # ShopInfo = ShopInfoSerializer
+    shop_info = ShopInfoSerializer(source ="shop_root",many=True, read_only=True)
+
     class Meta:
-        models = Seller
-        fields = '__all__'
+        model = Seller
+        fields = '__all__' 

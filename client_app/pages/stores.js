@@ -1,13 +1,27 @@
 import { useSelector } from "react-redux";
 import storeCardcat from "./components/stores/storeCard";
 
+export async function getStaticProps(context) {
+    const res = await fetch(`http://localhost:8000/api/vendor_catalog/sellers/`);
+    const seller_data = await res.json();
+  
+    if (!seller_data) {
+      return {
+        notFound: true,
+      };
+    }
+  
+    return {
+      props: { seller_data },  
+    };
+  }
 
-export default function AllShop() {
+export default function AllShop({seller_data}) {
 
     let categories_list = useSelector(state => state.categoryState.categories);
 
     let cat_items = categories_list.map(item => {
-        console.log(item);
+        // console.log(item);
         return (
             <div className="js-slide products-group">
                 <div className="product-item">
@@ -42,6 +56,26 @@ export default function AllShop() {
         // return (<h1> hi </h1>)
     })
 
+
+    let seller_list = seller_data.map(item => {
+        console.log(item.slug);
+        let link = "/stores/"+item.slug;
+        return (
+            <li className="col-6 col-md-2 col-xl-1gdot7 product-item">
+            <div className="product-item__outer h-100 w-100">
+                <div className="product-item__inner px-xl-4 p-3">
+                    <div className="product-item__body pb-xl-2">
+                        <div className="mb-2">
+                            <a href={link} className="d-block text-center"><img className="img-fluid" src={item.shop_info[0].primary_logo} alt="Image Description"/></a>
+                        </div>
+                        <h5 className="text-center mb-1 product-item__title"><a href={link} className="font-size-15 text-gray-90">{item.shop_name}</a></h5>
+                    </div>
+                </div>
+            </div>
+        </li>
+        )
+    })
+
     return (
         <main id="content" role="main">
             {/* <!-- breadcrumb --> */}
@@ -68,175 +102,9 @@ export default function AllShop() {
                     </div>
 
                     <ul className="row list-unstyled products-group no-gutters mb-6">
-                        <li className="col-6 col-md-2 col-xl-1gdot7 product-item">
-                            <div className="product-item__outer h-100 w-100">
-                                <div className="product-item__inner px-xl-4 p-3">
-                                    <div className="product-item__body pb-xl-2">
-                                        <div className="mb-2">
-                                            <a href='/stores/selldoom' className="d-block text-center"><img className="img-fluid" src="/assets/img/300X300/img8.jpg" alt="Image Description" /></a>
-                                        </div>
-                                        <h5 className="text-center mb-1 product-item__title"><a href='/stores/selldoom' className="font-size-15 text-gray-90">Selldoom</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="col-6 col-md-2 col-xl-1gdot7 product-item">
-                            <div className="product-item__outer h-100 w-100">
-                                <div className="product-item__inner px-xl-4 p-3">
-                                    <div className="product-item__body pb-xl-2">
-                                        <div className="mb-2">
-                                            <a href="#" className="d-block text-center"><img className="img-fluid" src="/assets/img/300X300/img15.jpg" alt="Image Description" /></a>
-                                        </div>
-                                        <h5 className="text-center mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="font-size-15 text-gray-90">All in One</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="col-6 col-md-2 col-xl-1gdot7 product-item">
-                            <div className="product-item__outer h-100 w-100">
-                                <div className="product-item__inner px-xl-4 p-3">
-                                    <div className="product-item__body pb-xl-2">
-                                        <div className="mb-2">
-                                            <a href="#" className="d-block text-center"><img className="img-fluid" src="/assets/img/300X300/img22.jpg" alt="Image Description" /></a>
-                                        </div>
-                                        <h5 className="text-center mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="font-size-15 text-gray-90">Gaming</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="col-6 col-md-2 col-xl-1gdot7 product-item">
-                            <div className="product-item__outer h-100 w-100">
-                                <div className="product-item__inner px-xl-4 p-3">
-                                    <div className="product-item__body pb-xl-2">
-                                        <div className="mb-2">
-                                            <a href="#" className="d-block text-center"><img className="img-fluid" src="/assets/img/300X300/img23.jpg" alt="Image Description" /></a>
-                                        </div>
-                                        <h5 className="text-center mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="font-size-15 text-gray-90">Laptops</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="col-6 col-md-2 col-xl-1gdot7 product-item">
-                            <div className="product-item__outer h-100 w-100">
-                                <div className="product-item__inner px-xl-4 p-3">
-                                    <div className="product-item__body pb-xl-2">
-                                        <div className="mb-2">
-                                            <a href="#" className="d-block text-center"><img className="img-fluid" src="/assets/img/300X300/img24.jpg" alt="Image Description" /></a>
-                                        </div>
-                                        <h5 className="text-center mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="font-size-15 text-gray-90">Mac Computers</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="col-6 col-md-2 col-xl-1gdot7 product-item remove-divider-md-lg">
-                            <div className="product-item__outer h-100 w-100">
-                                <div className="product-item__inner px-xl-4 p-3">
-                                    <div className="product-item__body pb-xl-2">
-                                        <div className="mb-2">
-                                            <a href="#" className="d-block text-center"><img className="img-fluid" src="/assets/img/300X300/img25.jpg" alt="Image Description" /></a>
-                                        </div>
-                                        <h5 className="text-center mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="font-size-15 text-gray-90">Peripherals</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="col-6 col-md-2 col-xl-1gdot7 product-item remove-divider">
-                            <div className="product-item__outer h-100 w-100">
-                                <div className="product-item__inner px-xl-4 p-3">
-                                    <div className="product-item__body pb-xl-2">
-                                        <div className="mb-2">
-                                            <a href="#" className="d-block text-center"><img className="img-fluid" src="/assets/img/300X300/img5.jpg" alt="Image Description" /></a>
-                                        </div>
-                                        <h5 className="text-center mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="font-size-15 text-gray-90">Servers</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                        
+                      {seller_list}
 
-                        <li className="col-6 col-md-2 col-xl-1gdot7 product-item">
-                            <div className="product-item__outer h-100 w-100">
-                                <div className="product-item__inner px-xl-4 p-3">
-                                    <div className="product-item__body pb-xl-2">
-                                        <div className="mb-2">
-                                            <a href="#" className="d-block text-center"><img className="img-fluid" src="/assets/img/300X300/img8.jpg" alt="Image Description" /></a>
-                                        </div>
-                                        <h5 className="text-center mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="font-size-15 text-gray-90">Accessories</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="col-6 col-md-2 col-xl-1gdot7 product-item">
-                            <div className="product-item__outer h-100 w-100">
-                                <div className="product-item__inner px-xl-4 p-3">
-                                    <div className="product-item__body pb-xl-2">
-                                        <div className="mb-2">
-                                            <a href="#" className="d-block text-center"><img className="img-fluid" src="/assets/img/300X300/img15.jpg" alt="Image Description" /></a>
-                                        </div>
-                                        <h5 className="text-center mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="font-size-15 text-gray-90">All in One</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="col-6 col-md-2 col-xl-1gdot7 product-item">
-                            <div className="product-item__outer h-100 w-100">
-                                <div className="product-item__inner px-xl-4 p-3">
-                                    <div className="product-item__body pb-xl-2">
-                                        <div className="mb-2">
-                                            <a href="#" className="d-block text-center"><img className="img-fluid" src="/assets/img/300X300/img22.jpg" alt="Image Description" /></a>
-                                        </div>
-                                        <h5 className="text-center mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="font-size-15 text-gray-90">Gaming</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="col-6 col-md-2 col-xl-1gdot7 product-item">
-                            <div className="product-item__outer h-100 w-100">
-                                <div className="product-item__inner px-xl-4 p-3">
-                                    <div className="product-item__body pb-xl-2">
-                                        <div className="mb-2">
-                                            <a href="#" className="d-block text-center"><img className="img-fluid" src="/assets/img/300X300/img23.jpg" alt="Image Description" /></a>
-                                        </div>
-                                        <h5 className="text-center mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="font-size-15 text-gray-90">Laptops</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="col-6 col-md-2 col-xl-1gdot7 product-item">
-                            <div className="product-item__outer h-100 w-100">
-                                <div className="product-item__inner px-xl-4 p-3">
-                                    <div className="product-item__body pb-xl-2">
-                                        <div className="mb-2">
-                                            <a href="#" className="d-block text-center"><img className="img-fluid" src="/assets/img/300X300/img24.jpg" alt="Image Description" /></a>
-                                        </div>
-                                        <h5 className="text-center mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="font-size-15 text-gray-90">Mac Computers</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="col-6 col-md-2 col-xl-1gdot7 product-item remove-divider-md-lg">
-                            <div className="product-item__outer h-100 w-100">
-                                <div className="product-item__inner px-xl-4 p-3">
-                                    <div className="product-item__body pb-xl-2">
-                                        <div className="mb-2">
-                                            <a href="#" className="d-block text-center"><img className="img-fluid" src="/assets/img/300X300/img25.jpg" alt="Image Description" /></a>
-                                        </div>
-                                        <h5 className="text-center mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="font-size-15 text-gray-90">Peripherals</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="col-6 col-md-2 col-xl-1gdot7 product-item remove-divider">
-                            <div className="product-item__outer h-100 w-100">
-                                <div className="product-item__inner px-xl-4 p-3">
-                                    <div className="product-item__body pb-xl-2">
-                                        <div className="mb-2">
-                                            <a href="#" className="d-block text-center"><img className="img-fluid" src="/assets/img/300X300/img5.jpg" alt="Image Description" /></a>
-                                        </div>
-                                        <h5 className="text-center mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="font-size-15 text-gray-90">Servers</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
                     </ul>
 
                     {/* <!-- People buying in this category --> */}
