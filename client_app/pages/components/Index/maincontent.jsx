@@ -236,7 +236,7 @@ export default function MainContent(){
        
         <div className="container">
         <BestSeller />
-            <div className="mb-6">
+            {/* <div className="mb-6">
                 <a href="../shop/shop.html" className="d-block text-gray-90">
                     <div className="" style={{ backgroundimage: 'url(/assets/img/1400X206/img1.jpg)' }}>
                         <div className="space-top-2-md p-4 pt-6 pt-md-8 pt-lg-6 pt-xl-8 pb-lg-4 px-xl-8 px-lg-6">
@@ -254,7 +254,7 @@ export default function MainContent(){
                         </div>
                     </div>
                 </a>
-            </div>
+            </div> */}
             
             {/* <RecentViewed /> */}
 

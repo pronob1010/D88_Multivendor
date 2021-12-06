@@ -58,8 +58,8 @@ export default function AllShop({seller_data}) {
 
 
     let seller_list = seller_data.map(item => {
-        console.log(item.slug);
-        let link = "/stores/"+item.slug;
+        // console.log(item);
+        let link = "/stores/"+item.slug+"-"+item.user;
         return (
             <li className="col-6 col-md-2 col-xl-1gdot7 product-item">
             <div className="product-item__outer h-100 w-100">
