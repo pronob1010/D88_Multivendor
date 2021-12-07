@@ -4,12 +4,24 @@ import VendorSlider from "../components/Index/slider/vendor_slider";
 import BestSeller from "../components/Bestsellers/bestsellers";
 import { useRouter } from "next/dist/client/router";
 
-export default function VendorShop() {
+ 
+export default function VendorShop({productdata}) {
   let router = useRouter();
   // console.log(router.query.slug);
   let seller_slug = router.query.slug;
   let seller_id = String(seller_slug).split('-')[3];
   console.log(seller_id);
+  
+  const url = 'http://localhost:8000/api/vendor_catalog/sellers/'
+
+  // let sellers_list = []; 
+  // let res = fetch(url).then(data=>{return data.json().then(data=>{
+  //   console.log(data)
+  //   sellers_list.push(data);
+  // })})
+  // console.log(sellers_list)
+
+  
 
   let dataset = useSelector((state) => state.productState.products);
 
@@ -20,9 +32,12 @@ export default function VendorShop() {
   let featured = [];
 
   featured_dataset.map((item) => {
-    if (item.type == "featured") {
+    // console.log(item);
+    if(item.type == "featured") {
       dataset.find((ele) => {
-        if (ele.id == item.Select_Product) {
+        // console.log(ele)
+
+        if (ele.id == item.Select_Product && ele.seller==seller_id) {
           featured.push(ele);
         }
       });

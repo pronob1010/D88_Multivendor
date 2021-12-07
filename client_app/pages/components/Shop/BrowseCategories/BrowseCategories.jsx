@@ -336,6 +336,7 @@ export function IndexBrowseCategories() {
 
 export function IndexBrowseCategoriesMain() {
     let categories_list = useSelector(state => state.categoryState.categories);
+    
 
     let cat_list = categories_list.map(item => {
         return (<IndexBrowseCategoriesMainSingle item={item} key={item.id} />)
@@ -344,13 +345,13 @@ export function IndexBrowseCategoriesMain() {
 
         <ul className="navbar-nav u-header__navbar-nav">
             <li class="nav-item u-header__nav-item" data-event="hover" data-position="left">
-                <a href="#" class="nav-link u-header__nav-link font-weight-bold">Top 100 Offers</a>
+                <a href="#" class="nav-link u-header__nav-link font-weight-bold">Deal of The Day !</a>
             </li>
             <li class="nav-item u-header__nav-item" data-event="hover" data-position="left">
-                <a href="#" class="nav-link u-header__nav-link font-weight-bold">Top 100 Offers</a>
+                <a href="#" class="nav-link u-header__nav-link font-weight-bold">Top 10 !</a>
             </li>
             <li class="nav-item u-header__nav-item" data-event="hover" data-position="left">
-                <a href="#" class="nav-link u-header__nav-link font-weight-bold">Top 100 Offers</a>
+                <a href="#" class="nav-link u-header__nav-link font-weight-bold">Mega offer !</a>
             </li>
             {cat_list}
 

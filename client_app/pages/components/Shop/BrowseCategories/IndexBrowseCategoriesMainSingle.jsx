@@ -1,4 +1,11 @@
 export default function IndexBrowseCategoriesMainSingle({item}){
+
+    // console.log(item);
+
+    let sub_cat = item.subcategory.map((item)=>{
+        // console.log(item);
+        return ( <li><a className="nav-link u-header__sub-menu-nav-link" href="#">{item.title}</a></li> )
+    })
     return (
         
         <li className="nav-item hs-has-mega-menu u-header__nav-item"
@@ -15,9 +22,10 @@ export default function IndexBrowseCategoriesMainSingle({item}){
                 </div>
                 <div className="row u-header__mega-menu-wrapper">
                     <div className="col mb-3 mb-sm-0">
-                        <span className="u-header__sub-menu-title">Computers & Accessories</span>
+                        <span className="u-header__sub-menu-title">{item.title}</span>
                         <ul className="u-header__sub-menu-nav-group mb-3">
-                            <li><a className="nav-link u-header__sub-menu-nav-link" href="#">All Computers & Accessories</a></li>
+                            {sub_cat}
+                            {/* <li><a className="nav-link u-header__sub-menu-nav-link" href="#">All Computers & Accessories</a></li>
                             <li><a className="nav-link u-header__sub-menu-nav-link" href="#">Laptops, Desktops & Monitors</a></li>
                             <li><a className="nav-link u-header__sub-menu-nav-link" href="#">Printers & Ink</a></li>
                             <li><a className="nav-link u-header__sub-menu-nav-link" href="#">Networking & Internet Devices</a></li>
@@ -28,12 +36,12 @@ export default function IndexBrowseCategoriesMainSingle({item}){
                                     <div className="">All Electronics</div>
                                     <div className="u-nav-subtext font-size-11 text-gray-30">Discover more products</div>
                                 </a>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
 
                     <div className="col mb-3 mb-sm-0">
-                        <span className="u-header__sub-menu-title">Office & Stationery</span>
+                        <span className="u-header__sub-menu-title">You may Need </span>
                         <ul className="u-header__sub-menu-nav-group">
                             <li><a className="nav-link u-header__sub-menu-nav-link" href="#">All Office & Stationery</a></li>
                         </ul>
