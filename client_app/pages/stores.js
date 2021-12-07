@@ -24,16 +24,16 @@ export default function AllShop({seller_data}) {
         // console.log(item);
         return (
             <div className="js-slide products-group">
-            <div className="product-item">
-                <div className="product-item__outer h-100">
-                    <div className="product-item__inner px-wd-4 p-2 p-md-3">
-                        <div className="product-item__body pb-xl-2">
-                            {/* <div className="mb-2"><a href="../shop/product-categories-7-column-full-width.html" className="font-size-12 text-gray-5">Speakers</a></div> */}
-                            <h5 className="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="text-blue font-weight-bold">{item.title}</a></h5>
-                            <div className="mb-2">
-                                <a href="../shop/single-product-fullwidth.html" className="d-block text-center"><img className="img-fluid" src={item.image} alt="Image Description" /></a>
-                            </div>
-                            {/* <div className="flex-center-between mb-1">
+                <div className="product-item">
+                    <div className="product-item__outer h-100">
+                        <div className="product-item__inner px-wd-4 p-2 p-md-3">
+                            <div className="product-item__body pb-xl-2">
+                                {/* <div className="mb-2"><a href="../shop/product-categories-7-column-full-width.html" className="font-size-12 text-gray-5">Speakers</a></div> */}
+                                <h5 className="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" className="text-blue font-weight-bold">{item.title}</a></h5>
+                                <div className="mb-2">
+                                    <a href="../shop/single-product-fullwidth.html" className="d-block text-center"><img className="img-fluid" src={item.image} alt="Image Description" /></a>
+                                </div>
+                                {/* <div className="flex-center-between mb-1">
                                 <div className="prodcut-price">
                                     <div className="text-gray-100">$685,00</div>
                                 </div>
@@ -41,25 +41,25 @@ export default function AllShop({seller_data}) {
                                     <a href="../shop/single-product-fullwidth.html" className="btn-add-cart btn-primary transition-3d-hover"><i className="ec ec-add-to-cart"></i></a>
                                 </div>
                             </div> */}
-                        </div>
-                        {/* <div className="product-item__footer">
+                            </div>
+                            {/* <div className="product-item__footer">
                             <div className="border-top pt-2 flex-center-between flex-wrap">
                                 <a href="../shop/compare.html" className="text-gray-6 font-size-13"><i className="ec ec-compare mr-1 font-size-15"></i> Compare</a>
                                 <a href="../shop/wishlist.html" className="text-gray-6 font-size-13"><i className="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a>
                             </div>
                         </div> */}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         )
         // return (<h1> hi </h1>)
     })
 
 
     let seller_list = seller_data.map(item => {
-        console.log(item.slug);
-        let link = "/stores/"+item.slug;
+        // console.log(item);
+        let link = "/stores/"+item.slug+"-"+item.user;
         return (
             <li className="col-6 col-md-2 col-xl-1gdot7 product-item">
             <div className="product-item__outer h-100 w-100">
@@ -106,7 +106,7 @@ export default function AllShop({seller_data}) {
                       {seller_list}
 
                     </ul>
-                    
+
                     {/* <!-- People buying in this category --> */}
                     <div className="position-relative">
                         <div className="border-bottom border-color-1 mb-2">
@@ -179,32 +179,32 @@ export default function AllShop({seller_data}) {
                             }]'>
                             <div className="js-slide">
                                 <a href="#" className="link-hover__brand">
-                                    <img className="img-fluid m-auto max-height-50" src="/assets/img/200X60/img1.png" alt="Image Description"/>
+                                    <img className="img-fluid m-auto max-height-50" src="/assets/img/200X60/img1.png" alt="Image Description" />
                                 </a>
                             </div>
                             <div className="js-slide">
                                 <a href="#" className="link-hover__brand">
-                                    <img className="img-fluid m-auto max-height-50" src="/assets/img/200X60/img2.png" alt="Image Description"/>
+                                    <img className="img-fluid m-auto max-height-50" src="/assets/img/200X60/img2.png" alt="Image Description" />
                                 </a>
                             </div>
                             <div className="js-slide">
                                 <a href="#" className="link-hover__brand">
-                                    <img className="img-fluid m-auto max-height-50" src="/assets/img/200X60/img3.png" alt="Image Description"/>
+                                    <img className="img-fluid m-auto max-height-50" src="/assets/img/200X60/img3.png" alt="Image Description" />
                                 </a>
                             </div>
                             <div className="js-slide">
                                 <a href="#" className="link-hover__brand">
-                                    <img className="img-fluid m-auto max-height-50" src="/assets/img/200X60/img4.png" alt="Image Description"/>
+                                    <img className="img-fluid m-auto max-height-50" src="/assets/img/200X60/img4.png" alt="Image Description" />
                                 </a>
                             </div>
                             <div className="js-slide">
                                 <a href="#" className="link-hover__brand">
-                                    <img className="img-fluid m-auto max-height-50" src="/assets/img/200X60/img5.png" alt="Image Description"/>
+                                    <img className="img-fluid m-auto max-height-50" src="/assets/img/200X60/img5.png" alt="Image Description" />
                                 </a>
                             </div>
                             <div className="js-slide">
                                 <a href="#" className="link-hover__brand">
-                                    <img className="img-fluid m-auto max-height-50" src="/assets/img/200X60/img6.png" alt="Image Description"/>
+                                    <img className="img-fluid m-auto max-height-50" src="/assets/img/200X60/img6.png" alt="Image Description" />
                                 </a>
                             </div>
                         </div>

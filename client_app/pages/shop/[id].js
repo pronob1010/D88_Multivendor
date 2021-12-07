@@ -4,7 +4,7 @@ import { useRouter } from "next/dist/client/router";
 import { useState } from "react";
 
 export default function ProductDetails() {
- 
+  // check
 
   let router = useRouter();
 
