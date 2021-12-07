@@ -37,7 +37,7 @@ export default function BrowseCategories() {
 
     return (
         <div className="mb-6 border border-width-2 border-color-3 borders-radius-6">
-            {/* <!--List --> */}
+           
             <ul id="sidebarNav" className="list-unstyled mb-0 sidebar-navbar view-all">
                 <li><div className="dropdown-title">Browse Categories</div></li>
                  
@@ -45,7 +45,7 @@ export default function BrowseCategories() {
                  {cat_list}
                  
             </ul>
-            {/* <!--End List --> */}
+            
         </div>
     )
 }
