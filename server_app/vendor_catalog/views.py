@@ -10,4 +10,4 @@ class ShopInfoViewSet(ModelViewSet):
     serializer_class = ShopInfoSerializer
     queryset = ShopInfo.objects.all()
 
-    print(queryset)
+    # print(queryset)

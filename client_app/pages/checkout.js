@@ -103,6 +103,10 @@ export default function Checkout(){
         )
     }
 
+
+    let payment_handeler =()=>{
+        // console.log("You are trying to click on payment.");
+    }
     return(
         <main id="content" role="main" className="checkout-page">
             {/* <!-- breadcrumb --> */}
@@ -178,15 +182,15 @@ export default function Checkout(){
                                             <tfoot>
                                                 <tr>
                                                     <th>Subtotal</th>
-                                                    <td>৳{totalPrice}</td>
+                                                    <td>৳ {totalPrice}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Shipping</th>
-                                                    <td>৳300</td>
+                                                    <td>৳ 70</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Total</th>
-                                                    <td><strong>৳{totalPrice+300}</strong></td>
+                                                    <td><strong>৳ {totalPrice+300}</strong></td>
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -194,53 +198,7 @@ export default function Checkout(){
                                         <div className="border-top border-width-3 border-color-1 pt-3 mb-3">
                                             {/* <!-- Basics Accordion --> */}
                                             <div id="basicsAccordion1">
-                                                {/* <!-- Card --> */}
-                                                <div className="border-bottom border-color-1 border-dotted-bottom">
-                                                    <div className="p-3" id="basicsHeadingOne">
-                                                        <div className="custom-control custom-radio">
-                                                            <input type="radio" className="custom-control-input" id="stylishRadio1" name="stylishRadio" checked />
-                                                            <label className="custom-control-label form-label" for="stylishRadio1"
-                                                                data-toggle="collapse"
-                                                                data-target="#basicsCollapseOnee"
-                                                                aria-expanded="true"
-                                                                aria-controls="basicsCollapseOnee">
-                                                                Direct bank transfer
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div id="basicsCollapseOnee" className="collapse show border-top border-color-1 border-dotted-top bg-dark-lighter"
-                                                        aria-labelledby="basicsHeadingOne"
-                                                        data-parent="#basicsAccordion1">
-                                                        <div className="p-4">
-                                                            Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                {/* <!-- End Card --> */}
-
-                                                {/* <!-- Card --> */}
-                                                <div className="border-bottom border-color-1 border-dotted-bottom">
-                                                    <div className="p-3" id="basicsHeadingTwo">
-                                                        <div className="custom-control custom-radio">
-                                                            <input type="radio" className="custom-control-input" id="secondStylishRadio1" name="stylishRadio" />
-                                                            <label className="custom-control-label form-label" for="secondStylishRadio1"
-                                                                data-toggle="collapse"
-                                                                data-target="#basicsCollapseTwo"
-                                                                aria-expanded="false"
-                                                                aria-controls="basicsCollapseTwo">
-                                                                Check payments
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div id="basicsCollapseTwo" className="collapse border-top border-color-1 border-dotted-top bg-dark-lighter"
-                                                        aria-labelledby="basicsHeadingTwo"
-                                                        data-parent="#basicsAccordion1">
-                                                        <div className="p-4">
-                                                            Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                {/* <!-- End Card --> */}
+                                                
 
                                                 {/* <!-- Card --> */}
                                                 <div className="border-bottom border-color-1 border-dotted-bottom">
@@ -276,7 +234,7 @@ export default function Checkout(){
                                                                 data-target="#basicsCollapseFour"
                                                                 aria-expanded="false"
                                                                 aria-controls="basicsCollapseFour">
-                                                                PayPal <a href="#" className="text-blue">What is PayPal?</a>
+                                                                SSLCOMMERZ <a href="#" className="text-blue">What is SSLCOMMERZ?</a>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -284,7 +242,7 @@ export default function Checkout(){
                                                         aria-labelledby="basicsHeadingFour"
                                                         data-parent="#basicsAccordion1">
                                                         <div className="p-4">
-                                                            Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.
+                                                            Pay via sslcommerz; you can pay with your credit card if you don’t have a sslcommerz account.
                                                         </div>
                                                     </div>
                                                 </div>
@@ -304,7 +262,7 @@ export default function Checkout(){
                                                 </label>
                                             </div>
                                         </div>
-                                        <button type="submit" className="btn btn-primary-dark-w btn-block btn-pill font-size-20 mb-3 py-3">Place order</button>
+                                        <button type="submit" onClick={payment_handeler} className="btn btn-primary-dark-w btn-block btn-pill font-size-20 mb-3 py-3">Place order</button>
                                     </div>
                                     {/* <!-- End Order Summary --> */}
                                 </div>
