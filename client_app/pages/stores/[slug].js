@@ -249,7 +249,7 @@ export default function VendorShop({productdata}) {
           {/* {/* <!-- End Tab Prodcut Section --> */}
           <div className="row">
             <div className="col-xl-9 col-wd-auto">
-              <BestSeller />
+              {/* <BestSeller /> */}
             </div>
           </div>
 

@@ -235,7 +235,9 @@ export default function MainContent(){
        <BestDeals />
        
         <div className="container">
-        <BestSeller />
+        {/* <BestSeller /> */}
+
+        
             {/* <div className="mb-6">
                 <a href="../shop/shop.html" className="d-block text-gray-90">
                     <div className="" style={{ backgroundimage: 'url(/assets/img/1400X206/img1.jpg)' }}>

@@ -112,7 +112,7 @@ export default function CartPage() {
             </table>
           </form>
         </div>
-        <div className="mb-8 cart-total">
+        {/* <div className="mb-8 cart-total">
           <div className="row">
             <div className="col-xl-5 col-lg-6 offset-lg-6 offset-xl-7 col-md-8 offset-md-4">
               <div className="border-bottom border-color-1 mb-3">
@@ -501,7 +501,7 @@ export default function CartPage() {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </main>
   );
