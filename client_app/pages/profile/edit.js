@@ -12,26 +12,15 @@ const ProfileEdit = () => {
     const [lastname, setlastname] = useState('')
     const [phone, setphone] = useState('')
     const [home_address, sethome_address] = useState('')
+    const [pro_pic, setpro_pic] = useState()
 
     let handleSubmit = () => {
-        if (user_details.firstname !== "" && firstname === "") {
-            setfirstname(user_details.firstname);
-        }
-        if (user_details.lastname !== "" && lastname === "") {
-            setlastname(user_details.lastname)
-        }
-        if (user_details.phone !== "" && phone === "") {
-            setphone(user_details.phone)
-        }
-        if (user_details.home_address !== "" && home_address === "") {
-            sethome_address(user_details.home_address)
-        }
-
         const data = {
             "firstname": firstname,
             "lastname": lastname,
             "phone": phone,
-            "home_address": home_address
+            "home_address": home_address,
+            "pro_pic": pro_pic.name,
         }
 
         let url = "http://localhost:8000/api/auth/" + userId + "/";
@@ -43,8 +32,9 @@ const ProfileEdit = () => {
 
         axios.put(url, data, header)
             .then(response => {
-                console.log(response)
+                console.log(response.data)
             })
+       router.push("/profile")
     }
 
     return (
@@ -85,6 +75,21 @@ const ProfileEdit = () => {
                                         <span className="text-danger">*</span>
                                     </label>
                                     <input type="text" className="form-control" name="home_address" onChange={(event) => sethome_address(event.target.value)} defaultValue={user_details.home_address} placeholder="152/13 mirpur 12" aria-label="152/13 mirpur 12" required="" data-msg="Please enter a valid address." data-error-className="u-has-error" data-success-className="u-has-success" />
+                                </div>
+
+                            </div>
+
+                            <div className="col-md-12">
+
+                                <div className="js-form-message mb-6">
+                                    <label className="form-label">
+                                        Profile Picture
+                                        <span className="text-danger">*</span>
+                                    </label>
+                                    <img style={{'height':"150px","width":"200px"}} src={user_details.profile_pic ? user_details.profile_pic:'image'} alt="" />
+                                    <br />
+                                    <br />
+                                    <input id="user_pro_pic" type="file" name="pro_pic" onChange={(event) => setpro_pic(event.target.files[0])} required="" data-error-className="u-has-error" data-success-className="u-has-success" />
                                 </div>
 
                             </div>

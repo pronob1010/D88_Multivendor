@@ -9,6 +9,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     firstname = models.CharField(max_length=30, null=True, blank=True)
     lastname = models.CharField(max_length=30, null=True, blank=True)
     phone = models.CharField(max_length=14, null=True, blank=True)
+    profile_pic = models.ImageField(upload_to="user_profile_pic", null=True, blank=True)
     home_address = models.CharField(max_length=128, null=True, blank=True)
     is_active = models.BooleanField(default=True)
     is_vendor = models.BooleanField(default=False)
