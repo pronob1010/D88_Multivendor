@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { useEffect } from "react";
 
 const Profile = () => {
-    const { username, profile_pic } = useSelector(state => state.userReducer.user_details)
+    const { username, profile_pic, is_vendor } = useSelector(state => state.userReducer.user_details)
     const { userId } = useSelector(state => state.userReducer)
     return (
         <div>
@@ -82,12 +82,16 @@ const Profile = () => {
                                     href="#Jpills-one-example1" role="tab" aria-controls="Jpills-one-example1"
                                     aria-selected="true">Dashboard</a>
                             </li>
+                            {
+                                is_vendor? (
+                                    <li className="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
+                                        <a className="nav-link" id="add_product_tab" data-toggle="pill"
+                                            href="#add_product" role="tab" aria-controls="add_product"
+                                            aria-selected="true">Add Product</a>
+                                    </li>
+                                ):''
+                            }
                             
-                            <li className="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
-                                <a className="nav-link" id="add_product_tab" data-toggle="pill"
-                                    href="#add_product" role="tab" aria-controls="add_product"
-                                    aria-selected="true">Add Product</a>
-                            </li>
 
                             <li className="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
                                 <a className="nav-link" id="Jpills-two-example1-tab" data-toggle="pill" href="#Jpills-two-example1"
@@ -233,12 +237,16 @@ const Profile = () => {
                                 </div>
 
                             </div>
-                            <div className="tab-pane fade active show" id="add_product" role="tabpanel"
-                                aria-labelledby="add_product_tab">
-                                <div className="row no-gutters">
-                                    <a style={{ "text-align" : "center" }} class="btn btn-primary btn-sm" href="/product/add">Add Product</a>
-                                </div>
-                            </div>
+                            {
+                                is_vendor ? (
+                                    <div className="tab-pane fade" id="add_product" role="tabpanel"
+                                        aria-labelledby="add_product_tab">
+                                        <div className="row no-gutters">
+                                            <a style={{ "text-align": "center" }} class="btn btn-primary btn-sm" href="/product/add">Add Product</a>
+                                        </div>
+                                    </div>
+                                ):''}
+                            
 
                             <div className="tab-pane fade" id="Jpills-two-example1" role="tabpanel"
                                 aria-labelledby="Jpills-two-example1-tab">

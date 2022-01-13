@@ -44,7 +44,7 @@ const ProfileEdit = () => {
                     <div className="border-bottom border-color-1 mb-5">
                         <h3 className="section-title text-center  mb-0 pb-2 font-size-25">Profile Edit</h3>
                     </div>
-                    <form onSubmit={handleSubmit} method="PUT" id="edit_profile">
+                    <form onSubmit={handleSubmit} method="PUT" enctype="multipart/form-data">
                         <div className="row">
                             <div className="col-md-6">
                                 <div className="js-form-message mb-6">

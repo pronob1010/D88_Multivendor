@@ -11,3 +11,6 @@ export const USER_DETAILS = "USER_DETAILS";
 export const AUTH_FAILED = "AUTH_FAILED";
 export const AUTH_LOADING = "AUTH_LOADING";
 export const AUTH_LOGOUT = "AUTH_LOGOUT";
+
+
+export const PRODUCT_CATEGORIES = "PRODUCT_CATEGORIES";

@@ -6,7 +6,7 @@ const INITIAL_STATE = {
     token: null,
     userId: null,
     authFailedMsg: null,
-    user_details : user_data,
+    user_details : {},
 }
 
 export const userReducer = (state = INITIAL_STATE, action) => {
