@@ -5,6 +5,8 @@ import ShopCard from "./components/Shop/shop_single_card";
 import { useSelector } from "react-redux";
 import LatestProduct from "./components/Shop/LatestProduct/latestproduct";
 
+import ProductsIdList from "../Data/recent_visited";
+
 export async function getStaticProps(context) {
   const res = await fetch(`http://localhost:8000/api/data/allproducts/`);
   const productdata = await res.json();
@@ -19,6 +21,11 @@ export async function getStaticProps(context) {
     props: { productdata },  
   };
 }
+
+
+let recommendedProductList = ProductsIdList.map((item)=> {
+  return (<RecommendedProductCard item={item} />);
+})
 
 export default function Shop({ productdata }) {
   let datatest = productdata;
@@ -445,14 +452,9 @@ export default function Shop({ productdata }) {
                                       "settings": {
                                         "slidesToShow": 2
                                       }
-                                    }]'
-                >
-                  <RecommendedProductCard />
-                  <RecommendedProductCard />
-                  <RecommendedProductCard />
-                  <RecommendedProductCard />
-                  <RecommendedProductCard />
-                  <RecommendedProductCard />
+                                    }]'>
+                  {recommendedProductList}
+                  
                 </div>
               </div>
             </div>

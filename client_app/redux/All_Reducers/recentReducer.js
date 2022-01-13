@@ -8,8 +8,11 @@ export const recentReducer = (state = initialState, action) => {
 
     switch(action.type) {
         case "ADD_TO_RECENT": {
-            state.recent.push(action.value);
-            
+
+            if(!(action.value in state.recent)){
+                state.recent.push(action.value);
+            }
+
             localStorage.setItem("recent_checked", JSON.stringify(state.recent));
             
             return state;

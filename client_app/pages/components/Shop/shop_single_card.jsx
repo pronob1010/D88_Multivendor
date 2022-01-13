@@ -48,14 +48,14 @@ export default function ShopCard({data}) {
             <div className="product-item__outer h-100">
                 <div className="product-item__inner px-xl-4 p-3">
                     <div className="product-item__body pb-xl-2">
-                        <div className="mb-2"><a href="../shop/product-categories-7-column-full-width.html" className="font-size-12 text-gray-5">{categoryName}</a></div>
+                        <div className="mb-2"><a href={`/shop/${data.id}`} className="font-size-12 text-gray-5">{categoryName}</a></div>
                         <h5 className="mb-1 product-item__title">
                             {/* <Link href="/shop/1"> */}
                                 <a className="text-blue font-weight-bold" href={`/shop/${data.id}`}>{data.Title}</a>
                             {/* </Link> */}
                         </h5>
                         <div className="mb-2">
-                            <a href="../shop/single-product-fullwidth.html" className="d-block text-center"><img className="img-fluid" src={data.image}  alt="Image Description" /></a>
+                            <a href={`/shop/${data.id}`} className="d-block text-center"><img className="img-fluid" src={data.image}  alt="Image Description" /></a>
                         </div>
                         <div className="flex-center-between mb-1">
                             <div className="prodcut-price d-flex align-items-center position-relative">
