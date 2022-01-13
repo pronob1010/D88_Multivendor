@@ -16,7 +16,7 @@ const AddProduct = () => {
     const [sub_category, setSub_category] = useState('')
     const [selling_price, setSelling_price] = useState('')
     const [offer_price, setOffer_price] = useState('')
-    const [sku, setSku] = useState('')
+    const [stock, setstock] = useState('')
     const [slug, setSlug] = useState('')
 
 
@@ -31,9 +31,10 @@ const AddProduct = () => {
             title,
             description,
             sub_category,
+            category,
             selling_price,
             offer_price,
-            sku,
+            stock,
             slug
         }
 
@@ -44,11 +45,19 @@ const AddProduct = () => {
             }
         }
 
-        axios.put(url, data, header)
-            .then(response => {
-                console.log(response.data)
-            })
-
+        try {
+            axios.post(url, data, header)
+                .then(response => {
+                    console.log(response.data)
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+            router.push("/profile")
+        }
+        catch (err) {
+            console.error(`Error received from axios.post: ${JSON.stringify(err)}`);
+        }
     }
 
     return (
@@ -142,10 +151,10 @@ const AddProduct = () => {
                             <div className="col-md-6">
                                 <div className="js-form-message mb-6">
                                     <label className="form-label">
-                                        Stock keeping unit
+                                        Stock
                                         <span className="text-danger">*</span>
                                     </label>
-                                    <input required placeholder="000SKU19G" type="text" className="form-control" name="sku" onChange={(event) => setSku(event.target.value)} />
+                                    <input required placeholder="15" type="number" className="form-control" name="stock" onChange={(event) => setstock(event.target.value)} />
                                 </div>
                             </div>
 

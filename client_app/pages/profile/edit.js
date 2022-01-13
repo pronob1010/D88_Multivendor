@@ -12,7 +12,7 @@ const ProfileEdit = () => {
     const [lastname, setlastname] = useState('')
     const [phone, setphone] = useState('')
     const [home_address, sethome_address] = useState('')
-    const [pro_pic, setpro_pic] = useState()
+    const [pro_pic, setpro_pic] = useState('')
 
     let handleSubmit = () => {
         const data = {
@@ -20,7 +20,7 @@ const ProfileEdit = () => {
             "lastname": lastname,
             "phone": phone,
             "home_address": home_address,
-            "pro_pic": pro_pic.name,
+            "pro_pic": pro_pic.name===""?"":pro_pic.name,
         }
 
         let url = "http://localhost:8000/api/auth/" + userId + "/";
@@ -30,11 +30,19 @@ const ProfileEdit = () => {
             }
         }
 
-        axios.put(url, data, header)
+        try{
+            axios.put(url, data, header)
             .then(response => {
                 console.log(response.data)
             })
-       router.push("/profile")
+            .catch((error) => {
+                console.log(error);
+            });
+            router.push("/profile")
+        }
+        catch (err){
+            console.error(`Error received from axios.post: ${JSON.stringify(err)}`);
+        }
     }
 
     return (
@@ -44,7 +52,7 @@ const ProfileEdit = () => {
                     <div className="border-bottom border-color-1 mb-5">
                         <h3 className="section-title text-center  mb-0 pb-2 font-size-25">Profile Edit</h3>
                     </div>
-                    <form onSubmit={handleSubmit} method="PUT" enctype="multipart/form-data">
+                    <form onSubmit={handleSubmit} method="PUT" encType="multipart/form-data">
                         <div className="row">
                             <div className="col-md-6">
                                 <div className="js-form-message mb-6">
@@ -52,7 +60,7 @@ const ProfileEdit = () => {
                                         First name
                                         <span className="text-danger">*</span>
                                     </label>
-                                    <input type="text" className="form-control" name="firstName" onChange={(event) => setfirstname(event.target.value)} placeholder="First name" defaultValue={user_details.firstname} aria-label="First name" required="" data-msg="Please enter your frist name." data-error-className="u-has-error" data-success-className="u-has-success" autocomplete="off" />
+                                    <input type="text" className="form-control" name="firstName" onChange={(event) => setfirstname(event.target.value)} placeholder="First name" defaultValue={user_details.firstname} aria-label="First name" required autoComplete="off" />
                                 </div>
                             </div>
 
@@ -100,7 +108,7 @@ const ProfileEdit = () => {
                                         Email address
                                         <span className="text-danger">*</span>
                                     </label>
-                                    <input type="email" className="form-control" name="emailAddress" value={user_details.email} placeholder="selldoom@gmail.com" aria-label="selldoom@gmail.com" required="" data-msg="Please enter a valid email address." data-error-className="u-has-error" data-success-className="u-has-success" />
+                                    <input type="email" className="form-control" readOnly name="emailAddress" defaultValue={user_details.email} placeholder="selldoom@gmail.com" aria-label="selldoom@gmail.com" required="" data-msg="Please enter a valid email address." data-error-className="u-has-error" data-success-className="u-has-success" />
                                 </div>
                             </div>
 
