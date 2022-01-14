@@ -1,8 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from "react";
 import { vendorsProduct } from '../redux/All_Reducers/productActionCreator';
+import axios from "axios";
+import { useRouter } from "next/router"
 
 const Profile = () => {
+    const router = useRouter()
     const { username, profile_pic, is_vendor } = useSelector(state => state.userReducer.user_details)
     const { userId } = useSelector(state => state.userReducer)
     const { vendors_product } = useSelector(state => state.productState)
@@ -11,6 +14,22 @@ const Profile = () => {
     useEffect(() => {
         dispatch(vendorsProduct(userId))
     }, [userId])
+
+
+    let deleteProduct = (id) => {
+        let url = "http://localhost:8000/api/data/allproducts/"+id+"/";
+        axios.delete(url)
+            .then(response => {
+                console.log(response.data)
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+        router.push("/profile/")
+    }
+
+
+
     return (
         <div>
             {/* <!-- breadcrumb --> */}
@@ -149,7 +168,30 @@ const Profile = () => {
                                                                                     <div className="text-gray-100mb-3"><b>$ {vendors_product[prod].offer_price}</b></div>
                                                                                     <div className="d-flex mt-3">
                                                                                         <a style={{ "width": "90px", "margin-right": "5px" }} href={`product/edit/${vendors_product[prod].id}/`} className="btn btn-sm btn-warning">Edit</a>
-                                                                                        <a style={{ "width": "90px", "margin-left": "5px" }}  href="" className="btn btn-sm  btn-danger">Delete</a>
+                                                                                        <button style={{ "width": "90px", "margin-left": "5px", "cursor":"pointer" }} className="btn btn-sm btn-danger" data-toggle="modal" data-target={`#Modal_${vendors_product[prod].id}`}>
+                                                                                            Delete
+                                                                                        </button>
+                                                                                        <div class="modal fade" id={`Modal_${vendors_product[prod].id}`} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                                            <div class="modal-dialog" role="document">
+                                                                                                <div class="modal-content">
+                                                                                                    <div class="modal-header">
+                                                                                                        <h5 class="modal-title" id="exampleModalLabel">Delete Product</h5>
+                                                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                                            <span aria-hidden="true">&times;</span>
+                                                                                                        </button>
+                                                                                                    </div>
+                                                                                                    <div class="modal-body">
+                                                                                                        <p>Do you really want to delete this product?</p>
+                                                                                                    </div>
+                                                                                                    <div class="modal-footer">
+                                                                                                        <form onSubmit={() => deleteProduct(vendors_product[prod].id)}>
+                                                                                                        <button type="button" className="btn btn-success mr-2" data-dismiss="modal">Close</button>
+                                                                                                            <button type="submit" className="btn btn-danger">Delete</button>
+                                                                                                        </form>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
