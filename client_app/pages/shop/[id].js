@@ -144,7 +144,7 @@ export default function ProductDetails() {
                 <div className="js-slide" style={{ cursor: "pointer" }}>
                   <img
                     className="img-fluid"
-                    src="/assets/img/720X660/img1.jpg"
+                    src={singleProductData.image}
                     alt="Image Description"
                   />
                 </div>

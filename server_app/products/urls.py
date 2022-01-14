@@ -7,10 +7,12 @@ from . views import *
 
 router = DefaultRouter()
 router.register("allproducts", ProductsViewSet, basename="allproducts"),
+router.register("vendors-product", VendorsProduct, basename="vendorsProduct"),
 router.register("categories", ProductsCategoryViewSet, basename="categories"),
 router.register("rating", ReviewViewSet, basename="rating"),
 
 
 urlpatterns = [
-
+    # path('vendors-product/', VendorsProduct.as_view()),
+    # path('vendors-product/<pk>/',VendorsProduct, name="VendorsProduct"),
 ] + router.urls

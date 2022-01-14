@@ -48,7 +48,7 @@ export default function ShopCard({data}) {
             <div className="product-item__outer h-100">
                 <div className="product-item__inner px-xl-4 p-3">
                     <div className="product-item__body pb-xl-2">
-                        <div className="mb-2"><a href="../shop/product-categories-7-column-full-width.html" className="font-size-12 text-gray-5">{categoryName}</a></div>
+                        <div className="mb-2"><a href={`/shop/${data.id}`} className="font-size-12 text-gray-5">{categoryName}</a></div>
                         <h5 className="mb-1 product-item__title">
                             {/* <Link href="/shop/1"> */}
                                 <a className="text-blue font-weight-bold" href={`/shop/${data.id}`}>{data.Title}</a>
