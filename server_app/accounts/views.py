@@ -2,8 +2,7 @@ from rest_framework.viewsets import ModelViewSet
 from . models import *
 from . serializers import *
 from rest_framework.response import Response
-
-
+from rest_framework.parsers import MultiPartParser, FormParser
 
 class UserViewSet(ModelViewSet):
     serializer_class = UserSerializer
@@ -14,15 +13,29 @@ class UserViewSet(ModelViewSet):
         data = request.data
         get_firstname = data['firstname']
         get_lastname = data['lastname']
-        user.firstname = get_firstname
-        user.lastname = get_lastname
         get_phone = data['phone']
         get_home_address = data['home_address']
-        user.phone = get_phone
-        user.home_address = get_home_address
-        user.save()
-        serializer = UserSerializer(user)
-        return Response(serializer.data)
+        get_pro_pic = data['pro_pic']
+        if get_firstname!="":
+            user.firstname = get_firstname
+        if get_lastname!="":
+            user.lastname = get_lastname
+        if get_phone!="":
+            user.phone = get_phone
+        if get_home_address!="":
+            user.home_address = get_home_address
+        if get_pro_pic!="" and get_pro_pic is not None:
+            user.profile_pic = get_pro_pic
+        response_msg = {}
+        try:
+            user.save()
+            response_msg["text"] = "Your profile updated successfully!"
+            response_msg["type"]= "success"
+        except:
+            response_msg["text"] = "Something went wrong!Your profile didn't updated!"
+            response_msg["type"]= "error"
+        return Response(response_msg)
+
 
 
 

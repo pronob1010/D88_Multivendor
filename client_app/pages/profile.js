@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { useEffect } from "react";
 
 const Profile = () => {
-    const { username } = useSelector(state => state.userReducer.user_details)
+    const { username, profile_pic, is_vendor } = useSelector(state => state.userReducer.user_details)
     const { userId } = useSelector(state => state.userReducer)
     return (
         <div>
@@ -27,8 +27,17 @@ const Profile = () => {
                                 data-arrow-right-classes="fas fa-arrow-right u-slick__arrow-classic-inner u-slick__arrow-classic-inner--right mr-lg-2 mr-xl-4"
                                 data-nav-for="#sliderSyncingThumb">
                                 <div className="js-slide">
-                                    <img style={{width: "320px" }} className="img-fluid" layout='fill' src="/assets/img/profile.jpg" alt="Image Description" />
+                                    {profile_pic ? (<img style={{ 'height': "170px", "width": "220px" }} className="img-fluid" layout='fill' src={profile_pic} alt="Image Description" />): (<></>) }
+                                    
                                 </div>
+                            </div>
+                            <div className="mr-xl-15">
+                                <div className="mb-3">
+                                    <div className="text-gray-6">Update your personal info :</div>
+                                </div>
+                                <a href={`/profile/edit/`}
+                                    className="btn btn-sm btn-block btn-primary-dark btn-wide transition-3d-hover">
+                                    Edit</a>
                             </div>
                         </div>
                         <div className="col-md-9 mb-md-6 mb-lg-0">
@@ -73,6 +82,17 @@ const Profile = () => {
                                     href="#Jpills-one-example1" role="tab" aria-controls="Jpills-one-example1"
                                     aria-selected="true">Dashboard</a>
                             </li>
+                            {
+                                is_vendor? (
+                                    <li className="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
+                                        <a className="nav-link" id="add_product_tab" data-toggle="pill"
+                                            href="#add_product" role="tab" aria-controls="add_product"
+                                            aria-selected="true">Add Product</a>
+                                    </li>
+                                ):''
+                            }
+                            
+
                             <li className="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
                                 <a className="nav-link" id="Jpills-two-example1-tab" data-toggle="pill" href="#Jpills-two-example1"
                                     role="tab" aria-controls="Jpills-two-example1" aria-selected="false">Shiping Status</a>
@@ -212,18 +232,22 @@ const Profile = () => {
                                         </div>
                                     </div>
                                     <div className="col-md-auto">
-                                        <div className="mr-xl-15">
-                                            <div className="mb-3">
-                                                <div className="text-gray-6">Update your personal info :</div>
-                                            </div>
-                                            <a href={`/profile/edit/`}
-                                                className="btn btn-sm btn-block btn-primary-dark btn-wide transition-3d-hover">
-                                                Edit</a>
-                                        </div>
+
                                     </div>
                                 </div>
 
                             </div>
+                            {
+                                is_vendor ? (
+                                    <div className="tab-pane fade" id="add_product" role="tabpanel"
+                                        aria-labelledby="add_product_tab">
+                                        <div className="row no-gutters">
+                                            <a style={{ "text-align": "center" }} class="btn btn-primary btn-sm" href="/product/add">Add Product</a>
+                                        </div>
+                                    </div>
+                                ):''}
+                            
+
                             <div className="tab-pane fade" id="Jpills-two-example1" role="tabpanel"
                                 aria-labelledby="Jpills-two-example1-tab">
                                 <h3 className="font-size-24 mb-3">Shiping Light</h3>

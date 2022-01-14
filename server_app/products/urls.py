@@ -12,5 +12,5 @@ router.register("rating", ReviewViewSet, basename="rating"),
 
 
 urlpatterns = [
-    
+
 ] + router.urls
