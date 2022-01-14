@@ -17,7 +17,7 @@ const AddProduct = () => {
     const [selling_price, setSelling_price] = useState('')
     const [offer_price, setOffer_price] = useState('')
     const [stock, setstock] = useState('')
-    const [slug, setSlug] = useState('')
+    const [digital_item, setdigital_item] = useState(0)
 
 
     useEffect(() => {
@@ -35,7 +35,7 @@ const AddProduct = () => {
             selling_price,
             offer_price,
             stock,
-            slug
+            digital_item
         }
 
         let url = "http://localhost:8000/api/data/allproducts/";
@@ -89,6 +89,26 @@ const AddProduct = () => {
                                     <textarea id="description" type="text" className="form-control" name="description" onChange={(event) => setDescription(event.target.value)} placeholder="Description" required />
                                 </div>
                             </div>
+                            <div className="col-md-6">
+                                <div className="js-form-message mb-6">
+                                    <label for="description" className="form-label">
+                                        Digital Item
+                                        
+                                    </label>
+                                    <label>&nbsp; </label>
+                                    
+                                    <input onChange={(event) => event.target.checked ? setdigital_item(1) : setdigital_item(0)} type="checkbox" name="digital_item" />
+                                </div>
+                            </div>
+                                <div className="col-md-6">
+                                    <div className="js-form-message mb-6">
+                                        <label className="form-label">
+                                            Stock
+                                            <span className="text-danger">*</span>
+                                        </label>
+                                        <input required placeholder="15" type="number" className="form-control" name="stock" onChange={(event) => setstock(event.target.value)} />
+                                    </div>
+                                </div>
             
                             <div className="col-md-6">
                                 <div className="js-form-message mb-6">
@@ -110,6 +130,7 @@ const AddProduct = () => {
                                 <div className="js-form-message mb-6">
                                     <label className="form-label">
                                         Subcategory
+                                        <span className="text-danger">*</span>
                                     </label>
                                     <select className="form-control" onChange={(event) => setSub_category(event.target.value)} required name="sub_category" id="">
                                         {
@@ -148,24 +169,7 @@ const AddProduct = () => {
                             </div>
 
 
-                            <div className="col-md-6">
-                                <div className="js-form-message mb-6">
-                                    <label className="form-label">
-                                        Stock
-                                        <span className="text-danger">*</span>
-                                    </label>
-                                    <input required placeholder="15" type="number" className="form-control" name="stock" onChange={(event) => setstock(event.target.value)} />
-                                </div>
-                            </div>
-
-                            <div className="col-md-6">
-                                <div className="js-form-message mb-6">
-                                    <label className="form-label">
-                                        Slug (A Slug is a short label for something, containing only letters, underscores or hyphens)
-                                    </label>
-                                    <input type="text" onChange={(event) => setSlug(event.target.value)} name="slug" className="form-control" placeholder="bike310" required />
-                                </div>
-                            </div>
+                            
 
                         </div>
                         <button type="submit" className="btn btn-block btn-sm btn-primary transition-3d-hover mt-2">Submit</button>

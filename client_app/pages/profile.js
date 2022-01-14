@@ -1,12 +1,16 @@
-import Link from "next/link";
-import Image from "next/image";
-import { useState } from "react";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from "react";
+import { vendorsProduct } from '../redux/All_Reducers/productActionCreator';
 
 const Profile = () => {
     const { username, profile_pic, is_vendor } = useSelector(state => state.userReducer.user_details)
     const { userId } = useSelector(state => state.userReducer)
+    const { vendors_product } = useSelector(state => state.productState)
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(vendorsProduct(userId))
+    }, [userId])
     return (
         <div>
             {/* <!-- breadcrumb --> */}
@@ -33,7 +37,7 @@ const Profile = () => {
                             </div>
                             <div className="mr-xl-15">
                                 <div className="mb-3">
-                                    <div className="text-gray-6">Update your personal info :</div>
+                                    <div className="text-gray-6">Update your personal info</div>
                                 </div>
                                 <a href={`/profile/edit/`}
                                     className="btn btn-sm btn-block btn-primary-dark btn-wide transition-3d-hover">
@@ -43,7 +47,7 @@ const Profile = () => {
                         <div className="col-md-9 mb-md-6 mb-lg-0">
                             <div className="mb-2">
                                 <div className="border-bottom mb-3 pb-md-1 pb-3">
-                                    <a href="#" className="font-size-12 text-gray-5 mb-2 d-inline-block">Customer ID: {userId}</a>
+                                    <a href="#" className="font-size-12 text-gray-5 mb-2 d-inline-block">User ID: {userId}</a>
                                     <h2 className="font-size-25 text-lh-1dot2">{username}</h2>
                                     <div className="mb-2">
                                         <a className="d-inline-flex align-items-center small font-size-15 text-lh-1" href="#">
@@ -73,6 +77,8 @@ const Profile = () => {
                 </div>
                 {/* <!-- End Single Product Body --> */}
                 {/* <!-- Single Product Tab --> */}
+                {
+                    is_vendor ? (<div>
                 <div className="mb-8">
                     <div className="position-relative position-md-static px-md-6">
                         <ul className="nav nav-classNameic nav-tab nav-tab-lg justify-content-xl-center flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble border-0 pb-1 pb-xl-0 mb-n1 mb-xl-0"
@@ -82,17 +88,11 @@ const Profile = () => {
                                     href="#Jpills-one-example1" role="tab" aria-controls="Jpills-one-example1"
                                     aria-selected="true">Dashboard</a>
                             </li>
-                            {
-                                is_vendor? (
-                                    <li className="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
-                                        <a className="nav-link" id="add_product_tab" data-toggle="pill"
-                                            href="#add_product" role="tab" aria-controls="add_product"
-                                            aria-selected="true">Add Product</a>
-                                    </li>
-                                ):''
-                            }
-                            
-
+                            <li className="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
+                                <a className="nav-link" id="add_product_tab" data-toggle="pill"
+                                    href="#add_product" role="tab" aria-controls="add_product"
+                                    aria-selected="true">Add Product</a>
+                            </li>
                             <li className="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
                                 <a className="nav-link" id="Jpills-two-example1-tab" data-toggle="pill" href="#Jpills-two-example1"
                                     role="tab" aria-controls="Jpills-two-example1" aria-selected="false">Shiping Status</a>
@@ -109,6 +109,13 @@ const Profile = () => {
                             </li>
                         </ul>
                     </div>
+                            {/* {
+                                Object.keys(vendors_product).map((prod) => {
+                                    console.log(prod)
+                                })
+                            } */}
+                            
+
                     {/* <!-- Tab Content --> */}
                     <div className="borders-radius-17 border p-4 mt-4 mt-md-0 px-lg-10 py-lg-9">
                         <div className="tab-content" id="Jpills-tabContent">
@@ -118,142 +125,60 @@ const Profile = () => {
                                     <div className="col mb-6 mb-md-0">
                                         <ul
                                             className="row list-unstyled products-group no-gutters border-bottom border-md-bottom-0">
-                                            <li
-                                                className="col-4 col-md-4 col-xl-2gdot5 product-item remove-divider-sm-down border-0">
-                                                <div className="product-item__outer h-100">
-                                                    <div className="remove-prodcut-hover product-item__inner px-xl-4 p-3">
-                                                        <div className="product-item__body pb-xl-2">
-                                                            <div className="mb-2 d-none d-md-block"><a
-                                                                href="../shop/product-categories-7-column-full-width.html"
-                                                                className="font-size-12 text-gray-5">Speakers</a></div>
-                                                            <h5 className="mb-1 product-item__title d-none d-md-block"><a href="#"
-                                                                className="text-blue font-weight-bold">Wireless Audio System
-                                                                Multiroom 360 degree Full base audio</a></h5>
-                                                            <div className="mb-2">
-                                                                <a href="../shop/single-product-fullwidth.html"
-                                                                    className="d-block text-center"><img className="img-fluid"
-                                                                        src="/assets/img/320X300/img1.jpg"
-                                                                        alt="Image Description" /></a>
-                                                            </div>
-                                                            <div className="flex-center-between mb-1 d-none d-md-block">
-                                                                <div className="prodcut-price">
-                                                                    <div className="text-gray-100">$685,00</div>
+                                                    {
+                                                        Object.keys(vendors_product).map((prod) => {
+                                                            return (<li
+                                                                className="col-4 col-md-4 col-xl-2gdot5 product-item remove-divider-sm-down border-0" style={{"flex": "0 0 19.83333%"}}>
+                                                                <div className="product-item__outer h-100">
+                                                                    <div className="remove-prodcut-hover product-item__inner px-xl-4 p-3">
+                                                                        <div className="product-item__body pb-xl-2">
+                                                                            <div className="mb-2 d-none d-md-block"><a
+                                                                                href={`../shop/${vendors_product[prod].id}`}
+                                                                                className="font-size-12 text-gray-5"></a></div>
+
+                                                                            <h5 className="mb-1 product-item__title d-none d-md-block"><a href={`../shop/${vendors_product[prod].id}`}
+                                                                                className="text-blue font-weight-bold">{prod.Title}</a></h5>
+                                                                            <div className="mb-2">
+                                                                                <a href={`../shop/${prod.id}`}
+                                                                                    className="d-block text-center"><img style={{"height":"200px"}} className="img-fluid"
+                                                                                        src={vendors_product[prod].image}
+                                                                                        alt="Image" /></a>
+                                                                            </div>
+                                                                            <div className="flex-center-between mb-1 d-none d-md-block">
+                                                                                <div className="prodcut-price">
+                                                                                    <div className="text-gray-100mb-3"><b>$ {vendors_product[prod].offer_price}</b></div>
+                                                                                    <div className="d-flex mt-3">
+                                                                                        <a style={{ "width": "90px", "margin-right": "5px" }} href={`product/edit/${vendors_product[prod].id}/`} className="btn btn-sm btn-warning">Edit</a>
+                                                                                        <a style={{ "width": "90px", "margin-left": "5px" }}  href="" className="btn btn-sm  btn-danger">Delete</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li className="col-4 col-md-4 col-xl-2gdot5 product-item remove-divider-sm-down">
-                                                <div className="product-item__outer h-100">
-                                                    <div
-                                                        className="remove-prodcut-hover add-accessories product-item__inner px-xl-4 p-3">
-                                                        <div className="product-item__body pb-xl-2">
-                                                            <div className="mb-2 d-none d-md-block"><a
-                                                                href="../shop/product-categories-7-column-full-width.html"
-                                                                className="font-size-12 text-gray-5">Speakers</a></div>
-                                                            <h5 className="mb-1 product-item__title d-none d-md-block"><a href="#"
-                                                                className="text-blue font-weight-bold">Tablet White EliteBook
-                                                                Revolve 810 G2</a></h5>
-                                                            <div className="mb-2">
-                                                                <a href="../shop/single-product-fullwidth.html"
-                                                                    className="d-block text-center"><img className="img-fluid"
-                                                                        src="/assets/img/320X300/img1.jpg"
-                                                                        alt="Image Description" /></a>
-                                                            </div>
-                                                            <div className="flex-center-between mb-1 d-none d-md-block">
-                                                                <div
-                                                                    className="prodcut-price d-flex align-items-center position-relative">
-                                                                    <ins
-                                                                        className="font-size-15 text-red text-decoration-none">$1999,00</ins>
-                                                                    <del
-                                                                        className="font-size-12 tex-gray-6 position-absolute bottom-100">$2
-                                                                        299,00</del>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li
-                                                className="col-4 col-md-4 col-xl-2gdot5 product-item remove-divider-sm-down remove-divider">
-                                                <div className="product-item__outer h-100">
-                                                    <div
-                                                        className="remove-prodcut-hover add-accessories product-item__inner px-xl-4 p-3">
-                                                        <div className="product-item__body pb-xl-2">
-                                                            <div className="mb-2 d-none d-md-block"><a
-                                                                href="../shop/product-categories-7-column-full-width.html"
-                                                                className="font-size-12 text-gray-5">Speakers</a></div>
-                                                            <h5 className="mb-1 product-item__title d-none d-md-block"><a href="#"
-                                                                className="text-blue font-weight-bold">Purple Solo 2
-                                                                Wireless</a></h5>
-                                                            <div className="mb-2">
-                                                                <a href="../shop/single-product-fullwidth.html"
-                                                                    className="d-block text-center"><img className="img-fluid"
-                                                                        src="/assets/img/320X300/img1.jpg"
-                                                                        alt="Image Description" /></a>
-                                                            </div>
-                                                            <div className="flex-center-between mb-1 d-none d-md-block">
-                                                                <div className="prodcut-price">
-                                                                    <div className="text-gray-100">$685,00</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
+                                                                
+                                                            </li>
+                                                            )
+                                                        })
+                                                    }
+                                            
                                         </ul>
-                                        <div
-                                            className="form-check pl-4 pl-md-0 ml-md-4 mb-2 pb-2 pb-md-0 mb-md-0 border-bottom border-md-bottom-0">
-                                            <input className="form-check-input" type="checkbox" value="" id="inlineCheckbox1"
-                                                checked disabled />
-                                            <label className="form-check-label mb-1" htmlFor="inlineCheckbox1">
-                                                <strong>This product: </strong> Ultra Wireless S50 Headphones S50 with Bluetooth
-                                                - <span className="text-red font-size-16">$35.00</span>
-                                            </label>
-                                        </div>
-                                        <div
-                                            className="form-check pl-4 pl-md-0 ml-md-4 mb-2 pb-2 pb-md-0 mb-md-0 border-bottom border-md-bottom-0">
-                                            <input className="form-check-input" type="checkbox" id="inlineCheckbox2" value="option1"
-                                                checked />
-                                            <label className="form-check-label mb-1 text-blue" htmlFor="inlineCheckbox2">
-                                                <span className="text-decoration-on cursor-pointer-on">Universal Headphones Case in
-                                                    Black</span> - <span className="text-red font-size-16">$159.00</span>
-                                            </label>
-                                        </div>
-                                        <div
-                                            className="form-check pl-4 pl-md-0 ml-md-4 mb-2 pb-2 pb-md-0 mb-md-0 border-bottom border-md-bottom-0">
-                                            <input className="form-check-input" type="checkbox" id="inlineCheckbox3" value="option2"
-                                                checked />
-                                            <label className="form-check-label mb-1 text-blue" htmlFor="inlineCheckbox3">
-                                                <span className="text-decoration-on cursor-pointer-on">Headphones USB Wires</span> -
-                                                <span className="text-red font-size-16">$50.00</span>
-                                            </label>
-                                        </div>
                                     </div>
                                     <div className="col-md-auto">
 
                                     </div>
                                 </div>
-
                             </div>
-                            {
-                                is_vendor ? (
-                                    <div className="tab-pane fade" id="add_product" role="tabpanel"
-                                        aria-labelledby="add_product_tab">
-                                        <div className="row no-gutters">
-                                            <a style={{ "text-align": "center" }} class="btn btn-primary btn-sm" href="/product/add">Add Product</a>
-                                        </div>
-                                    </div>
-                                ):''}
-                            
-
+                            <div className="tab-pane fade" id="add_product" role="tabpanel"
+                                aria-labelledby="add_product_tab">
+                                <div className="row no-gutters">
+                                    <a style={{ "text-align": "center" }} class="btn btn-primary btn-sm" href="/product/add">Add Product</a>
+                                </div>
+                            </div>
                             <div className="tab-pane fade" id="Jpills-two-example1" role="tabpanel"
                                 aria-labelledby="Jpills-two-example1-tab">
                                 <h3 className="font-size-24 mb-3">Shiping Light</h3>
                                 <p>Status will update when update product status. We are trying to improve our system.</p>
-
-
 
                                 <div className="border rounded-pill py-1 px-4 border-color-1">
                                     <div className="js-quantity row align-items-center">
@@ -643,7 +568,8 @@ const Profile = () => {
                     </div>
                     {/* <!-- End Tab Content --> */}
                 </div>
-                {/* <!-- End Single Product Tab --> */}
+                        {/* <!-- End Single Product Tab --> */}</div>):''
+                }
             </div>
         </div>
     )

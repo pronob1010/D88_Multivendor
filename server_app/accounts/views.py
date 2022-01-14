@@ -15,7 +15,11 @@ class UserViewSet(ModelViewSet):
         get_lastname = data['lastname']
         get_phone = data['phone']
         get_home_address = data['home_address']
-        get_pro_pic = data['pro_pic']
+
+        if 'pro_pic' in request.data.keys():
+            get_pro_pic = data['pro_pic']
+            if get_pro_pic!="" and get_pro_pic is not None:
+                user.profile_pic = get_pro_pic
         if get_firstname!="":
             user.firstname = get_firstname
         if get_lastname!="":
@@ -24,8 +28,6 @@ class UserViewSet(ModelViewSet):
             user.phone = get_phone
         if get_home_address!="":
             user.home_address = get_home_address
-        if get_pro_pic!="" and get_pro_pic is not None:
-            user.profile_pic = get_pro_pic
         response_msg = {}
         try:
             user.save()
@@ -35,7 +37,3 @@ class UserViewSet(ModelViewSet):
             response_msg["text"] = "Something went wrong!Your profile didn't updated!"
             response_msg["type"]= "error"
         return Response(response_msg)
-
-
-
-

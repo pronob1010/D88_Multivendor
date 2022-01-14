@@ -12,7 +12,7 @@ const ProfileEdit = () => {
     const [lastname, setlastname] = useState('')
     const [phone, setphone] = useState('')
     const [home_address, sethome_address] = useState('')
-    const [pro_pic, setpro_pic] = useState('')
+    const [pro_pic, setpro_pic] = useState(null)
 
     let handleSubmit = () => {
         const data = {
@@ -20,13 +20,26 @@ const ProfileEdit = () => {
             "lastname": lastname,
             "phone": phone,
             "home_address": home_address,
-            "pro_pic": pro_pic.name===""?"":pro_pic.name,
         }
+        const data2 ={
+            "firstname": firstname,
+            "lastname": lastname,
+            "phone": phone,
+            "home_address": home_address,
+            "pro_pic": (pro_pic==null?"":pro_pic),
+        }
+        
+        console.log('pro_pic ', typeof(pro_pic))
 
         let url = "http://localhost:8000/api/auth/" + userId + "/";
         const header = {
             headers: {
                 "content-type": "application/json"
+            }
+        }
+        const header2 = {
+            headers: {
+                "content-type": "multipart/form-data"
             }
         }
 
@@ -38,7 +51,21 @@ const ProfileEdit = () => {
             .catch((error) => {
                 console.log(error);
             });
-            router.push("/profile")
+            // router.push("/profile")
+        }
+        catch (err){
+            console.error(`Error received from axios.post: ${JSON.stringify(err)}`);
+        }
+
+        try{
+            axios.put(url, data2, header2)
+            .then(response => {
+                console.log(response.data)
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+            // router.push("/profile")
         }
         catch (err){
             console.error(`Error received from axios.post: ${JSON.stringify(err)}`);
@@ -71,7 +98,7 @@ const ProfileEdit = () => {
                                         Last name
                                         <span className="text-danger">*</span>
                                     </label>
-                                    <input type="text" onChange={(event) => setlastname(event.target.value)} className="form-control" name="lastName" placeholder="Last name" defaultValue={user_details.lastname} aria-label="Last name" required="" data-msg="Please enter your last name." data-error-className="u-has-error" data-success-className="u-has-success" />
+                                    <input type="text" onChange={(event) => setlastname(event.target.value)} className="form-control" name="lastName" placeholder="Last name" defaultValue={user_details.lastname} />
                                 </div>
 
                             </div>
@@ -82,7 +109,7 @@ const ProfileEdit = () => {
                                         Home Address
                                         <span className="text-danger">*</span>
                                     </label>
-                                    <input type="text" className="form-control" name="home_address" onChange={(event) => sethome_address(event.target.value)} defaultValue={user_details.home_address} placeholder="152/13 mirpur 12" aria-label="152/13 mirpur 12" required="" data-msg="Please enter a valid address." data-error-className="u-has-error" data-success-className="u-has-success" />
+                                    <input type="text" className="form-control" name="home_address" onChange={(event) => sethome_address(event.target.value)} defaultValue={user_details.home_address} placeholder="152/13 mirpur 12" />
                                 </div>
 
                             </div>
@@ -94,10 +121,10 @@ const ProfileEdit = () => {
                                         Profile Picture
                                         <span className="text-danger">*</span>
                                     </label>
-                                    <img style={{'height':"150px","width":"200px"}} src={user_details.profile_pic ? user_details.profile_pic:'image'} alt="" />
+                                    <img accept="image/*" style={{'height':"150px","width":"200px"}} src={user_details.profile_pic ? user_details.profile_pic:null} alt="image" />
                                     <br />
                                     <br />
-                                    <input id="user_pro_pic" type="file" name="pro_pic" onChange={(event) => setpro_pic(event.target.files[0])} required="" data-error-className="u-has-error" data-success-className="u-has-success" />
+                                    <input accept="image/*" id="user_pro_pic" type="file" name="pro_pic" onChange={(event) => setpro_pic(event.target.files[0])} />
                                 </div>
 
                             </div>
@@ -108,7 +135,7 @@ const ProfileEdit = () => {
                                         Email address
                                         <span className="text-danger">*</span>
                                     </label>
-                                    <input type="email" className="form-control" readOnly name="emailAddress" defaultValue={user_details.email} placeholder="selldoom@gmail.com" aria-label="selldoom@gmail.com" required="" data-msg="Please enter a valid email address." data-error-className="u-has-error" data-success-className="u-has-success" />
+                                    <input type="email" className="form-control" readOnly name="emailAddress" defaultValue={user_details.email} placeholder="selldoom@gmail.com" />
                                 </div>
                             </div>
 
@@ -117,7 +144,7 @@ const ProfileEdit = () => {
                                     <label className="form-label">
                                         Phone
                                     </label>
-                                    <input type="text" onChange={(event) => setphone(event.target.value)} defaultValue={user_details.phone} className="form-control" placeholder="01*********" aria-label="+1 (062) 109-9222" data-msg="Please enter your last name." data-error-className="u-has-error" data-success-className="u-has-success" />
+                                    <input type="text" onChange={(event) => setphone(event.target.value)} defaultValue={user_details.phone} className="form-control" placeholder="01*********" />
                                 </div>
                             </div>
 

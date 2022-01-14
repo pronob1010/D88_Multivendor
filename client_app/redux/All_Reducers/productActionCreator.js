@@ -8,6 +8,22 @@ export const product_categories = (data) => {
     }
 }
 
+export const product_data = (data) => {
+    return {
+        type: actionTypes.PRODUCT_DATA,
+        payload: data
+    }
+}
+
+export const vendors_product = (data) => {
+    return {
+        type: actionTypes.VENDORS_PRODUCT,
+        payload: data
+    }
+}
+
+
+
 export const productCategories = () => dispatch => {
 
     const header = {
@@ -16,14 +32,56 @@ export const productCategories = () => dispatch => {
         }
     }
 
-    const authData = {
+    const category_data = {
 
     }
 
-    let authUrl = 'http://localhost:8000/api/data/categories/'
-    axios.get(authUrl, authData, header)
+    let cate_url = 'http://localhost:8000/api/data/categories/'
+    axios.get(cate_url, category_data, header)
         .then(response => {
             dispatch(product_categories(response.data))
+        })
+}
+
+
+export const productData = (id) => dispatch => {
+
+    if(id){const header = {
+        headers: {
+            "content-type": "application/json"
+        }
+    }
+
+    const prod_data = {
+        "id":id
+    }
+
+    let prod_url = 'http://localhost:8000/api/data/allproducts/'+id+"/"
+    axios.get(prod_url, prod_data, header)
+        .then(response => {
+            dispatch(product_data(response.data))
+        })}
+}
+
+export const vendorsProduct = (userId) => dispatch => {
+
+    const header = {
+        headers: {
+            "content-type": "application/json"
+        }
+    }
+
+    const data = {
+        "userId": userId,
+    }
+
+    let url = 'http://localhost:8000/api/data/vendors-product/';
+    axios.get(url, data, header)
+        .then(response => {
+            let data = response.data.filter((d) =>{
+                return d.seller == userId;
+            });
+            dispatch(vendors_product(data))
         })
 }
 
